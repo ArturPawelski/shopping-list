@@ -1,12 +1,12 @@
+import Navbar from "./components/Navbar";
 
-import './App.css';
+
 
 function App() {
   return (
-    <div className="">
+    <div >
 
-      <h1 className='text-black bg-slate-600'> lox</h1>
-
+      <Navbar />
 
 
     </div>
