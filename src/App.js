@@ -1,10 +1,12 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 
-import Home from './components/Home';
-import Lista from './components/Lista';
-import Posilki from './components/Posilki';
-import TwojeListy from './components/TwojeListy';
-import Login from './components/Login';
+import Home from './components/Home/Home';
+import Lista from './components/Lista/Lista';
+import Posilki from './components/Posilki/Posilki';
+import TwojeListy from './components/TwojeListy/TwojeListy';
+import Login from './components/Login/Login';
+
+import Navbar from './components/Navbar';
 
 
 
@@ -13,28 +15,26 @@ function App() {
     <div >
 
       <BrowserRouter>
-        <Routes>
 
+        <Navbar />
+
+        <Routes>
           <Route path='/' element={<Home />} />
 
-          <Route path='/lista' element={<Lista />} />
+          < Route path='/lista' element={< Lista />} />
 
-          <Route path='/posilki' element={< Posilki />} />
+          < Route path='/posilki' element={< Posilki />} />
 
-          <Route path='/twojelisty' element={<TwojeListy />} />
+          < Route path='/twojelisty' element={< TwojeListy />} />
 
-          <Route path='/login' element={<Login />} />
+          < Route path='/login' element={< Login />} />
 
-          <Route path='*' element={<h1>404 error</h1>} />
-
-
-
-        </Routes>
-      </BrowserRouter>
+          < Route path='*' element={<h1 h1 > 404 error</h1 >} />
+        </Routes >
+      </BrowserRouter >
 
 
-
-    </div>
+    </div >
   );
 }
 

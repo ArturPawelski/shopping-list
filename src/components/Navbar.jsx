@@ -1,26 +1,28 @@
-// import React from 'react'
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 
-// const Navbar = () => {
-//     return (
-//         <div className='w-full '>
-//             <nav className='flex bg-black text-white justify-between py-4 px-8 '>
 
 
-//                 <a href="/"> Site Name</a>
+const Navbar = () => {
+    return (
+        <div className='w-full '>
+            <nav className='flex bg-black text-white justify-between py-4 px-8 '>
 
-//                 <ul className='flex gap-4'>
-//                     <li> <a href="/lista"> LISTA </a></li>
-//                     <li> <a href="/posilki"> POSILKI  </a></li>
-//                     <li> <a href="/twojelisty"> TWOJE LISTY  </a></li>
-//                     <li> <a href="/login"> LOG IN  </a></li>
+                <Link to="/"> Sklep-lista </Link>
 
-//                 </ul>
+                <ul className='flex gap-4'>
 
+                    <li> <Link to="/lista"> Lista </Link></li>
+                    <li> <Link to="/posilki"> Posilki </Link> </li>
+                    <li> <Link to="/twojelisty"> Twoje Listy </Link>  </li>
+                    <li> <Link to="/login"> Log In </Link> </li>
 
-//             </nav>
-//         </div>
-//     )
-// }
+                </ul>
 
-// export default Navbar
+            </nav>
+        </div>
+    )
+}
+
+export default Navbar
