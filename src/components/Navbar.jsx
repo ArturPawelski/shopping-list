@@ -1,28 +1,26 @@
-import React from 'react'
+// import React from 'react'
 
 
-const Navbar = () => {
-    return (
-        <div className='w-full '>
-            <nav className='flex bg-slate-400 justify-between pt-4 px-8 '>
+// const Navbar = () => {
+//     return (
+//         <div className='w-full '>
+//             <nav className='flex bg-black text-white justify-between py-4 px-8 '>
 
 
-                <a href="/"> Site Name</a>
+//                 <a href="/"> Site Name</a>
 
-                <ul className='flex gap-4'>
-                    <li> <a href=""> LISTA </a></li>
-                    <li> <a href=""> POSILKI  </a></li>
-                    <li> <a href=""> TWOJE LISTY  </a></li>
-                    <li> <a href=""> LOG IN  </a></li>
+//                 <ul className='flex gap-4'>
+//                     <li> <a href="/lista"> LISTA </a></li>
+//                     <li> <a href="/posilki"> POSILKI  </a></li>
+//                     <li> <a href="/twojelisty"> TWOJE LISTY  </a></li>
+//                     <li> <a href="/login"> LOG IN  </a></li>
 
-
-
-                </ul>
+//                 </ul>
 
 
-            </nav>
-        </div>
-    )
-}
+//             </nav>
+//         </div>
+//     )
+// }
 
-export default Navbar
+// export default Navbar
