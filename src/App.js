@@ -12,7 +12,7 @@ import Navbar from './components/Navbar';
 
 function App() {
   return (
-    <div >
+    <div className='bg-gradient-to-b from-blue-300 to-blue-800 min-h-[1049px]' >
 
       <BrowserRouter>
 
@@ -32,6 +32,9 @@ function App() {
           < Route path='*' element={<h1 h1 > 404 error</h1 >} />
         </Routes >
       </BrowserRouter >
+
+
+
 
 
     </div >
