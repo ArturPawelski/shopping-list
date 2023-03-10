@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Logo from '../images/SKLEP-nav.png'
 import { FiMenu } from 'react-icons/fi'
@@ -6,13 +6,23 @@ import { FiMenu } from 'react-icons/fi'
 
 
 const Navbar = () => {
+
+    const [menu, setMenu] = useState(true)
+
+    const toggleMenu = () => {
+
+    }
+
+
     return (
-        <div className='w-full '>
-            <nav className='flex text-white bg-[#000B70] justify-between py-8 px-20 uppercase items-center gap-4'>
+        <div className='w-full font-lol font-bold'>
+            <nav className='flex text-white bg-[#000B70] justify-between py-8 px-4 uppercase items-center gap-4 sm:px-8'>
 
-                <Link to="/"> <img src={Logo} alt="" className='w-[20rem] lg:w-[20rem]' /> </Link>
 
-                <ul className='hidden  lg:flex lg:gap-12 lg:text-[1.2rem] lg:items-center'>
+
+                <Link to="/"> <img src={Logo} alt="" className='w-[12rem] md:w-[16rem] lg:w-[20rem]' /> </Link>
+
+                <ul className='hidden  lg:flex lg:gap-12 lg:text-[1.2rem] lg:items-center '>
 
                     <li> <Link to="/lista"> Lista </Link></li>
                     <li> <Link to="/posilki"> Posilki </Link> </li>
@@ -21,7 +31,8 @@ const Navbar = () => {
 
                 </ul>
 
-                <FiMenu size={30} className='lg:hidden' />
+                <FiMenu size={25} className='lg:hidden' />
+
 
 
 
