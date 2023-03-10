@@ -7,6 +7,7 @@ import TwojeListy from './components/TwojeListy/TwojeListy';
 import Login from './components/Login/Login';
 
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 
 
@@ -31,6 +32,8 @@ function App() {
 
           < Route path='*' element={<h1 h1 > 404 error</h1 >} />
         </Routes >
+
+        <Footer />
       </BrowserRouter >
 
 

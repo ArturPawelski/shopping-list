@@ -41,11 +41,11 @@ const Navbar = () => {
 
 
 
-                {!menu && <ul className='absolute right-0 top-[0] px-8 bg-black h-full w-[44%] z-0 bg-opacity-80  lg:hidden'>
+                {!menu && <ul className='absolute right-0 top-[0] px-8 bg-black h-full w-[44%] z-0 bg-opacity-90  lg:hidden'>
 
                     <div className='mt-32 '>
-
-                        <li > <Link to="/lista"> Lista </Link></li>
+                        <li > <Link to="/"> HOME </Link></li>
+                        <li className='mt-8'> <Link to="/lista"> Lista </Link></li>
                         <li className='mt-8'> <Link to="/posilki"> Posilki </Link> </li>
                         <li className='mt-8'> <Link to="/twojelisty"> Twoje Listy </Link>  </li>
                         <li className='bg-[#262A83] py-2  rounded-xl mt-16 flex justify-center max-w-[150px] mx-auto md:mx-0 '> <Link to="/login"> Log In </Link> </li>
