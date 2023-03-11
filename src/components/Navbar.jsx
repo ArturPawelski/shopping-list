@@ -41,7 +41,7 @@ const Navbar = () => {
 
 
 
-                {!menu && <ul className='absolute right-0 top-[0] px-8 bg-black h-[100%] w-[44%] z-0 bg-opacity-90  lg:hidden'>
+                {!menu && <ul className='absolute right-0 top-[0] px-8 bg-black h-[100%] w-[44%] z-5 bg-opacity-90  lg:hidden'>
 
                     <div className='mt-32 '>
                         <li > <Link to="/"> HOME </Link></li>
