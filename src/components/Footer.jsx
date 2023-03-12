@@ -14,22 +14,22 @@ const Footer = () => {
         <div className='w-full font-lol font-bold bg-[#FFFFFF] bg-opacity-[85%] mt-[8rem]   '>
 
 
-            <footer className='w-[90%] mx-auto py-12'>
+            <footer className='w-[90%] mx-auto py-12 md:flex md:items-center md:justify-center md:gap-[5%] xl:gap-[10%]'>
 
-                <div className='w-full'>
-                    <img src={Logo} alt="/" className='w-[65%] mx-auto' />
+                <div className='w-full md:w-auto'>
+                    <img src={Logo} alt="/" className='w-[65%] md:w-full mx-auto' />
                 </div>
 
-                <ul className='grid place-items-center mt-8'>
-                    <li className='flex items-center gap-2'><HiOutlineMail size={25} /> sklep.lista@gmail.com</li>
-                    <li className='flex items-center mt-4 gap-2'> <MdOutlinePhoneIphone size={25} /> 666 666 666 </li>
+                <ul className='grid place-items-center mt-8 md:place-items-start md:items-center md:mt-0'>
+                    <li className='flex items-center gap-2 lg:text-2xl'><HiOutlineMail size={30} /> sklep.lista@gmail.com</li>
+                    <li className='flex items-center mt-4 gap-2 lg:text-2xl'> <MdOutlinePhoneIphone size={30} /> 666 666 666 </li>
                 </ul>
 
-                <div className='flex justify-center items-center gap-[15%] mt-8'>
-                    <AiFillFacebook size={25} />
-                    <BsInstagram size={25} />
-                    <SiTiktok size={25} />
-                    <VscTwitter size={25} />
+                <div className='flex justify-center items-center gap-[15%] mt-12 md:mt-0'>
+                    <AiFillFacebook size={40} className='lg:w-[3rem] xl:w-[4rem]' />
+                    <BsInstagram size={40} className='lg:w-[3rem] xl:w-[4rem]' />
+                    <SiTiktok size={40} className='lg:w-[3rem] xl:w-[4rem]' />
+                    <VscTwitter size={40} className='lg:w-[3rem] xl:w-[4rem]' />
                 </div>
 
             </footer>
