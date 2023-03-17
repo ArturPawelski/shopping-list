@@ -31,7 +31,7 @@ const Footer = () => {
                     <SiTiktok size={40} className='lg:w-[3rem] xl:w-[4rem]' />
                     <VscTwitter size={40} className='lg:w-[3rem] xl:w-[4rem]' />
                 </div>
-                asdasd
+
             </footer>
 
 
