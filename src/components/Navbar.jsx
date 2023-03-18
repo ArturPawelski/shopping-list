@@ -16,9 +16,9 @@ const Navbar = () => {
 
 
     return (
-        <div className='w-full font-lol font-bold'>
+        <div className='w-full font-lol font-bold       '>
 
-            <nav className='flex text-white bg-[#000B70] justify-between py-8 px-4 uppercase items-center gap-4 sm:px-8 '>
+            <nav className='flex text-white   bg-[#000B70] justify-between py-8 px-4 uppercase items-center gap-4 sm:px-8   '>
 
 
 
@@ -36,27 +36,31 @@ const Navbar = () => {
                 </ul>
 
 
-                {menu ? <FiMenu size={25} className='lg:hidden' onClick={toggleMenu} /> : <HiX size={25} className='
-                 lg:hidden z-10' onClick={toggleMenu} />}
+                {
+                    menu ? <FiMenu size={25} className='lg:hidden' onClick={toggleMenu} /> : <HiX size={25} className=' fixed top-9 right-8
+                 lg:hidden z-10' onClick={toggleMenu} />
+                }
 
 
 
-                {!menu && <ul className='absolute right-0 top-[0] px-8 bg-black h-[100%] w-[44%] z-5 bg-opacity-90  lg:hidden'>
+                {
+                    !menu && <ul className=' fixed right-0 top-[0] px-8 bg-black h-[100%] w-[44%] z-5 bg-opacity-90  lg:hidden'>
 
-                    <div className='mt-32 '>
-                        <li > <Link to="/"> HOME </Link></li>
-                        <li className='mt-8'> <Link to="/lista"> Lista </Link></li>
-                        <li className='mt-8'> <Link to="/posilki"> Posilki </Link> </li>
-                        <li className='mt-8'> <Link to="/twojelisty"> Twoje Listy </Link>  </li>
-                        <li className='bg-[#262A83] py-2  rounded-xl mt-16 flex justify-center max-w-[150px] mx-auto md:mx-0  hover:bg-slate-200 hover:text-black'> <Link to="/login"> Log In </Link> </li>
-                    </div>
+                        <div className='mt-32 '>
+                            <li > <Link to="/"> HOME </Link></li>
+                            <li className='mt-8'> <Link to="/lista"> Lista </Link></li>
+                            <li className='mt-8'> <Link to="/posilki"> Posilki </Link> </li>
+                            <li className='mt-8'> <Link to="/twojelisty"> Twoje Listy </Link>  </li>
+                            <li className='bg-[#262A83] py-2  rounded-xl mt-16 flex justify-center max-w-[150px] mx-auto md:mx-0  hover:bg-slate-200 hover:text-black'> <Link to="/login"> Log In </Link> </li>
+                        </div>
 
-                </ul>}
+                    </ul>
+                }
 
 
 
-            </nav>
-        </div>
+            </nav >
+        </div >
     )
 }
 
