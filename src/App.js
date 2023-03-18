@@ -30,10 +30,11 @@ function App() {
 
           < Route path='/login' element={< Login />} />
 
-          < Route path='*' element={<h1 h1 > 404 error</h1 >} />
+          < Route path='*' element={<h1 h1 > 404 error </h1 >} />
         </Routes >
 
         <Footer />
+
       </BrowserRouter >
 
 

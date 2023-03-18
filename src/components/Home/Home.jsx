@@ -45,10 +45,10 @@ const Home = () => {
 
 
 
-            <div className='flex flex-col justify-center min-h-[450px] items-center max-w-[90%] mx-auto mt-[4rem] gap-4 shadow-2xl py-8 rounded-2xl px-4 bg-[#000B70] bg-opacity-60 md:flex-row  md:bg-transparent md:max-w-[80%] md:mt-[8rem] '>
+            <div className='flex flex-col  justify-center min-h-[450px] items-center max-w-[90%] mx-auto mt-[4rem] gap-4 shadow-2xl py-8 rounded-2xl px-4 bg-[#000B70] bg-opacity-60 md:flex-row  md:bg-transparent md:max-w-[80%] md:mt-[8rem] '>
 
-                <div className=' md:w-[50%] '>
-                    <img src={Phone3} alt="" className=' w-[30%] relative left-6 sm:w-[28%] md:w-[60%] md:left-16 lg:w-[45%] xl:left-24 mx-auto ' />
+                <div className='  md:w-[50%]  '>
+                    <img src={Phone3} alt="" className=' w-[30%]  relative left-6 sm:w-[28%] md:w-[60%] md:left-16 lg:w-[45%] xl:left-24 mx-auto ' />
                 </div>
 
                 <div className=' md:w-[50%] xl:pr-40'>
@@ -62,7 +62,7 @@ const Home = () => {
 
 
 
-            <div className='flex relative flex-col min-h-[450px] justify-center items-center max-w-[90%] mx-auto mt-[4rem] gap-4 shadow-2xl py-8 rounded-2xl px-4 bg-[#000B70] bg-opacity-60 md:flex-row-reverse md:bg-transparent md:max-w-[80%] md:mt-[8rem]'>
+            <div className='flex   flex-col min-h-[450px] justify-center items-center max-w-[90%] mx-auto mt-[4rem] gap-4 shadow-2xl py-8 rounded-2xl px-4 bg-[#000B70] bg-opacity-60 md:flex-row-reverse md:bg-transparent md:max-w-[80%] md:mt-[8rem]'>
 
                 <div className=' md:w-[50%]'>
                     <img src={Phone4} alt="" className=' w-[40%] relative left-6 sm:left-14 sm:w-[37%] md:w-[50%] md:left-0 md:bottom-[100%] mx-auto md:mr-[20%] ' />

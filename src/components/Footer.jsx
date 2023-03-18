@@ -11,7 +11,7 @@ const Footer = () => {
 
 
     return (
-        <div className='w-full font-lol font-bold bg-[#FFFFFF] bg-opacity-[85%] mt-[8rem]   '>
+        <div className='w-full font-lol  font-bold bg-[#FFFFFF] bg-opacity-[85%] mt-[8rem]   '>
 
 
             <footer className='w-[90%] mx-auto py-12 md:flex md:items-center md:justify-center md:gap-[5%] xl:gap-[10%]'>
