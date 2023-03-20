@@ -28,10 +28,11 @@ const Lista = () => {
 
 
     const addProductToList = () => {
+        const cena = cenaProduktu * iloscProduktu
         const newProduct = {
             nazwa: nazwaProduktu,
             ilosc: iloscProduktu,
-            cena: cenaProduktu * iloscProduktu
+            cena: cena.toFixed(2)
         };
         setFullList([...fullList, newProduct]);
         setNazwaProduktu('');
