@@ -27,7 +27,9 @@ const Lista = () => {
     const [complete, setComplete] = useState(true)
     const toggleComplete = (index) => {
         const newList = [...fullList];
+
         newList[index].status = !newList[index].status;
+
         setFullList(newList);
 
     }
@@ -35,6 +37,7 @@ const Lista = () => {
 
     const [fullList, setFullList] = useState([])
     const addProductToList = () => {
+
         const cena = cenaProduktu * iloscProduktu
 
         const newProduct = {
