@@ -24,17 +24,26 @@ const Lista = () => {
     };
 
 
+    const [complete, setComplete] = useState(true)
+    const toggleComplete = (index) => {
+        const newList = [...fullList];
+        newList[index].status = !newList[index].status;
+        setFullList(newList);
+
+    }
+
+
     const [fullList, setFullList] = useState([])
-
-
     const addProductToList = () => {
         const cena = cenaProduktu * iloscProduktu
 
         const newProduct = {
             nazwa: nazwaProduktu,
             ilosc: iloscProduktu,
-            cena: cena.toFixed(2)
+            cena: cena.toFixed(2),
+            status: complete
         };
+
         setFullList([...fullList, newProduct]);
         setNazwaProduktu('');
         setIloscProduktu(``);
@@ -51,11 +60,6 @@ const Lista = () => {
     };
 
 
-    const [complete, setComplete] = useState(true)
-
-    const toggleComplete = () => {
-        setComplete(!complete)
-    }
 
 
     return (
@@ -122,7 +126,7 @@ const Lista = () => {
                                     <div className='flex gap-4 items-center md:gap-16'>
                                         <p className='font-bold'>{product.ilosc}</p>
                                         <p className='font-bold'>{product.cena}</p>
-                                        <div className={complete ? 'bg-black  max-w-[0.3rem] min-h-[1.5rem] rounded-[100%] px-2 md:px-4' : 'bg-red-600   max-w-[0.3rem] min-h-[1.5rem] rounded-[100%] px-2 md:px-4'} onClick={toggleComplete} ></div>
+                                        <div className={product.status ? 'bg-black  max-w-[0.3rem] min-h-[1.5rem] rounded-[100%] px-2 md:px-4' : 'bg-red-600   max-w-[0.3rem] min-h-[1.5rem] rounded-[100%] px-2 md:px-4'} onClick={() => toggleComplete(index)} ></div>
                                     </div>
                                 </div>
                             </section>
