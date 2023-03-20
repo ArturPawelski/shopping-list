@@ -12,13 +12,13 @@ const Lista = () => {
     };
 
 
-    const [iloscProduktu, setIloscProduktu] = useState(0);
+    const [iloscProduktu, setIloscProduktu] = useState();
     const targetIloscInput = (e) => {
         setIloscProduktu(e.target.value)
     };
 
 
-    const [cenaProduktu, setCenaProduktu] = useState(0);
+    const [cenaProduktu, setCenaProduktu] = useState();
     const targetCenaInput = (e) => {
         setCenaProduktu(e.target.value)
     };
@@ -31,9 +31,12 @@ const Lista = () => {
         const newProduct = {
             nazwa: nazwaProduktu,
             ilosc: iloscProduktu,
-            cena: cenaProduktu
+            cena: cenaProduktu * iloscProduktu
         };
         setFullList([...fullList, newProduct]);
+        setNazwaProduktu('');
+        setIloscProduktu(``);
+        setCenaProduktu(``);
     };
 
     console.log(fullList)
@@ -44,7 +47,7 @@ const Lista = () => {
 
 
 
-            <section className=' '>
+            <section>
 
                 <button button className='w-[85%] shadow-[6px_4px_8px_rgba(0,0,0,0.50)] gap-4 flex justify-center items-center font-extrabold mx-auto mt-[6rem] py-2 px-8 bg-white rounded-xl sm:max-w-[500px] md:min-w-[650px]   ' > WYBIERZ PRODUKTY Z PODANYCH < BiCaretDown size={25} className='' /> </button >
 
@@ -92,19 +95,20 @@ const Lista = () => {
 
                     <div>
 
-                        <section className='flex items-center justify-center gap-2 mt-[2rem] md:gap-8'>
-                            <BsTrash size={25} />
-                            <div className='flex justify-between items-center w-[90%] bg-[#B7C6FF] py-4 px-2 rounded-xl shadow-[0px_5px_4px_rgba(0,0,0,0.35)] md:px-8'>
-                                <p className='font-bold '>MLEKO</p>
+                        {fullList.map((product, index) => (
+                            <section key={index} className='flex items-center justify-center gap-2 mt-[2rem] md:gap-8'>
+                                <BsTrash size={25} />
+                                <div className='flex justify-between items-center w-[90%] bg-[#B7C6FF] py-4 px-2 rounded-xl shadow-[0px_5px_4px_rgba(0,0,0,0.35)] md:px-8'>
+                                    <p className='font-bold '>{product.nazwa}</p>
 
-                                <div className='flex gap-4 items-center md:gap-16'>
-                                    <p className='font-bold'>2</p>
-                                    <p className='font-bold'>7.18</p>
-                                    <div className='bg-black max-w-[0.4rem] rounded-[100%] px-2 md:px-4'>.</div>
+                                    <div className='flex gap-4 items-center md:gap-16'>
+                                        <p className='font-bold'>{product.ilosc}</p>
+                                        <p className='font-bold'>{product.cena}</p>
+                                        <div className='bg-black max-w-[0.4rem] rounded-[100%] px-2 md:px-4'>.</div>
+                                    </div>
                                 </div>
-                            </div>
-                        </section>
-
+                            </section>
+                        ))}
 
 
                     </div>
@@ -125,23 +129,4 @@ const Lista = () => {
         </div >
     )
 }
-
 export default Lista
-
-
-const list = () => {
-
-    <section className='flex items-center justify-center gap-2 mt-[2rem] md:gap-8'>
-        <BsTrash size={25} />
-        <div className='flex justify-between items-center w-[90%] bg-[#B7C6FF] py-4 px-2 rounded-xl shadow-[0px_5px_4px_rgba(0,0,0,0.35)] md:px-8'>
-            <p className='font-bold '>MLEKO</p>
-
-            <div className='flex gap-4 items-center md:gap-16'>
-                <p className='font-bold'>2</p>
-                <p className='font-bold'>7.18</p>
-                <div className='bg-black max-w-[0.4rem] rounded-[100%] px-2 md:px-4'>.</div>
-            </div>
-        </div>
-    </section>
-
-}
