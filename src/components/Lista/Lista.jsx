@@ -110,7 +110,6 @@ const Lista = () => {
 
             <main className='mt-[8rem]'>
 
-
                 <img src={TwojaLista} alt="/" className='mx-auto w-auto px-8 md:max-w-[550px]' />
 
                 <div className='mt-[2rem] bg-white w-[90%] mx-auto rounded-2xl py-8 px-4 md:w-[85%] lg:w-[75%] xl:w-[70%] 2xl:w-[50%]'>
@@ -128,14 +127,17 @@ const Lista = () => {
 
 
 
+                    <section className='flex text-center justify-center gap-[4rem] mt-16 '>
 
 
+                        <input className='' type="text" placeholder='ilosc wszytkich' readonly="" />
+                        <input className='' type="text" placeholder='cena wszytkich' readonly="" />
+
+                    </section>
 
                 </div>
 
-
             </main>
-
 
         </div >
     )

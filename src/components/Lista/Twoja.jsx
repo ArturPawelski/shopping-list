@@ -22,9 +22,6 @@ const Twoja = ({ product, index, handleDelete, toggleComplete }) => {
             </div>
         </section>
 
-
-
-
     )
 }
 
