@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { BiCaretDown } from 'react-icons/bi'
 import TwojaLista from '../images/TWOJA.png'
-// import { BsTrash } from 'react-icons/bs'
+import { BsTrash } from 'react-icons/bs'
 import Twoja from './Twoja'
 
 
@@ -40,6 +40,7 @@ const Lista = () => {
 
 
     const [fullList, setFullList] = useState([])
+
     const addProductToList = () => {
 
         const cena = cenaProduktu * iloscProduktu
@@ -130,18 +131,31 @@ const Lista = () => {
 
 
 
-                    <section className='flex flex-col text-center justify-center gap-[2rem] mt-16 sm:flex-row sm:gap-[8rem]  '>
+                    <section className='flex flex-col text-center justify-center gap-[2rem] mt-16 sm:flex-row sm:gap-[4rem]  '>
 
                         <div className=''>
                             <p className='font-extrabold '>ILOŚĆ PRODUKTÓW:</p>
-                            <input className='bg-[#B7C6FF] rounded-2xl py-2 shadow-[inset_10px_14px_6px_rgba(0,0,0,0.25)] ' type="text" readonly="" />
+                            <input className='bg-[#B7C6FF] rounded-2xl text-center py-2 shadow-[inset_10px_12px_8px_rgba(0,0,0,0.25)]  ' type="text" readonly="" />
                         </div>
                         <div>
                             <p className='font-extrabold '>CENA:</p>
-                            <input className='bg-[#B7C6FF] rounded-2xl py-2   shadow-[inset_10px_14px_6px_rgba(0,0,0,0.25)] ' type="text" readonly="" />
+                            <input className='bg-[#B7C6FF] rounded-2xl py-2 text-center   shadow-[inset_10px_12px_8px_rgba(0,0,0,0.25)] ' type="text" readonly="" />
                         </div>
 
                     </section>
+
+
+                    <section className=' relative flex items-center justify-center mt-[4rem] gap-[2rem] left-[1.8rem]'>
+                        <button className='bg-[#4A55AA] text-white font-extrabold px-8 py-4 text-center rounded-[25px] text-[1.5rem] tracking-[0.3rem]'>ZAPISZ LISTĘ</button>
+                        <BsTrash size={35} />
+
+
+
+
+                    </section>
+
+
+
 
                 </div>
 

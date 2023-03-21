@@ -1,6 +1,9 @@
 import React from 'react'
 import { BsTrash } from 'react-icons/bs'
 
+import { BsCircle } from 'react-icons/bs'
+import { AiOutlineCheckCircle } from 'react-icons/ai'
+
 
 const Twoja = ({ product, index, handleDelete, toggleComplete }) => {
 
