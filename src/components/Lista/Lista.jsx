@@ -4,6 +4,9 @@ import TwojaLista from '../images/TWOJA.png'
 // import { BsTrash } from 'react-icons/bs'
 import Twoja from './Twoja'
 
+
+
+
 const Lista = () => {
 
 
@@ -127,11 +130,16 @@ const Lista = () => {
 
 
 
-                    <section className='flex text-center justify-center gap-[4rem] mt-16 '>
+                    <section className='flex flex-col text-center justify-center gap-[2rem] mt-16 sm:flex-row sm:gap-[8rem]  '>
 
-
-                        <input className='' type="text" placeholder='ilosc wszytkich' readonly="" />
-                        <input className='' type="text" placeholder='cena wszytkich' readonly="" />
+                        <div className=''>
+                            <p className='font-extrabold '>ILOŚĆ PRODUKTÓW:</p>
+                            <input className='bg-[#B7C6FF] rounded-2xl py-2 shadow-[inset_10px_14px_6px_rgba(0,0,0,0.25)] ' type="text" readonly="" />
+                        </div>
+                        <div>
+                            <p className='font-extrabold '>CENA:</p>
+                            <input className='bg-[#B7C6FF] rounded-2xl py-2   shadow-[inset_10px_14px_6px_rgba(0,0,0,0.25)] ' type="text" readonly="" />
+                        </div>
 
                     </section>
 
@@ -143,6 +151,10 @@ const Lista = () => {
     )
 }
 export default Lista
+
+
+
+
 
 
 
