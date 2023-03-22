@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { BiCaretDown } from 'react-icons/bi'
 import TwojaLista from '../images/TWOJA.png'
 import { BsTrash } from 'react-icons/bs'
-import Twoja from './Twoja'
+import TwojaListaBox from './TwojaListaBox'
 
 
 
@@ -62,15 +62,22 @@ const Lista = () => {
     };
 
 
+    const [allProducts, setAllProducts] = useState(0)
     useEffect(() => {
         const newProduct = fullList.reduce((total, product) => total + Number(product.ilosc), 0);
         setAllProducts(newProduct);
     }, [fullList]);
 
 
-    const [allProducts, setAllProducts] = useState(0)
-
     const [fullPrice, setFullPrice] = useState(0)
+    useEffect(() => {
+        const newPrice = fullList.reduce((total, product) => total + Number(product.cena), 0);
+        setFullPrice(newPrice)
+    }, [fullList])
+
+
+
+
 
 
     return (
@@ -138,7 +145,7 @@ const Lista = () => {
 
                     <div>
                         {fullList.map((product, index) => (
-                            <Twoja product={product} index={index} handleDelete={handleDelete} toggleComplete={toggleComplete} />
+                            <TwojaListaBox product={product} index={index} handleDelete={handleDelete} toggleComplete={toggleComplete} />
                         ))}
 
                     </div>
@@ -151,11 +158,11 @@ const Lista = () => {
 
                         <div className=''>
                             <p className='font-extrabold '>ILOŚĆ PRODUKTÓW:</p>
-                            <input className='bg-[#B7C6FF] rounded-2xl text-center py-2 shadow-[inset_10px_12px_8px_rgba(0,0,0,0.25)]  ' type="text" value={allProducts} readonly='' />
+                            <input className='bg-[#B7C6FF] rounded-2xl font-bold text-center py-2 shadow-[inset_10px_12px_8px_rgba(0,0,0,0.25)]  ' type="text" value={allProducts} readonly='' />
                         </div>
                         <div>
                             <p className='font-extrabold '>CENA:</p>
-                            <input className='bg-[#B7C6FF] rounded-2xl py-2 text-center   shadow-[inset_10px_12px_8px_rgba(0,0,0,0.25)] ' type="text" value={fullPrice} readonly="" />
+                            <input className='bg-[#B7C6FF] rounded-2xl font-bold py-2 text-center   shadow-[inset_10px_12px_8px_rgba(0,0,0,0.25)] ' type="text" value={fullPrice} readonly="" />
                         </div>
 
                     </section>
