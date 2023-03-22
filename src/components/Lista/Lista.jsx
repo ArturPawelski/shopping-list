@@ -33,10 +33,7 @@ const Lista = () => {
         const newList = [...fullList];
         newList[index].status = !newList[index].status;
         setFullList(newList);
-
     }
-
-
 
 
     const [fullList, setFullList] = useState([])
@@ -55,36 +52,24 @@ const Lista = () => {
         setNazwaProduktu('');
         setIloscProduktu(``);
         setCenaProduktu(``);
-
-        // setFullQuantity((prevQuantity) => Number(prevQuantity) + Number(newProduct.ilosc))
-
     };
-
-
-    useEffect(() => {
-        const newQuantity = fullList.reduce((total, product) => total + Number(product.ilosc), 0);
-        setFullQuantity(newQuantity);
-    }, [fullList]);
 
 
     const handleDelete = (index) => {
         const newList = [...fullList];
-
-
-        // const deletedProduct = newList[index];
-        // const deletedQuantity = Number(deletedProduct.ilosc);
-
-
         newList.splice(index, 1);
         setFullList(newList);
-
-
-        // setFullQuantity((prevQuantity) => prevQuantity - deletedQuantity)
     };
 
 
+    useEffect(() => {
+        const newProduct = fullList.reduce((total, product) => total + Number(product.ilosc), 0);
+        setAllProducts(newProduct);
+    }, [fullList]);
 
-    const [fullQuantity, setFullQuantity] = useState(0)
+
+    const [allProducts, setAllProducts] = useState(0)
+
     const [fullPrice, setFullPrice] = useState(0)
 
 
@@ -166,7 +151,7 @@ const Lista = () => {
 
                         <div className=''>
                             <p className='font-extrabold '>ILOŚĆ PRODUKTÓW:</p>
-                            <input className='bg-[#B7C6FF] rounded-2xl text-center py-2 shadow-[inset_10px_12px_8px_rgba(0,0,0,0.25)]  ' type="text" value={fullQuantity} readonly='' />
+                            <input className='bg-[#B7C6FF] rounded-2xl text-center py-2 shadow-[inset_10px_12px_8px_rgba(0,0,0,0.25)]  ' type="text" value={allProducts} readonly='' />
                         </div>
                         <div>
                             <p className='font-extrabold '>CENA:</p>
