@@ -5,7 +5,7 @@ import { BsCircle } from 'react-icons/bs'
 import { AiOutlineCheckCircle } from 'react-icons/ai'
 
 
-const Twoja = ({ product, index, handleDelete, toggleComplete }) => {
+const TwojaListaBox = ({ product, index, handleDelete, toggleComplete }) => {
 
 
     return (
@@ -32,4 +32,4 @@ const Twoja = ({ product, index, handleDelete, toggleComplete }) => {
     )
 }
 
-export default Twoja
+export default TwojaListaBox
