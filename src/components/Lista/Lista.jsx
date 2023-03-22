@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { BiCaretDown } from 'react-icons/bi'
 import TwojaLista from '../images/TWOJA.png'
 import { BsTrash } from 'react-icons/bs'
@@ -31,16 +31,15 @@ const Lista = () => {
     const [complete, setComplete] = useState(true)
     const toggleComplete = (index) => {
         const newList = [...fullList];
-
         newList[index].status = !newList[index].status;
-
         setFullList(newList);
 
     }
 
 
-    const [fullList, setFullList] = useState([])
 
+
+    const [fullList, setFullList] = useState([])
     const addProductToList = () => {
 
         const cena = cenaProduktu * iloscProduktu
@@ -56,20 +55,36 @@ const Lista = () => {
         setNazwaProduktu('');
         setIloscProduktu(``);
         setCenaProduktu(``);
+
+        // setFullQuantity((prevQuantity) => Number(prevQuantity) + Number(newProduct.ilosc))
+
     };
+
+
+    useEffect(() => {
+        const newQuantity = fullList.reduce((total, product) => total + Number(product.ilosc), 0);
+        setFullQuantity(newQuantity);
+    }, [fullList]);
 
 
     const handleDelete = (index) => {
         const newList = [...fullList];
 
-        newList.splice(index, 1);
 
+        // const deletedProduct = newList[index];
+        // const deletedQuantity = Number(deletedProduct.ilosc);
+
+
+        newList.splice(index, 1);
         setFullList(newList);
+
+
+        // setFullQuantity((prevQuantity) => prevQuantity - deletedQuantity)
     };
 
 
-    const [fullQuantity, setFullQuantity] = useState(0)
 
+    const [fullQuantity, setFullQuantity] = useState(0)
     const [fullPrice, setFullPrice] = useState(0)
 
 
@@ -118,6 +133,9 @@ const Lista = () => {
 
 
 
+
+
+
             <main className='mt-[8rem]'>
 
                 <img src={TwojaLista} alt="/" className='mx-auto w-auto px-8 md:max-w-[550px]' />
@@ -148,11 +166,11 @@ const Lista = () => {
 
                         <div className=''>
                             <p className='font-extrabold '>ILOŚĆ PRODUKTÓW:</p>
-                            <input className='bg-[#B7C6FF] rounded-2xl text-center py-2 shadow-[inset_10px_12px_8px_rgba(0,0,0,0.25)]  ' type="text" readonly={fullQuantity} />
+                            <input className='bg-[#B7C6FF] rounded-2xl text-center py-2 shadow-[inset_10px_12px_8px_rgba(0,0,0,0.25)]  ' type="text" value={fullQuantity} readonly='' />
                         </div>
                         <div>
                             <p className='font-extrabold '>CENA:</p>
-                            <input className='bg-[#B7C6FF] rounded-2xl py-2 text-center   shadow-[inset_10px_12px_8px_rgba(0,0,0,0.25)] ' type="text" readonly="" />
+                            <input className='bg-[#B7C6FF] rounded-2xl py-2 text-center   shadow-[inset_10px_12px_8px_rgba(0,0,0,0.25)] ' type="text" value={fullPrice} readonly="" />
                         </div>
 
                     </section>
