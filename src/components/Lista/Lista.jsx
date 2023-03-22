@@ -68,6 +68,9 @@ const Lista = () => {
     };
 
 
+    const [fullQuantity, setFullQuantity] = useState(0)
+
+    const [fullPrice, setFullPrice] = useState(0)
 
 
     return (
@@ -145,7 +148,7 @@ const Lista = () => {
 
                         <div className=''>
                             <p className='font-extrabold '>ILOŚĆ PRODUKTÓW:</p>
-                            <input className='bg-[#B7C6FF] rounded-2xl text-center py-2 shadow-[inset_10px_12px_8px_rgba(0,0,0,0.25)]  ' type="text" readonly="" />
+                            <input className='bg-[#B7C6FF] rounded-2xl text-center py-2 shadow-[inset_10px_12px_8px_rgba(0,0,0,0.25)]  ' type="text" readonly={fullQuantity} />
                         </div>
                         <div>
                             <p className='font-extrabold '>CENA:</p>
