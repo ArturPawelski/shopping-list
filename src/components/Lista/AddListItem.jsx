@@ -1,9 +1,49 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { BiCaretDown } from 'react-icons/bi'
 
-const AddListItem = ({ nazwaProduktu, targetNazwaInput, iloscProduktu, targetIloscInput, cenaProduktu, targetCenaInput, addProductToList }) => {
-    return (
+const AddListItem = ({ appendProductToList }) => {
 
+
+    const [nazwaProduktu, setNazwaProduktu] = useState('');
+    const targetNazwaInput = (e) => {
+        setNazwaProduktu(e.target.value)
+    };
+
+
+    const [iloscProduktu, setIloscProduktu] = useState();
+    const targetIloscInput = (e) => {
+        setIloscProduktu(e.target.value)
+    };
+
+
+    const [cenaProduktu, setCenaProduktu] = useState();
+    const targetCenaInput = (e) => {
+        setCenaProduktu(e.target.value)
+    };
+
+
+    const [complete, setComplete] = useState(true)
+
+
+    const addProductToList = () => {
+
+        const cena = cenaProduktu * iloscProduktu
+
+        const newProduct = {
+            nazwa: nazwaProduktu,
+            ilosc: iloscProduktu,
+            cena: cena.toFixed(2),
+            status: complete
+        };
+
+        appendProductToList(newProduct);
+        setNazwaProduktu('');
+        setIloscProduktu(``);
+        setCenaProduktu(``);
+    };
+
+
+    return (
         <section>
 
             <button button className='w-[85%] shadow-[6px_4px_8px_rgba(0,0,0,0.50)] gap-4 flex justify-center items-center font-extrabold mx-auto mt-[6rem] py-2 px-8 bg-white rounded-xl sm:max-w-[500px] md:min-w-[650px]   ' > WYBIERZ PRODUKTY Z PODANYCH < BiCaretDown size={25} className='' /> </button >
