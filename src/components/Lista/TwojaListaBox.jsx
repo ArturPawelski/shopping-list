@@ -14,10 +14,10 @@ const TwojaListaBox = ({ product, index, handleDelete, toggleComplete }) => {
 
             <BsTrash size={25} onClick={() => handleDelete(index)} />
 
-            <div className='flex justify-between items-center w-[90%] bg-[#B7C6FF] py-3 px-4 rounded-xl shadow-[0px_5px_4px_rgba(0,0,0,0.35)] md:px-8'>
+            <div className='flex flex-col justify-between items-center w-[90%] bg-[#B7C6FF] py-3 px-4 rounded-xl shadow-[0px_5px_4px_rgba(0,0,0,0.35)] sm:flex-row md:px-8'>
                 <p className='font-bold'>{product.nazwa}</p>
 
-                <div className='flex gap-4 items-center md:gap-16 '>
+                <div className='flex gap-4 items-center py-2 sm:py-0 md:gap-16 '>
                     <p className='font-bold'>{product.ilosc}</p>
                     <p className='font-bold'>{product.cena}</p>
 

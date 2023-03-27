@@ -52,7 +52,7 @@ const ItemList = ({ fullList, handleDelete, toggleComplete, allProducts, fullPri
 
 
                 <section className=' relative flex items-center justify-center mt-[4rem] gap-[0.5rem] left-[1.8rem] sm:gap-[2rem] '>
-                    <button className='bg-[#4A55AA] text-white font-extrabold px-2 py-4 text-center rounded-[25px] text-[1rem] tracking-[0.3rem] sm:text-[1.5rem] sm:px-4'>ZAPISZ LISTĘ</button>
+                    <button className='bg-[#4A55AA] text-white font-extrabold px-2 py-4 text-center rounded-[25px] text-[1rem] tracking-[0.1rem] sm:text-[1.5rem] sm:tracking-[0.3rem] sm:px-4'>ZAPISZ LISTĘ</button>
 
                     <BsTrash size={35} onClick={delateAllProducts} />
                 </section>
