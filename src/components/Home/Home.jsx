@@ -9,7 +9,7 @@ import Phone4 from '../images/illustration4.svg'
 
 const Home = () => {
     return (
-        <div className='w-full font-lol '>
+        <div className='w-full font-rob '>
 
 
 
@@ -21,7 +21,7 @@ const Home = () => {
 
                 <div className=' md:w-[50%] '>
 
-                    <h2 className=' text-center   text-white font-lol font-bold text-2xl mt-4 md:text-left md:leading-[2.6rem] md:text-3xl lg:leading-[2.8rem] xl:text-4xl xl:leading-[3rem] 2xl:text-5xl 2xl:leading-[4rem] '>TWÓRZ SWOJE WŁASNE <br /> LISTY ZAKUPÓW </h2>
+                    <h2 className=' text-center   text-white  font-bold text-2xl mt-4 md:text-left md:leading-[2.6rem] md:text-3xl lg:leading-[2.8rem] xl:text-4xl xl:leading-[3rem] 2xl:text-5xl 2xl:leading-[4rem] '>TWÓRZ SWOJE WŁASNE <br /> LISTY ZAKUPÓW </h2>
                     <p className='text-center  text-white font-lol font-light text-[1rem] mt-4 md:text-left lg:text-2xl xl:mt-8 xl:text-[1.7rem] xl:leading-[2.5rem] 2xl:text-[2rem] 2xl:leading-[2.8rem] '>i korzystaj z przykładowych list z <br /> “SKLEP LISTA” wszystko jest proste</p>
 
                 </div>

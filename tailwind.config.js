@@ -6,7 +6,7 @@ module.exports = {
 
       fontFamily: {
         xd: ['Caveat', 'sans-serif'],
-        lol: ['Roboto', 'sans-serif'],
+        rob: ['Roboto', 'sans-serif'],
 
       },
 

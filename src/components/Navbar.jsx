@@ -16,7 +16,7 @@ const Navbar = () => {
 
 
     return (
-        <div className='w-full font-lol font-bold       '>
+        <div className='w-full font-rob font-bold       '>
 
             <nav className='flex text-white   bg-[#000B70] justify-between py-8 px-4 uppercase items-center gap-4 sm:px-8   '>
 

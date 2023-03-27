@@ -61,7 +61,7 @@ const Lista = () => {
 
 
     return (
-        <div className='w-full font-lol'>
+        <div className='w-full font-rob'>
 
 
 
