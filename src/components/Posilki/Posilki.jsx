@@ -14,7 +14,7 @@ const Posilki = () => {
         <div className='w-full font-rob min-h-screen flex flex-col justify-center items-center '>
 
 
-            <section className='flex flex-col justify-center  bg-white mx-auto mt-[8rem] py-4 px-2 rounded-xl sm:px-0 sm:max-w-[600px]  lg:max-w-[800px]'>
+            <section className='flex flex-col justify-center  bg-white mx-auto mt-[8rem] py-4 px-2 shadow-md rounded-xl sm:px-0 sm:max-w-[600px]  lg:max-w-[800px]'>
 
                 <main className=' flex items-center gap-4 justify-center'>
 
