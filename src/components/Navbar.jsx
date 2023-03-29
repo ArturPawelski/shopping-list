@@ -18,7 +18,7 @@ const Navbar = () => {
     return (
         <div className='w-full font-rob font-bold       '>
 
-            <nav className='flex text-white   bg-[#000B70] justify-between py-8 px-4 uppercase items-center gap-4 sm:px-8   '>
+            <nav className='flex text-white min-h-[6rem]  bg-[#000B70] justify-between py-8 px-4 uppercase items-center gap-4 sm:px-8   '>
 
 
 
@@ -44,7 +44,7 @@ const Navbar = () => {
 
 
                 {
-                    !menu && <ul style={{ zIndex: 5 }} className='  fixed right-0 top-[0] px-8 bg-black h-[100%] w-[44%] z-5 bg-opacity-90  lg:hidden'>
+                    !menu && <ul style={{ zIndex: 5 }} className='fixed right-0 top-[0] px-8 bg-black h-[100%] w-[44%] z-5 bg-opacity-90  lg:hidden'>
 
                         <div className='mt-32 '>
                             <li > <Link to="/"> HOME </Link></li>

@@ -13,7 +13,7 @@ const Home = () => {
 
 
 
-            <div className='flex  flex-col justify-center items-center min-h-[450px] max-w-[90%] mx-auto mt-[4rem] gap-4 shadow-2xl py-8 rounded-2xl px-4 bg-[#000B70] bg-opacity-60 md:flex-row  md:bg-transparent md:max-w-[80%] md:mt-[4rem] '>
+            <div className='flex  flex-col justify-center items-center min-h-[450px] max-w-[90%] mx-auto mt-[6rem] gap-4 shadow-2xl py-8 rounded-2xl px-4 bg-[#000B70] bg-opacity-60 md:flex-row  md:bg-transparent md:max-w-[80%] md:mt-[6rem] '>
 
                 <div className=' md:w-[50%] '>
                     <img src={Phone} alt="" className=' w-[30%]  sm:w-[28%] md:w-[40%] lg:left-12 2xl:w-[35%] mx-auto ' />
