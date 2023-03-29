@@ -9,7 +9,7 @@ import Phone4 from '../images/illustration4.svg'
 
 const Home = () => {
     return (
-        <div className='w-full font-rob '>
+        <div className='w-full font-rob mb-[8rem]'>
 
 
 

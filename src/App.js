@@ -13,7 +13,7 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className='bg-gradient-to-b from-blue-300 to-blue-800 min-h-[1049px]' >
+    <div className='bg-gradient-to-b from-blue-300 to-blue-800 ' >
 
       <BrowserRouter>
 

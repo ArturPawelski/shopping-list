@@ -61,7 +61,7 @@ const Lista = () => {
 
 
     return (
-        <div className='w-full font-rob'>
+        <div className='w-full font-rob mb-[8rem]'>
 
 
 

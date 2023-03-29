@@ -7,7 +7,7 @@ import { BsTrash } from 'react-icons/bs'
 
 const TwojeListy = () => {
     return (
-        <div className='w-full font-rob min-h-screen flex flex-col justify-center items-center  '>
+        <div className='w-full font-rob min-h-screen flex flex-col justify-center items-center mb-[8rem]  '>
 
 
 
