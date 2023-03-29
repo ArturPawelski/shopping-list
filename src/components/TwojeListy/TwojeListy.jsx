@@ -18,7 +18,12 @@ const TwojeListy = () => {
                 <img src={Twoje} alt="" className='mt-[2rem]   mx-auto' />
 
 
-                <div className='flex justify-center items-center mt-8 gap-2 '>
+
+
+
+
+
+                <div className='flex justify-center items-center mt-16 gap-2 '>
                     <AiOutlineHeart size={25} />
 
                     <section className='flex flex-col w-full justify-center items-center gap-2  bg-white py-2 px-4 rounded-xl sm:flex-row sm:justify-between sm:w-[80%]'>

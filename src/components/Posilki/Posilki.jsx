@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { BiCaretDown } from 'react-icons/bi'
 import TwojaListaBox from '../Lista/TwojaListaBox'
-
+import { BsTrash } from 'react-icons/bs'
 
 const Posilki = () => {
 
@@ -26,7 +26,11 @@ const Posilki = () => {
                     <div className='w-[60%] flex flex-col justify-center items-center'>
                         <h2 className='font-extrabold text-[#050C69]'>POSIŁEK 1</h2>
                         <p className='text-left mt-2'>Korem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia.</p>
-                        <button onClick={toggleProducst} className='mt-4 flex flex-col items-center  text-white font-extrabold px-2 py-2 bg-[#4A55AA] rounded-2xl sm:px-8 sm:flex-row sm:gap-4 '>ROZWIŃ LISTĘ PRODUKTÓW <BiCaretDown /></button>
+
+                        <div className='flex items-center gap-2'>
+                            <button onClick={toggleProducst} className='mt-4 flex flex-col items-center  text-white font-extrabold  py-2 bg-[#4A55AA] rounded-2xl sm:px-8 sm:flex-row sm:gap-4 '>ROZWIŃ LISTĘ PRODUKTÓW <BiCaretDown /></button>
+                            <BsTrash size={30} className=' relative sm:top-2' />
+                        </div>
                     </div>
 
                 </main>
