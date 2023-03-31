@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Twoje from '../images/TWOJE.png'
 import { AiOutlineHeart } from 'react-icons/ai'
 import { AiFillHeart } from 'react-icons/ai'
@@ -6,6 +6,22 @@ import { BiCaretDown } from 'react-icons/bi'
 import { BsTrash } from 'react-icons/bs'
 
 const TwojeListy = () => {
+
+    const [listData, setListData] = useState([])
+
+
+    useEffect(() => {
+        fetch("http://localhost:3001/list")
+            .then(response => response.json())
+            .then(result => {
+                console.log(result)
+                setListData(result)
+            })
+            .catch(error => console.log('error', error));
+    }, [])
+
+
+
     return (
         <div className='w-full font-rob min-h-screen flex flex-col justify-center items-center mb-[8rem]  '>
 
@@ -19,27 +35,28 @@ const TwojeListy = () => {
 
 
 
+                {listData && listData.map(({ id, name, date, products }) => (
+                    <div key={id} className='flex justify-center items-center mt-16 gap-2 '>
+                        <AiOutlineHeart size={25} />
 
+                        <section className='flex flex-col w-full justify-center items-center gap-2  bg-white py-2 px-4 rounded-xl sm:flex-row sm:justify-between sm:w-[80%]'>
+                            <h2 className='uppercase font-extrabold'>{name}</h2>
 
+                            <div className='flex flex-col gap-2 items-center sm:flex-row sm:gap-4'>
 
+                                <p className='font-extrabold'>{date}</p>
+                                <BiCaretDown />
+                            </div>
+                        </section>
 
-                <div className='flex justify-center items-center mt-16 gap-2 '>
-                    <AiOutlineHeart size={25} />
+                        <BsTrash size={25} />
 
-                    <section className='flex flex-col w-full justify-center items-center gap-2  bg-white py-2 px-4 rounded-xl sm:flex-row sm:justify-between sm:w-[80%]'>
-                        <h2 className='uppercase font-extrabold'>"nazwa listy"</h2>
+                        <div>
+                            <h1>{products && products[0].name}</h1>
 
-                        <div className='flex flex-col gap-2 items-center sm:flex-row sm:gap-4'>
-
-                            <p className='font-extrabold'>01.01.2022</p>
-                            <BiCaretDown />
                         </div>
 
-                    </section>
-
-                    <BsTrash size={25} />
-
-                </div>
+                    </div>))}
 
 
 

@@ -1,0 +1,20 @@
+{
+  "list": [
+    {
+      "id": 1,
+      "name": "lista z bazy danych",
+      "date": "1.1.11",
+      "products": [
+        {
+          "id": 1,
+          "name": "mleko"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "lista z bazy danych2",
+      "date": "2.2.22"
+    }
+  ]
+}
