@@ -7,14 +7,30 @@
       "products": [
         {
           "id": 1,
-          "name": "mleko"
+          "name": "mleko",
+          "number": 2,
+          "price": 2.8
+        },
+        {
+          "id": 2,
+          "name": "ciastko",
+          "number": 5,
+          "price": 60
         }
       ]
     },
     {
       "id": 2,
       "name": "lista z bazy danych2",
-      "date": "2.2.22"
+      "date": "2.2.22",
+      "products": [
+        {
+          "id": 1,
+          "name": "kawa",
+          "number": 4,
+          "price": 10
+        }
+      ]
     }
   ]
 }

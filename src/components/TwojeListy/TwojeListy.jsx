@@ -1,13 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import Twoje from '../images/TWOJE.png'
-import { AiOutlineHeart } from 'react-icons/ai'
+import { AiFillEyeInvisible, AiOutlineHeart } from 'react-icons/ai'
 import { AiFillHeart } from 'react-icons/ai'
 import { BiCaretDown } from 'react-icons/bi'
 import { BsTrash } from 'react-icons/bs'
 
 const TwojeListy = () => {
 
+    const [openListId, setOpenListId] = useState(null);
+    const toggleOpenProducts = (id) => {
+        setOpenListId(openListId === id ? null : id);
+    };
+
+
     const [listData, setListData] = useState([])
+
 
 
     useEffect(() => {
@@ -28,41 +35,68 @@ const TwojeListy = () => {
 
 
 
-            <main className='bg-[#B7C6FF] py-4 px-8 rounded-xl   min-h-[500px]  '>
 
+
+
+
+            <main className='bg-[#B7C6FF] py-4 px-8 rounded-xl   min-h-[500px]  '>
 
                 <img src={Twoje} alt="" className='mt-[2rem]   mx-auto' />
 
 
 
+
+
+
                 {listData && listData.map(({ id, name, date, products }) => (
-                    <div key={id} className='flex justify-center items-center mt-16 gap-2 '>
-                        <AiOutlineHeart size={25} />
+                    <div key={id} className=''>
+                        <div className='flex justify-center items-center mt-14 gap-2 '>
 
-                        <section className='flex flex-col w-full justify-center items-center gap-2  bg-white py-2 px-4 rounded-xl sm:flex-row sm:justify-between sm:w-[80%]'>
-                            <h2 className='uppercase font-extrabold'>{name}</h2>
 
-                            <div className='flex flex-col gap-2 items-center sm:flex-row sm:gap-4'>
 
-                                <p className='font-extrabold'>{date}</p>
-                                <BiCaretDown />
-                            </div>
-                        </section>
+                            <section className='flex flex-col w-full justify-center items-center gap-2  bg-white py-2 px-4 rounded-xl sm:flex-row sm:justify-between sm:w-[80%]'>
+                                <h2 className='uppercase font-extrabold'>{name}</h2>
 
-                        <BsTrash size={25} />
+                                <div className='flex flex-col gap-2 items-center sm:flex-row sm:gap-4'>
 
-                        <div>
-                            <h1>{products && products[0].name}</h1>
+                                    <p className='font-extrabold'>{date}</p>
+                                    <BiCaretDown size={25} onClick={() => toggleOpenProducts(id)} />
+                                </div>
+                            </section>
 
+                            <BsTrash size={25} />
                         </div>
 
-                    </div>))}
 
 
 
 
 
-            </main>
+                        {openListId === id &&
+                            <div>
+
+                                {products && products.map(({ id, name, number, price }) => (
+                                    <div key={id} className='flex justify-center items-center mt-4 gap-2 '>
+
+                                        <section className='flex flex-col w-[50%] justify-center items-center gap-2 bg-white bg-opacity-40 py-1 px-4 rounded-xl sm:flex-row sm:justify-between sm:w-[65%]'>
+
+                                            <h2 className='uppercase font-extrabold'>{name}</h2>
+
+                                            <div className='flex flex-col gap-2 items-center sm:flex-row sm:gap-8'>
+                                                <p>{number}</p>
+                                                <p className='font-extrabold'>{price}</p>
+
+                                            </div>
+                                        </section>
+
+
+                                    </div>))}
+
+                            </div>
+                        }
+
+                    </div>))
+                }
 
 
 
@@ -70,7 +104,22 @@ const TwojeListy = () => {
 
 
 
-        </div>
+
+
+            </main >
+
+
+
+
+
+
+
+
+
+
+
+
+        </div >
     )
 }
 

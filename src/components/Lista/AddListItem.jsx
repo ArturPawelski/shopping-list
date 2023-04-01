@@ -40,6 +40,7 @@ const AddListItem = ({ appendProductToList }) => {
         setNazwaProduktu('');
         setIloscProduktu(``);
         setCenaProduktu(``);
+
     };
 
 

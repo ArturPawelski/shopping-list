@@ -25,6 +25,7 @@ const Lista = () => {
 
     const appendProductToList = (newProduct) => {
         setFullList([...fullList, newProduct]);
+
     }
 
 
@@ -46,6 +47,7 @@ const Lista = () => {
     useEffect(() => {
         const newProduct = fullList.reduce((total, product) => total + Number(product.ilosc), 0);
         setAllProducts(newProduct.toFixed(2));
+
     }, [fullList]);
 
 
