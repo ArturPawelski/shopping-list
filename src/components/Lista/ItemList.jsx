@@ -1,12 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import TwojaLista from '../images/TWOJA.png'
 import TwojaListaBox from './TwojaListaBox'
 import { BsTrash } from 'react-icons/bs'
+import { GrClose } from 'react-icons/gr'
 
 const ItemList = ({ fullList, handleDelete, toggleComplete, allProducts, fullPrice, delateAllProducts }) => {
+
+    const [openButton, setOpenButton] = useState(true)
+    const toggleOpenButton = () => {
+        setOpenButton(!openButton)
+    }
+
+
+
+
+
+
+
     return (
 
-        <main className='mt-[8rem]'>
+        <main className='mt-[8rem] font-rob'>
 
             <img src={TwojaLista} alt="/" className='mx-auto w-auto px-8 md:max-w-[550px]' />
 
@@ -52,7 +65,7 @@ const ItemList = ({ fullList, handleDelete, toggleComplete, allProducts, fullPri
 
 
                 <section className=' relative flex items-center justify-center mt-[4rem] gap-[0.5rem] left-[1.8rem] sm:gap-[2rem] '>
-                    <button className='bg-[#4A55AA] text-white font-extrabold px-2 py-4 text-center rounded-[25px] text-[1rem] tracking-[0.1rem] sm:text-[1.5rem] sm:tracking-[0.3rem] sm:px-4'>ZAPISZ LISTĘ</button>
+                    <button onClick={toggleOpenButton} className='bg-[#4A55AA] text-white font-extrabold px-2 py-4 text-center rounded-[25px] text-[1rem] tracking-[0.1rem] sm:text-[1.5rem] sm:tracking-[0.3rem] sm:px-4'>ZAPISZ LISTĘ</button>
 
                     <BsTrash size={35} onClick={delateAllProducts} />
                 </section>
@@ -62,21 +75,38 @@ const ItemList = ({ fullList, handleDelete, toggleComplete, allProducts, fullPri
 
             </div>
 
-            <section className=''>
-                <div>
-                    <h2>CZY CHCESZ ZAPISAĆ SWOJĄ LISTĘ?</h2>
-
-                    <p>NAZWA LISTY:</p>
-                    <input type="text" />
-
-                    <p>DATA:</p>
-                    <input type="text" />
-
-                    <button>ZAPISZ</button>
-                </div>
 
 
-            </section>
+
+
+            {!openButton &&
+
+                <aside class="bg-black bg-opacity-80 fixed inset-0 flex justify-center items-center">
+
+                    <section class="relative z-10 bg-white max-w-[400px] px-8 py-8 rounded-xl">
+
+                        <GrClose onClick={toggleOpenButton} className='absolute right-5 top-5' size={20} />
+
+                        <h2 class="text-center pt-8 font-extrabold">CZY CHCESZ ZAPISAĆ SWOJĄ LISTĘ?</h2>
+
+                        <p class="mt-8 font-extralight">NAZWA LISTY:</p>
+                        <input class="bg-[#D9D9D9] bg-opacity-60 px-2 py-2 rounded-xl w-full" type="text" />
+
+                        <p class="mt-4 font-extralight">DATA:</p>
+                        <input class="bg-[#D9D9D9] bg-opacity-60 py-2 px-2 rounded-xl w-full" type="text" />
+
+                        <button class="block mt-8 mx-auto bg-black text-white py-2 px-8 rounded-xl font-extrabold">ZAPISZ</button>
+
+
+                    </section>
+
+                </aside>}
+
+
+
+
+
+
 
 
         </main>
@@ -84,3 +114,7 @@ const ItemList = ({ fullList, handleDelete, toggleComplete, allProducts, fullPri
 }
 
 export default ItemList
+
+
+
+
