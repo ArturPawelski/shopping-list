@@ -62,6 +62,23 @@ const ItemList = ({ fullList, handleDelete, toggleComplete, allProducts, fullPri
 
             </div>
 
+            <section className=''>
+                <div>
+                    <h2>CZY CHCESZ ZAPISAĆ SWOJĄ LISTĘ?</h2>
+
+                    <p>NAZWA LISTY:</p>
+                    <input type="text" />
+
+                    <p>DATA:</p>
+                    <input type="text" />
+
+                    <button>ZAPISZ</button>
+                </div>
+
+
+            </section>
+
+
         </main>
     )
 }

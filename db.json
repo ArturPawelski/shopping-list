@@ -31,6 +31,18 @@
           "price": 10
         }
       ]
+    },
+    {
+      "name": "test dodane",
+      "date": "3.3.33",
+      "products": [
+        {
+          "name": "cola",
+          "number": 10,
+          "price": 100
+        }
+      ],
+      "id": 3
     }
   ]
 }
