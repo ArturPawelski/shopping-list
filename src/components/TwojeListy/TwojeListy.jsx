@@ -13,9 +13,17 @@ const TwojeListy = () => {
     };
 
 
+
+
+    const [refresh, setRefresh] = useState(false);
+    const toggleRefresh = () => {
+        setRefresh(!refresh)
+    }
+
+
+
+
     const [listData, setListData] = useState([])
-
-
 
     useEffect(() => {
         fetch("http://localhost:3001/list")
@@ -25,7 +33,30 @@ const TwojeListy = () => {
                 setListData(result)
             })
             .catch(error => console.log('error', error));
-    }, [])
+    }, [refresh])
+
+
+
+
+
+    const deleteList = (id,) => {
+        var requestOptions = {
+            method: 'DELETE',
+            redirect: 'follow'
+        };
+
+        fetch(`http://localhost:3001/list/${id}`, requestOptions)
+            .then(response => response.text())
+            .then(result => {
+                console.log(result)
+                toggleRefresh()
+
+            })
+            .catch(error => console.log('error', error));
+
+    }
+
+
 
 
 
@@ -64,11 +95,8 @@ const TwojeListy = () => {
                                 </div>
                             </section>
 
-                            <BsTrash size={25} />
+                            <BsTrash size={25} onClick={() => deleteList(id)} />
                         </div>
-
-
-
 
 
 
