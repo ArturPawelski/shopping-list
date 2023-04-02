@@ -75,16 +75,16 @@ const TwojeListy = () => {
                         {openListId === id &&
                             <div>
 
-                                {products && products.map(({ id, name, number, price }) => (
+                                {products && products.map(({ id, nazwa, ilosc, cena }) => (
                                     <div key={id} className='flex justify-center items-center mt-4 gap-2 '>
 
                                         <section className='flex flex-col w-[50%] justify-center items-center gap-2 bg-white bg-opacity-40 py-1 px-4 rounded-xl sm:flex-row sm:justify-between sm:w-[65%]'>
 
-                                            <h2 className='uppercase font-extrabold'>{name}</h2>
+                                            <h2 className='uppercase font-extrabold'>{nazwa}</h2>
 
                                             <div className='flex flex-col gap-2 items-center sm:flex-row sm:gap-8'>
-                                                <p>{number}</p>
-                                                <p className='font-extrabold'>{price}</p>
+                                                <p>{ilosc}</p>
+                                                <p className='font-extrabold'>{cena}</p>
 
                                             </div>
                                         </section>

@@ -7,42 +7,92 @@
       "products": [
         {
           "id": 1,
-          "name": "mleko",
-          "number": 2,
-          "price": 2.8
+          "nazwa": "mleko",
+          "ilosc": 2,
+          "cena": 2.8
         },
         {
           "id": 2,
-          "name": "ciastko",
-          "number": 5,
-          "price": 60
+          "nazwa": "ciastko",
+          "ilosc": 5,
+          "cena": 60
         }
       ]
     },
     {
-      "id": 2,
-      "name": "lista z bazy danych2",
-      "date": "2.2.22",
+      "name": "zosia i artur",
+      "date": "13.03.03",
       "products": [
         {
-          "id": 1,
-          "name": "kawa",
-          "number": 4,
-          "price": 10
+          "nazwa": "cos",
+          "ilosc": "2",
+          "cena": "8.00",
+          "status": true
+        },
+        {
+          "nazwa": "artur",
+          "ilosc": "2",
+          "cena": "8.00",
+          "status": true
+        },
+        {
+          "nazwa": "zosia",
+          "ilosc": "2",
+          "cena": "4.00",
+          "status": true
         }
-      ]
+      ],
+      "id": 2
     },
     {
-      "name": "test dodane",
-      "date": "3.3.33",
+      "name": "edyta grzesiu hania",
+      "date": "1.1.1.1.1.",
       "products": [
         {
-          "name": "cola",
-          "number": 10,
-          "price": 100
+          "nazwa": "grzesiu",
+          "ilosc": "4",
+          "cena": "18.00",
+          "status": true
+        },
+        {
+          "nazwa": "hania",
+          "ilosc": "10",
+          "cena": "20.00",
+          "status": true
+        },
+        {
+          "nazwa": "edyta",
+          "ilosc": "2",
+          "cena": "4.40",
+          "status": true
         }
       ],
       "id": 3
+    },
+    {
+      "name": "kupciapupcia",
+      "date": "12.04.2023",
+      "products": [
+        {
+          "nazwa": "kupcia",
+          "ilosc": "3",
+          "cena": "12.00",
+          "status": true
+        },
+        {
+          "nazwa": "sisuski",
+          "ilosc": "2",
+          "cena": "10.00",
+          "status": true
+        },
+        {
+          "nazwa": "jaja",
+          "ilosc": "10",
+          "cena": "12.30",
+          "status": true
+        }
+      ],
+      "id": 4
     }
   ]
 }

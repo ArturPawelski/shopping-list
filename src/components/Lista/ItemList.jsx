@@ -11,8 +11,41 @@ const ItemList = ({ fullList, handleDelete, toggleComplete, allProducts, fullPri
         setOpenButton(!openButton)
     }
 
+    const [listName, setListName] = useState('')
+    const [listDate, setListDate] = useState('')
+
+    const nameTarget = (e) => {
+        setListName(e.target.value)
+    };
+    const dateTarget = (e) => {
+        setListDate(e.target.value)
+    };
 
 
+
+    const postDataToServer = () => {
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        var raw = JSON.stringify({
+            "name": listName,
+            "date": listDate,
+            "products": fullList
+
+        });
+
+        var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+        };
+
+        fetch("http://localhost:3001/list", requestOptions)
+            .then(response => response.text())
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error));
+    }
 
 
 
@@ -90,12 +123,12 @@ const ItemList = ({ fullList, handleDelete, toggleComplete, allProducts, fullPri
                         <h2 class="text-center pt-8 font-extrabold">CZY CHCESZ ZAPISAĆ SWOJĄ LISTĘ?</h2>
 
                         <p class="mt-8 font-extralight">NAZWA LISTY:</p>
-                        <input class="bg-[#D9D9D9] bg-opacity-60 px-2 py-2 rounded-xl w-full" type="text" />
+                        <input value={listName} onChange={nameTarget} class="bg-[#D9D9D9] bg-opacity-60 px-2 py-2 rounded-xl w-full" type="text" />
 
                         <p class="mt-4 font-extralight">DATA:</p>
-                        <input class="bg-[#D9D9D9] bg-opacity-60 py-2 px-2 rounded-xl w-full" type="text" />
+                        <input value={listDate} onChange={dateTarget} class="bg-[#D9D9D9] bg-opacity-60 py-2 px-2 rounded-xl w-full" type="text" />
 
-                        <button class="block mt-8 mx-auto bg-black text-white py-2 px-8 rounded-xl font-extrabold">ZAPISZ</button>
+                        <button onClick={postDataToServer} class="block mt-8 mx-auto bg-black text-white py-2 px-8 rounded-xl font-extrabold hover:bg-blue-700">ZAPISZ</button>
 
 
                     </section>
