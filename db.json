@@ -1,23 +1,48 @@
 {
   "list": [
     {
-      "id": 1,
-      "name": "lista z bazy danych",
-      "date": "1.1.11",
+      "name": "Zakupy Biedronka",
+      "date": "23.03.2022",
       "products": [
         {
-          "id": 1,
-          "nazwa": "mleko",
-          "ilosc": 2,
-          "cena": 2.8
+          "nazwa": "Mleko",
+          "ilosc": "2",
+          "cena": "6.00",
+          "status": true
         },
         {
-          "id": 2,
-          "nazwa": "ciastko",
-          "ilosc": 5,
-          "cena": 60
+          "nazwa": "ciastka",
+          "ilosc": "1",
+          "cena": "0.00",
+          "status": true
+        },
+        {
+          "nazwa": "kurczak",
+          "ilosc": "",
+          "cena": "0.00",
+          "status": true
+        },
+        {
+          "nazwa": "ryz",
+          "ilosc": "1",
+          "cena": "4.00",
+          "status": true
         }
-      ]
+      ],
+      "id": 1
+    },
+    {
+      "name": "xdd",
+      "date": "xddd",
+      "products": [
+        {
+          "nazwa": "smietana",
+          "ilosc": "3",
+          "cena": "10.20",
+          "status": true
+        }
+      ],
+      "id": 2
     }
   ]
 }

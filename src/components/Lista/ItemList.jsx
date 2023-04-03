@@ -1,50 +1,73 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import TwojaLista from '../images/TWOJA.png'
 import TwojaListaBox from './TwojaListaBox'
 import { BsTrash } from 'react-icons/bs'
 import { GrClose } from 'react-icons/gr'
+import { Link } from 'react-router-dom'
 
 const ItemList = ({ fullList, handleDelete, toggleComplete, allProducts, fullPrice, delateAllProducts }) => {
+
 
     const [openButton, setOpenButton] = useState(true)
     const toggleOpenButton = () => {
         setOpenButton(!openButton)
     }
 
+
     const [listName, setListName] = useState('')
     const [listDate, setListDate] = useState('')
+
+
+    const [checkRouter, setCheckRouter] = useState(true)
+
 
     const nameTarget = (e) => {
         setListName(e.target.value)
     };
+
+
     const dateTarget = (e) => {
         setListDate(e.target.value)
     };
 
 
+    useEffect(() => {
+        if (listName.length >= 3 && listDate.length >= 3) {
+            setCheckRouter(false);
+        }
+        else {
+            setCheckRouter(true);
+        }
+    }, [listName, listDate]);
+
 
     const postDataToServer = () => {
-        var myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/json");
+        if (listName.length >= 3 && listDate.length >= 3) {
 
-        var raw = JSON.stringify({
-            "name": listName,
-            "date": listDate,
-            "products": fullList
 
-        });
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
 
-        var requestOptions = {
-            method: 'POST',
-            headers: myHeaders,
-            body: raw,
-            redirect: 'follow'
-        };
+            var raw = JSON.stringify({
+                "name": listName,
+                "date": listDate,
+                "products": fullList
 
-        fetch("http://localhost:3001/list", requestOptions)
-            .then(response => response.text())
-            .then(result => console.log(result))
-            .catch(error => console.log('error', error));
+            });
+
+            var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: raw,
+                redirect: 'follow'
+            };
+
+            fetch("http://localhost:3001/list", requestOptions)
+                .then(response => response.text())
+                .then(result => console.log(result))
+                .catch(error => console.log('error', error));
+        }
+
     }
 
 
@@ -115,24 +138,30 @@ const ItemList = ({ fullList, handleDelete, toggleComplete, allProducts, fullPri
             {!openButton &&
 
                 <aside class="bg-black bg-opacity-80 fixed inset-0 flex justify-center items-center">
-
                     <section class="relative z-10 bg-white max-w-[400px] px-8 py-8 rounded-xl">
+
 
                         <GrClose onClick={toggleOpenButton} className='absolute right-5 top-5' size={20} />
 
                         <h2 class="text-center pt-8 font-extrabold">CZY CHCESZ ZAPISAĆ SWOJĄ LISTĘ?</h2>
 
-                        <p class="mt-8 font-extralight">NAZWA LISTY:</p>
+
+                        <h2 class="mt-8 font-extralight">NAZWA LISTY:</h2>
                         <input value={listName} onChange={nameTarget} class="bg-[#D9D9D9] bg-opacity-60 px-2 py-2 rounded-xl w-full" type="text" />
 
-                        <p class="mt-4 font-extralight">DATA:</p>
+                        {checkRouter && <p class="font-bold text-[0.8rem] text-red-600 pt-1">Minimum 3 znaki!</p>}
+
+                        <h2 class="mt-4 font-extralight">DATA:</h2>
                         <input value={listDate} onChange={dateTarget} class="bg-[#D9D9D9] bg-opacity-60 py-2 px-2 rounded-xl w-full" type="text" />
 
-                        <button onClick={postDataToServer} class="block mt-8 mx-auto bg-black text-white py-2 px-8 rounded-xl font-extrabold hover:bg-blue-700">ZAPISZ</button>
+                        {checkRouter && <p class="font-bold text-[0.8rem] text-red-600 pt-1">Minimum 3 znaki!</p>}
+
+
+                        <button onClick={postDataToServer} class="block mt-8 mx-auto bg-black text-white py-2 px-8 rounded-xl font-extrabold hover:bg-blue-700">
+                            {checkRouter ? <p className="text-red-600">Zapisz</p> : <Link Link to="/twojelisty"> Zapisz  </Link>} </button>
 
 
                     </section>
-
                 </aside>}
 
 
@@ -142,7 +171,7 @@ const ItemList = ({ fullList, handleDelete, toggleComplete, allProducts, fullPri
 
 
 
-        </main>
+        </main >
     )
 }
 

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Twoje from '../images/TWOJE.png'
-import { AiFillEyeInvisible, AiOutlineHeart } from 'react-icons/ai'
-import { AiFillHeart } from 'react-icons/ai'
+
 import { BiCaretDown } from 'react-icons/bi'
 import { BsTrash } from 'react-icons/bs'
 
@@ -110,7 +109,7 @@ const TwojeListy = () => {
 
                                             <h2 className='uppercase font-extrabold'>{nazwa}</h2>
 
-                                            <div className='flex flex-col gap-2 items-center sm:flex-row sm:gap-8'>
+                                            <div className='flex  gap-4 items-center sm:flex-row sm:gap-8'>
                                                 <p>{ilosc}</p>
                                                 <p className='font-extrabold'>{cena}</p>
 
