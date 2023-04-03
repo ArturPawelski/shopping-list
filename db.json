@@ -1,48 +1,41 @@
 {
   "list": [
     {
-      "name": "Zakupy Biedronka",
-      "date": "23.03.2022",
+      "name": "Testowe Zakupy",
+      "date": "03.04.2023 17:00",
       "products": [
         {
           "nazwa": "Mleko",
+          "ilosc": "1",
+          "cena": "3.50",
+          "status": true
+        },
+        {
+          "nazwa": "olej",
+          "ilosc": "1",
+          "cena": "8.00",
+          "status": true
+        },
+        {
+          "nazwa": "jajka 20 sztuk",
+          "ilosc": "1",
+          "cena": "20.00",
+          "status": true
+        },
+        {
+          "nazwa": "kurczak 6kg",
+          "ilosc": "1",
+          "cena": "40.00",
+          "status": true
+        },
+        {
+          "nazwa": "jogurt naturalny ",
           "ilosc": "2",
-          "cena": "6.00",
-          "status": true
-        },
-        {
-          "nazwa": "ciastka",
-          "ilosc": "1",
-          "cena": "0.00",
-          "status": true
-        },
-        {
-          "nazwa": "kurczak",
-          "ilosc": "",
-          "cena": "0.00",
-          "status": true
-        },
-        {
-          "nazwa": "ryz",
-          "ilosc": "1",
           "cena": "4.00",
           "status": true
         }
       ],
       "id": 1
-    },
-    {
-      "name": "xdd",
-      "date": "xddd",
-      "products": [
-        {
-          "nazwa": "smietana",
-          "ilosc": "3",
-          "cena": "10.20",
-          "status": true
-        }
-      ],
-      "id": 2
     }
   ]
 }

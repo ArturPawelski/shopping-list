@@ -12,14 +12,10 @@ const TwojeListy = () => {
     };
 
 
-
-
     const [refresh, setRefresh] = useState(false);
     const toggleRefresh = () => {
         setRefresh(!refresh)
     }
-
-
 
 
     const [listData, setListData] = useState([])
@@ -33,7 +29,6 @@ const TwojeListy = () => {
             })
             .catch(error => console.log('error', error));
     }, [refresh])
-
 
 
 
@@ -52,11 +47,7 @@ const TwojeListy = () => {
 
             })
             .catch(error => console.log('error', error));
-
     }
-
-
-
 
 
     return (

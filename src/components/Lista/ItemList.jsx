@@ -32,7 +32,7 @@ const ItemList = ({ fullList, handleDelete, toggleComplete, allProducts, fullPri
 
 
     useEffect(() => {
-        if (listName.length >= 3 && listDate.length >= 3) {
+        if (listName.trim().length >= 3 && listDate.trim().length >= 3) {
             setCheckRouter(false);
         }
         else {
@@ -42,8 +42,7 @@ const ItemList = ({ fullList, handleDelete, toggleComplete, allProducts, fullPri
 
 
     const postDataToServer = () => {
-        if (listName.length >= 3 && listDate.length >= 3) {
-
+        if (listName.trim().length >= 3 && listDate.trim().length >= 3) {
 
             var myHeaders = new Headers();
             myHeaders.append("Content-Type", "application/json");
@@ -67,14 +66,10 @@ const ItemList = ({ fullList, handleDelete, toggleComplete, allProducts, fullPri
                 .then(result => console.log(result))
                 .catch(error => console.log('error', error));
         }
-
     }
 
 
-
-
     return (
-
         <main className='mt-[8rem] font-rob'>
 
             <img src={TwojaLista} alt="/" className='mx-auto w-auto px-8 md:max-w-[550px]' />
