@@ -19,7 +19,6 @@ const TwojeListy = () => {
 
 
     const [listData, setListData] = useState([])
-
     useEffect(() => {
         fetch("http://localhost:3001/list")
             .then(response => response.json())
@@ -29,8 +28,6 @@ const TwojeListy = () => {
             })
             .catch(error => console.log('error', error));
     }, [refresh])
-
-
 
 
     const deleteList = (id,) => {
