@@ -38,23 +38,25 @@ const Posilki = () => {
 
 
 
-            {foodsData && foodsData.map(({ id, name }) => (
+            {foodsData && foodsData.map(({ id, name, description, img, productsList }) => (
 
 
-
-
-                <section className='flex flex-col justify-center  bg-white mx-auto mt-[8rem] py-4 px-2 shadow-md rounded-xl sm:px-0 sm:max-w-[600px]  lg:max-w-[800px]'>
+                <section key={id} className='flex flex-col justify-center  bg-white mx-auto mt-[8rem] py-4 px-2 shadow-md rounded-xl sm:px-0 sm:max-w-[600px] md:min-w-[600px]  lg:max-w-[800px] xl:min-w-[800px]'>
 
                     <main className=' flex items-center gap-4 justify-center'>
 
                         <div className='flex justify-center w-[40%] ' >
-                            <div className='w-[100px] bg-slate-500 h-[100px] rounded-md'></div>
+
+
+                            <div className='w-[100px] grid place-items-center bg-slate-500  h-[100px] rounded-md'>
+                                <img src={img} alt="" className='w-full h-[100%] opacity-80 ' />
+                            </div>
                         </div>
 
 
                         <div className='w-[60%] flex flex-col justify-center items-center'>
-                            <h2 className='font-extrabold text-[#050C69]'>POSIŁEK 1</h2>
-                            <p className='text-left mt-2'>Korem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia.</p>
+                            <h2 className='font-extrabold text-[#050C69]'>{name}</h2>
+                            <p className='text-left mt-2'>{description}</p>
 
                             <div className='flex items-center gap-2'>
                                 <button onClick={toggleProducst} className='mt-4 flex flex-col items-center  text-white font-extrabold  py-2 bg-[#4A55AA] rounded-2xl sm:px-8 sm:flex-row sm:gap-4 '>ROZWIŃ LISTĘ PRODUKTÓW <BiCaretDown /></button>
