@@ -1,17 +1,27 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { BiCaretDown } from 'react-icons/bi'
 import TwojaListaBox from '../Lista/TwojaListaBox'
 import { BsTrash } from 'react-icons/bs'
 
 const Posilki = () => {
 
+
+    const [foodsData, setFoodsData] = useState([])
+
+
+
+
     const [products, setProducts] = useState(true)
     const toggleProducst = () => {
         setProducts(product => !product)
     }
 
+
     return (
         <div className='w-full font-rob min-h-screen flex flex-col justify-center items-center mb-[8rem] '>
+
+
+
 
 
             <section className='flex flex-col justify-center  bg-white mx-auto mt-[8rem] py-4 px-2 shadow-md rounded-xl sm:px-0 sm:max-w-[600px]  lg:max-w-[800px]'>
@@ -34,6 +44,9 @@ const Posilki = () => {
                     </div>
 
                 </main>
+
+
+
 
 
                 {!products &&
