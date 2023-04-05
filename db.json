@@ -82,6 +82,12 @@
           "ilosc": "11",
           "cena": "3.500",
           "status": true
+        },
+        {
+          "nazwa": "posilek3",
+          "ilosc": "44",
+          "cena": "3.500",
+          "status": true
         }
       ]
     },
