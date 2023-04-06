@@ -70,17 +70,30 @@
       "id": 7
     },
     {
-      "name": "aaa",
-      "date": "1222",
+      "name": "xdxd",
+      "date": "2222",
       "products": [
         {
           "nazwa": "asd",
-          "ilosc": "2",
-          "cena": "6.00",
+          "ilosc": "3",
+          "cena": "12.00",
           "status": true
         }
       ],
       "id": 8
+    },
+    {
+      "name": "ssss",
+      "date": "ssss",
+      "products": [
+        {
+          "nazwa": "olej",
+          "ilosc": "2",
+          "cena": "8.00",
+          "status": true
+        }
+      ],
+      "id": 9
     }
   ],
   "foods": [

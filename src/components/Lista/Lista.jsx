@@ -79,6 +79,7 @@ const Lista = () => {
                 allProducts={allProducts}
                 fullPrice={fullPrice}
                 delateAllProducts={delateAllProducts}
+                setFullList={setFullList}
             />
 
 

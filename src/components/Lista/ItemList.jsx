@@ -5,7 +5,7 @@ import { BsTrash } from 'react-icons/bs'
 import { GrClose } from 'react-icons/gr'
 import { Link } from 'react-router-dom'
 
-const ItemList = ({ fullList, handleDelete, toggleComplete, allProducts, fullPrice, delateAllProducts }) => {
+const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProducts, fullPrice, delateAllProducts }) => {
 
 
     const [openButton, setOpenButton] = useState(true)
@@ -89,9 +89,11 @@ const ItemList = ({ fullList, handleDelete, toggleComplete, allProducts, fullPri
                     {fullList.map((product, index) => (
                         <TwojaListaBox
                             product={product}
+                            key={index}
                             index={index}
                             handleDelete={handleDelete}
                             toggleComplete={toggleComplete}
+                            setFullList={setFullList}
                         />
                     ))}
 
@@ -104,12 +106,12 @@ const ItemList = ({ fullList, handleDelete, toggleComplete, allProducts, fullPri
                 <section className='flex flex-col text-center justify-center gap-[2rem] mt-16 sm:flex-row sm:gap-[4rem]  '>
                     <div className=''>
                         <p className='font-extrabold '>ILOŚĆ PRODUKTÓW:</p>
-                        <input className='bg-[#B7C6FF] rounded-2xl font-bold text-center py-2 shadow-[inset_10px_12px_8px_rgba(0,0,0,0.25)]  ' type="text" value={allProducts} readonly='' />
+                        <input className='bg-[#B7C6FF] rounded-2xl font-bold text-center py-2 shadow-[inset_10px_12px_8px_rgba(0,0,0,0.25)]  ' type="text" value={allProducts} readOnly={true} />
                     </div>
 
                     <div>
                         <p className='font-extrabold '>CENA:</p>
-                        <input className='bg-[#B7C6FF] rounded-2xl font-bold py-2 text-center   shadow-[inset_10px_12px_8px_rgba(0,0,0,0.25)] ' type="text" value={fullPrice} readonly="" />
+                        <input className='bg-[#B7C6FF] rounded-2xl font-bold py-2 text-center   shadow-[inset_10px_12px_8px_rgba(0,0,0,0.25)] ' type="text" value={fullPrice} readOnly={true} />
                     </div>
                 </section>
 
@@ -153,7 +155,7 @@ const ItemList = ({ fullList, handleDelete, toggleComplete, allProducts, fullPri
 
 
                         <button onClick={postDataToServer} class="block mt-8 mx-auto bg-black text-white py-2 px-8 rounded-xl font-extrabold hover:bg-blue-700">
-                            {checkRouter ? <p className="text-red-600">Zapisz</p> : <Link Link to="/twojelisty"> Zapisz  </Link>} </button>
+                            {checkRouter ? <p className="text-red-600">Zapisz</p> : <Link to="/twojelisty"> Zapisz  </Link>} </button>
 
 
                     </section>
