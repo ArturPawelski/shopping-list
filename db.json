@@ -57,30 +57,23 @@
       "id": 6
     },
     {
-      "name": "asdasd",
-      "date": "13.03",
+      "name": "tort",
+      "date": "13.3",
       "products": [
         {
-          "nazwa": "xd",
-          "ilosc": "3",
-          "cena": "12.00",
+          "nazwa": "noz",
+          "ilosc": "4",
+          "cena": "5.50",
+          "status": true
+        },
+        {
+          "nazwa": "ziemniaki",
+          "ilosc": "1",
+          "cena": "5.30",
           "status": true
         }
       ],
-      "id": 7
-    },
-    {
-      "name": "xdxd",
-      "date": "2222",
-      "products": [
-        {
-          "nazwa": "asd",
-          "ilosc": "3",
-          "cena": "12.00",
-          "status": true
-        }
-      ],
-      "id": 8
+      "id": 10
     }
   ],
   "foods": [

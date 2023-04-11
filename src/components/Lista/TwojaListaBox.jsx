@@ -69,29 +69,36 @@ const TwojaListaBox = ({ product, index, handleDelete, toggleComplete, setFullLi
             <div className='flex flex-col justify-between items-center w-[90%] bg-[#B7C6FF] py-3 px-4 rounded-xl shadow-[0px_5px_4px_rgba(0,0,0,0.35)] sm:flex-row md:px-8'>
 
 
-                {!editEnabled ? <p className='font-bold'>{product.nazwa}</p> : <input value={product.nazwa} onChange={setName}></input>}
 
-
-                {!editEnabled ? <button onClick={editName}> edit</button> : <button onClick={saveName}>save</button>}
-
+                {!editEnabled ? <p className='font-bold'>{product.nazwa}</p> : <input className='max-w-[4rem] bg-black text-white rounded-md shadow-md' value={product.nazwa} onChange={setName}></input>}
 
 
 
-                <div className='flex gap-4 items-center py-2 sm:py-0 md:gap-16 '>
 
 
-                    {!editEnabled ? <p className='font-bold'>{product.ilosc}</p> : <input value={product.ilosc} onChange={setNumber} ></input>}
+                <div className='flex flex-col gap-4 items-center py-2 sm:py-0 sm:flex-row sm:gap-12 md:gap-20 '>
 
-                    {!editEnabled ? <p className='font-bold'>{product.cena}</p> : <input value={product.cena} onChange={setPrice} ></input>}
+                    <div className='flex gap-4 items-center py-2 sm:py-0 md:gap-12'>
 
-                    <div className='max-w-[1rem] ' onClick={() => toggleComplete(index)} >
-                        {product.status ? <BsCircle size={25} /> : <AiOutlineCheckCircle size={25} />}
+                        {!editEnabled ? <p className='font-bold'>{product.ilosc}</p> : <input className='max-w-[4rem] bg-black text-white rounded-md shadow-md  ' value={product.ilosc} onChange={setNumber} ></input>}
+
+                        {!editEnabled ? <p className='font-bold'>{product.cena}</p> : <input className='max-w-[4rem] bg-black text-white rounded-md shadow-md  ' value={product.cena} onChange={setPrice} ></input>}
+
+                        <div className='max-w-[1rem] ' onClick={() => toggleComplete(index)} >
+                            {product.status ? <BsCircle size={25} /> : <AiOutlineCheckCircle size={25} />}
+                        </div>
 
                     </div>
-                </div>
-            </div>
-        </section>
 
+                    {!editEnabled ? <button className='font-bold text-white bg-black  uppercase text-sm border-2 p-1 border-white' onClick={editName}> edit</button> : <button className='font-bold text-white bg-black uppercase text-sm border-2 p-1 border-red-600' onClick={saveName}>save</button>}
+
+                </div>
+
+
+
+            </div>
+
+        </section>
     )
 }
 
