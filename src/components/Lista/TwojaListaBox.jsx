@@ -26,16 +26,35 @@ const TwojaListaBox = ({ product, index, handleDelete, toggleComplete, setFullLi
     function setName(event) {
 
         const newName = event.target.value
+
         setFullList(previousList => {
             let newList = Array.from(previousList) // możesz spróbować znaleźć odpowiedź dlaczego
-
             newList[index].nazwa = newName
-
             return newList
         })
     }
 
 
+    const setNumber = (event) => {
+        const newNumber = event.target.value
+
+        setFullList(previousList => {
+            let newList = Array.from(previousList)
+            newList[index].ilosc = newNumber
+            return newList
+        })
+    }
+
+
+    const setPrice = (event) => {
+        const newPrice = event.target.value
+        setFullList(previousList => {
+            let newList = Array.from(previousList)
+            newList[index].cena = newPrice
+            return newList
+        })
+
+    }
 
 
 
@@ -59,8 +78,11 @@ const TwojaListaBox = ({ product, index, handleDelete, toggleComplete, setFullLi
 
 
                 <div className='flex gap-4 items-center py-2 sm:py-0 md:gap-16 '>
-                    <p className='font-bold'>{product.ilosc}</p>
-                    <p className='font-bold'>{product.cena}</p>
+
+
+                    {!editEnabled ? <p className='font-bold'>{product.ilosc}</p> : <input value={product.ilosc} onChange={setNumber} ></input>}
+
+                    {!editEnabled ? <p className='font-bold'>{product.cena}</p> : <input value={product.cena} onChange={setPrice} ></input>}
 
                     <div className='max-w-[1rem] ' onClick={() => toggleComplete(index)} >
                         {product.status ? <BsCircle size={25} /> : <AiOutlineCheckCircle size={25} />}
