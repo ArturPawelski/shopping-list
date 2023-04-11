@@ -81,19 +81,6 @@
         }
       ],
       "id": 8
-    },
-    {
-      "name": "ssss",
-      "date": "ssss",
-      "products": [
-        {
-          "nazwa": "olej",
-          "ilosc": "2",
-          "cena": "8.00",
-          "status": true
-        }
-      ],
-      "id": 9
     }
   ],
   "foods": [
