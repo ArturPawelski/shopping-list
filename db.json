@@ -57,23 +57,10 @@
       "id": 6
     },
     {
-      "name": "tort",
-      "date": "13.3",
-      "products": [
-        {
-          "nazwa": "noz",
-          "ilosc": "4",
-          "cena": "5.50",
-          "status": true
-        },
-        {
-          "nazwa": "ziemniaki",
-          "ilosc": "1",
-          "cena": "5.30",
-          "status": true
-        }
-      ],
-      "id": 10
+      "name": "sss",
+      "date": "sss",
+      "products": [],
+      "id": 7
     }
   ],
   "foods": [

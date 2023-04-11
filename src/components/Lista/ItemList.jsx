@@ -3,7 +3,7 @@ import TwojaLista from '../images/TWOJA.png'
 import TwojaListaBox from './TwojaListaBox'
 import { BsTrash } from 'react-icons/bs'
 import { GrClose } from 'react-icons/gr'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProducts, fullPrice, delateAllProducts }) => {
 
@@ -41,6 +41,8 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
     }, [listName, listDate]);
 
 
+    const history = useNavigate()
+
     const postDataToServer = () => {
         if (listName.trim().length >= 3 && listDate.trim().length >= 3) {
 
@@ -63,7 +65,10 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
 
             fetch("http://localhost:3001/list", requestOptions)
                 .then(response => response.text())
-                .then(result => console.log(result))
+                .then(result => {
+                    console.log(result);
+                    history('/twojelisty'); // przekierowanie użytkownika do /twojelisty
+                })
                 .catch(error => console.log('error', error));
 
         }
@@ -156,7 +161,7 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
 
 
                         <button onClick={postDataToServer} class="block mt-8 mx-auto bg-black text-white py-2 px-8 rounded-xl font-extrabold hover:bg-blue-700">
-                            {checkRouter ? <p className="text-red-600">Zapisz</p> : <Link to="/twojelisty"> Zapisz  </Link>} </button>
+                            Zapisz </button>
 
 
                     </section>
