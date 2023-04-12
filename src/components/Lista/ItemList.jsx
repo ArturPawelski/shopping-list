@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react'
-import TwojaLista from '../images/TWOJA.png'
-import TwojaListaBox from './TwojaListaBox'
+import React, { useEffect, useState } from 'react'
 import { BsTrash } from 'react-icons/bs'
 import { GrClose } from 'react-icons/gr'
 import { useNavigate } from 'react-router-dom'
+import TwojaLista from '../images/TWOJA.png'
+import TwojaListaBox from './TwojaListaBox'
 
 const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProducts, fullPrice, delateAllProducts }) => {
 
@@ -13,13 +13,11 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
         setOpenButton(!openButton)
     }
 
-
     const [openFoods, setOpenFoods] = useState(true)
     const toggleOpenFoods = () => {
         setOpenFoods(!openFoods)
         setOpenButton(true)
     }
-
 
     const [openList, setOpenList] = useState(true)
     const toggleOpenList = () => {
@@ -28,20 +26,19 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
     }
 
 
+
+
     const [listName, setListName] = useState('')
     const [listDate, setListDate] = useState('')
     const [checkRouter, setCheckRouter] = useState(true)
-
 
     const nameTarget = (e) => {
         setListName(e.target.value)
     };
 
-
     const dateTarget = (e) => {
         setListDate(e.target.value)
     };
-
 
     useEffect(() => {
         if (listName.trim().length >= 3 && listDate.trim().length >= 3) {
@@ -51,6 +48,26 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
             setCheckRouter(true);
         }
     }, [listName, listDate]);
+
+
+
+
+    const [foodsName, setFoodsName] = useState('')
+    const [foodsDescription, setFoodsdescription] = useState('')
+    const [foodsImg, setFoodsImg] = useState('')
+
+    const foodsNameTarget = (e) => {
+        setFoodsName(e.target.value)
+    };
+
+    const foodsDescriptionTarget = (e) => {
+        setFoodsdescription(e.target.value)
+    };
+    const foodsImgTarget = (e) => {
+        setFoodsImg(e.target.value)
+    };
+
+
 
 
     const history = useNavigate()
@@ -83,6 +100,36 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
                 .catch(error => console.log('error', error));
 
         }
+    }
+
+
+
+    const postDataToFoods = () => {
+
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        var raw = JSON.stringify({
+            "name": listName,
+            "date": listDate,
+            "products": fullList
+
+        });
+
+        var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+        };
+
+        fetch("http://localhost:3001/foods", requestOptions)
+            .then(response => response.text())
+            .then(result => {
+                console.log(result);
+                history('/posilki'); // przekierowanie użytkownika do /twojelisty
+            })
+            .catch(error => console.log('error', error));
     }
 
 
@@ -129,8 +176,8 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
 
 
 
-                <section className=' relative flex items-center justify-center mt-[4rem] gap-[0.5rem] left-[1.8rem] sm:gap-[2rem] '>
-                    <button onClick={toggleOpenButton} className='bg-[#4A55AA] transition duration-500 hover:bg-black text-white font-extrabold px-2 py-4 text-center rounded-[25px] text-[1rem] tracking-[0.1rem] sm:text-[1.5rem] sm:tracking-[0.3rem] sm:px-8'>ZAPISZ </button>
+                <section className=' relative flex items-center justify-center mt-[4rem] gap-[0.5rem] left-[1rem] sm:left-[1.8rem] sm:gap-[2rem] '>
+                    <button onClick={toggleOpenButton} className='bg-[#4A55AA] transition duration-500 hover:bg-black text-white font-extrabold px-6 py-4 text-center rounded-[20px] text-[1rem] tracking-[0.1rem] sm:text-[1.5rem] sm:tracking-[0.3rem] sm:px-8'>ZAPISZ </button>
 
                     <BsTrash size={35} onClick={delateAllProducts} />
                 </section>
@@ -148,13 +195,13 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
 
 
             <div >
-                <aside class={!openButton ? 'bg-black bg-opacity-80 fixed inset-0 flex justify-center items-center ease-in-out duration-700' : 'ease-in-out duration-500 fixed left-[-100%]'}>
+                <aside className={!openButton ? 'bg-black bg-opacity-80 fixed inset-0 flex justify-center items-center ease-in-out duration-700' : ' ease-in-out duration-1000 fixed left-[-100%]'}>
 
-                    <section class="relative w-full  z-10 bg-white sm:max-w-[400px] sm:px-16 py-8 rounded-xl">
+                    <section className="relative w-full  z-10 bg-white sm:max-w-[400px] sm:px-16 py-8 rounded-xl">
 
-                        <GrClose onClick={toggleOpenButton} className='absolute right-5 top-5' size={20} />
+                        <GrClose onClick={toggleOpenButton} className='absolute right-5 top-5' size={25} />
 
-                        <h2 class="text-center pt-8 font-extrabold text-[1.8rem] tracking-wider">Zapisz jako?</h2>
+                        <h2 className="text-center pt-8 font-extrabold text-[1.8rem] tracking-wider">Zapisz jako?</h2>
 
                         <div className='flex gap-4  mt-8 justify-center sm:gap-12 '>
                             <button onClick={toggleOpenFoods} className='text-white min-w-[100px] bg-blue-800 py-2 px-4 rounded-2xl font-bold hover:bg-black'>POSIłEK</button>
@@ -173,29 +220,65 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
 
 
 
+            {
+                !openFoods &&
+                <aside className="bg-black bg-opacity-80 fixed inset-0 flex justify-center items-center">
+                    <section className="relative z-10 bg-white max-w-[400px] px-8 py-8 rounded-xl">
+
+                        <GrClose onClick={toggleOpenFoods} className='absolute right-5 top-5' size={25} />
+
+                        <h2 className="text-center text-[1.3rem] pt-8 font-extrabold">CZY CHCESZ ZAPISAĆ SWÓJ POSIŁEK??</h2>
+
+
+                        <h2 class="mt-8 font-extralight">NAZWA POSIŁKU:</h2>
+                        <input value={foodsName} onChange={foodsNameTarget} className="bg-[#D9D9D9] bg-opacity-60 px-2 py-2 rounded-xl w-full" type="text" />
+
+                        <h2 className="mt-4 font-extralight">OPIS:</h2>
+                        <input value={foodsDescription} onChange={foodsDescriptionTarget} class="bg-[#D9D9D9] bg-opacity-60 py-2 px-2 rounded-xl w-full" type="text" />
+
+                        <h2 className="mt-4 font-extralight">LINK DO ZDJĘCIA:</h2>
+                        <input value={foodsImg} onChange={foodsImgTarget} class="bg-[#D9D9D9] bg-opacity-60 py-2 px-2 rounded-xl w-full" type="text" />
+
+
+                        <button onClick={postDataToFoods} className="block mt-8 mx-auto bg-black text-white py-2 px-8 rounded-xl font-extrabold hover:bg-blue-700">
+                            Zapisz </button>
+
+                    </section>
+                </aside>
+            }
+
+
+
+
+
+
+
+
+
+
 
 
 
             {
                 !openList &&
-                <aside class="bg-black bg-opacity-80 fixed inset-0 flex justify-center items-center">
-                    <section class="relative z-10 bg-white max-w-[400px] px-8 py-8 rounded-xl">
+                <aside className="bg-black bg-opacity-80 fixed inset-0 flex justify-center items-center">
+                    <section className="relative z-10 bg-white max-w-[400px] px-8 py-8 rounded-xl">
 
-                        <GrClose onClick={toggleOpenList} className='absolute right-5 top-5' size={20} />
+                        <GrClose onClick={toggleOpenList} className='absolute right-5 top-5' size={25} />
 
-                        <h2 class="text-center pt-8 font-extrabold">CZY CHCESZ ZAPISAĆ SWOJĄ LISTĘ?</h2>
+                        <h2 className="text-center pt-8 font-extrabold">CZY CHCESZ ZAPISAĆ SWOJĄ LISTĘ?</h2>
 
                         <h2 class="mt-8 font-extralight">NAZWA LISTY:</h2>
-                        <input value={listName} onChange={nameTarget} class="bg-[#D9D9D9] bg-opacity-60 px-2 py-2 rounded-xl w-full" type="text" />
+                        <input value={listName} onChange={nameTarget} className="bg-[#D9D9D9] bg-opacity-60 px-2 py-2 rounded-xl w-full" type="text" />
 
-                        {checkRouter && <p class="font-bold text-[0.8rem] text-red-600 pt-1">Minimum 3 znaki!</p>}
+                        {checkRouter && <p className="font-bold text-[0.8rem] text-red-600 pt-1">Minimum 3 znaki!</p>}
 
-                        <h2 class="mt-4 font-extralight">DATA:</h2>
+                        <h2 className="mt-4 font-extralight">DATA:</h2>
                         <input value={listDate} onChange={dateTarget} class="bg-[#D9D9D9] bg-opacity-60 py-2 px-2 rounded-xl w-full" type="text" />
 
-                        {checkRouter && <p class="font-bold text-[0.8rem] text-red-600 pt-1">Minimum 3 znaki!</p>}
+                        {checkRouter && <p className="font-bold text-[0.8rem] text-red-600 pt-1">Minimum 3 znaki!</p>}
 
-                        <button onClick={postDataToList} class="block mt-8 mx-auto bg-black text-white py-2 px-8 rounded-xl font-extrabold hover:bg-blue-700">
+                        <button onClick={postDataToList} className="block mt-8 mx-auto bg-black text-white py-2 px-8 rounded-xl font-extrabold hover:bg-blue-700">
                             Zapisz </button>
 
                     </section>

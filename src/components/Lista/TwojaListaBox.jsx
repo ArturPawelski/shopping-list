@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { BsTrash } from 'react-icons/bs'
 
 import { BsCircle } from 'react-icons/bs'
