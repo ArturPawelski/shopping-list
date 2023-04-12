@@ -62,15 +62,15 @@ const Posilki = () => {
             {foodsData && foodsData.map(({ id, name, description, img, productsList }) => (
 
 
-                <section key={id} className='flex flex-col justify-center  bg-white mx-auto mt-[8rem] py-4 px-2 shadow-md rounded-xl sm:px-0 sm:max-w-[600px] md:min-w-[600px]  lg:max-w-[800px] xl:min-w-[800px]'>
+                <section key={id} className='flex flex-col justify-center  bg-white mx-auto mt-[8rem] py-4 px-2 shadow-md rounded-xl sm:px-0 sm:max-w-[600px] sm:min-w-[600px] md:min-w-[600px] md:max-w-[600px]  lg:max-w-[800px] lg:min-w-[800px] xl:min-w-[800px]'>
 
                     <main className=' flex items-center gap-4 justify-center'>
 
-                        <div className='flex justify-center w-[40%] ' >
+                        <div className='flex justify-center w-[40%]  ' >
 
 
-                            <div className='w-[120px] grid place-items-center bg-slate-500  h-[120px] rounded-md'>
-                                <img src={img} alt="" className='w-full h-[100%] opacity-50 rounded-md ' />
+                            <div className='max-w-[120px] grid place-items-center bg-slate-500   rounded-md'>
+                                <img src={img} alt="" className='min-w-[100px] max-w-[100px] max-h-[100px] min-h-[100px] opacity-50 rounded-md ' />
                             </div>
                         </div>
 

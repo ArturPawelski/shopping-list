@@ -81,7 +81,6 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
                 "name": listName,
                 "date": listDate,
                 "products": fullList
-
             });
 
             var requestOptions = {
@@ -98,7 +97,6 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
                     history('/twojelisty'); // przekierowanie użytkownika do /twojelisty
                 })
                 .catch(error => console.log('error', error));
-
         }
     }
 
@@ -110,10 +108,10 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
         myHeaders.append("Content-Type", "application/json");
 
         var raw = JSON.stringify({
-            "name": listName,
-            "date": listDate,
-            "products": fullList
-
+            "name": foodsName,
+            "description": foodsDescription,
+            "img": foodsImg,
+            "productsList": fullList
         });
 
         var requestOptions = {
