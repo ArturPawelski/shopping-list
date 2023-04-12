@@ -31,6 +31,22 @@ const Posilki = () => {
     }, [refresh])
 
 
+    const deleteFoodList = (id,) => {
+        var requestOptions = {
+            method: 'DELETE',
+            redirect: 'follow'
+        };
+
+        fetch(`http://localhost:3001/foods/${id}`, requestOptions)
+            .then(response => response.text())
+            .then(result => {
+                console.log(result)
+                toggleRefresh()
+
+            })
+            .catch(error => console.log('error', error));
+    }
+
 
 
 
@@ -65,7 +81,7 @@ const Posilki = () => {
 
                             <div className='flex items-center gap-2'>
                                 <button onClick={() => toggleOpenProducts(id)} className='mt-4 flex flex-col items-center  text-white font-extrabold  py-2 bg-[#4A55AA] rounded-2xl sm:px-8 sm:flex-row sm:gap-4 '>ROZWIŃ LISTĘ PRODUKTÓW <BiCaretDown /></button>
-                                <BsTrash size={30} className=' relative sm:top-2' />
+                                <BsTrash size={30} className=' relative sm:top-2' onClick={() => deleteFoodList(id)} />
                             </div>
                         </div>
 

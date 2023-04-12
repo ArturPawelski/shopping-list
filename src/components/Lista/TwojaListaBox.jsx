@@ -24,7 +24,6 @@ const TwojaListaBox = ({ product, index, handleDelete, toggleComplete, setFullLi
 
 
     function setName(event) {
-
         const newName = event.target.value
 
         setFullList(previousList => {
@@ -53,9 +52,7 @@ const TwojaListaBox = ({ product, index, handleDelete, toggleComplete, setFullLi
             newList[index].cena = newPrice
             return newList
         })
-
     }
-
 
 
 
