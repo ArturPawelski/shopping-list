@@ -14,10 +14,22 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
     }
 
 
+    const [openFoods, setOpenFoods] = useState(true)
+    const toggleOpenFoods = () => {
+        setOpenFoods(!openFoods)
+        setOpenButton(true)
+    }
+
+
+    const [openList, setOpenList] = useState(true)
+    const toggleOpenList = () => {
+        setOpenList(!openList)
+        setOpenButton(true)
+    }
+
+
     const [listName, setListName] = useState('')
     const [listDate, setListDate] = useState('')
-
-
     const [checkRouter, setCheckRouter] = useState(true)
 
 
@@ -42,8 +54,6 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
 
 
     const history = useNavigate()
-
-
     const postDataToList = () => {
         if (listName.trim().length >= 3 && listDate.trim().length >= 3) {
 
@@ -77,7 +87,7 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
 
 
     return (
-        <main className='mt-[8rem] font-rob'>
+        <main className='mt-[6rem] font-rob'>
 
 
             <img src={TwojaLista} alt="/" className='mx-auto w-auto px-8 md:max-w-[550px]' />
@@ -120,7 +130,7 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
 
 
                 <section className=' relative flex items-center justify-center mt-[4rem] gap-[0.5rem] left-[1.8rem] sm:gap-[2rem] '>
-                    <button onClick={toggleOpenButton} className='bg-[#4A55AA] hover:bg-black text-white font-extrabold px-2 py-4 text-center rounded-[25px] text-[1rem] tracking-[0.1rem] sm:text-[1.5rem] sm:tracking-[0.3rem] sm:px-8'>ZAPISZ </button>
+                    <button onClick={toggleOpenButton} className='bg-[#4A55AA] transition duration-500 hover:bg-black text-white font-extrabold px-2 py-4 text-center rounded-[25px] text-[1rem] tracking-[0.1rem] sm:text-[1.5rem] sm:tracking-[0.3rem] sm:px-8'>ZAPISZ </button>
 
                     <BsTrash size={35} onClick={delateAllProducts} />
                 </section>
@@ -137,30 +147,23 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
 
 
 
-            {!openButton && <aside>
+            <div >
+                <aside class={!openButton ? 'bg-black bg-opacity-80 fixed inset-0 flex justify-center items-center ease-in-out duration-700' : 'ease-in-out duration-500 fixed left-[-100%]'}>
 
-
-                <aside class="bg-black bg-opacity-80 fixed inset-0 flex justify-center items-center">
                     <section class="relative w-full  z-10 bg-white sm:max-w-[400px] sm:px-16 py-8 rounded-xl">
-
 
                         <GrClose onClick={toggleOpenButton} className='absolute right-5 top-5' size={20} />
 
                         <h2 class="text-center pt-8 font-extrabold text-[1.8rem] tracking-wider">Zapisz jako?</h2>
+
                         <div className='flex gap-4  mt-8 justify-center sm:gap-12 '>
+                            <button onClick={toggleOpenFoods} className='text-white min-w-[100px] bg-blue-800 py-2 px-4 rounded-2xl font-bold hover:bg-black'>POSIłEK</button>
 
-                            <button className='text-white min-w-[100px] bg-blue-800 py-2 px-4 rounded-2xl font-bold hover:bg-black'>POSIłEK</button>
-                            <button className=' text-white min-w-[100px] bg-blue-800 px-4 rounded-2xl font-bold hover:bg-black'>LISTA</button>
+                            <button onClick={toggleOpenList} className=' text-white min-w-[100px] bg-blue-800 px-4 rounded-2xl font-bold hover:bg-black'>LISTA</button>
                         </div>
-
-
                     </section>
                 </aside>
-
-
-
-
-            </aside>}
+            </div>
 
 
 
@@ -173,16 +176,14 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
 
 
 
-            {/* {!openButton &&
-
+            {
+                !openList &&
                 <aside class="bg-black bg-opacity-80 fixed inset-0 flex justify-center items-center">
                     <section class="relative z-10 bg-white max-w-[400px] px-8 py-8 rounded-xl">
 
-
-                        <GrClose onClick={toggleOpenButton} className='absolute right-5 top-5' size={20} />
+                        <GrClose onClick={toggleOpenList} className='absolute right-5 top-5' size={20} />
 
                         <h2 class="text-center pt-8 font-extrabold">CZY CHCESZ ZAPISAĆ SWOJĄ LISTĘ?</h2>
-
 
                         <h2 class="mt-8 font-extralight">NAZWA LISTY:</h2>
                         <input value={listName} onChange={nameTarget} class="bg-[#D9D9D9] bg-opacity-60 px-2 py-2 rounded-xl w-full" type="text" />
@@ -194,14 +195,13 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
 
                         {checkRouter && <p class="font-bold text-[0.8rem] text-red-600 pt-1">Minimum 3 znaki!</p>}
 
-
                         <button onClick={postDataToList} class="block mt-8 mx-auto bg-black text-white py-2 px-8 rounded-xl font-extrabold hover:bg-blue-700">
                             Zapisz </button>
 
-
                     </section>
-                </aside>}
- */}
+                </aside>
+            }
+
 
 
 
