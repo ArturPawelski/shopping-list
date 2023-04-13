@@ -74,7 +74,7 @@ const AddListItem = ({ appendProductToList }) => {
 
                 </main>
 
-                <button className=' mt-[2rem] max-w-[400px] mx-auto bg-white shadow-[6px_4px_8px_rgba(0,0,0,0.50)] font-extrabold py-2 px-8 rounded-xl md:mt-[4rem]' onClick={addProductToList} >DODAJ PRODUKT DO LISTY</button>
+                <button className=' mt-[2rem] max-w-[400px] mx-auto bg-white shadow-[6px_4px_8px_rgba(0,0,0,0.50)] font-extrabold py-2 px-8 rounded-xl md:mt-[4rem] hover:bg-black hover:text-white transition duration-500' onClick={addProductToList} >DODAJ PRODUKT DO LISTY</button>
 
             </article>
 

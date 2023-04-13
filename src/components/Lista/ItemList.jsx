@@ -173,7 +173,6 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
                 </section>
 
 
-
                 <section className=' relative flex items-center justify-center mt-[4rem] gap-[0.5rem] left-[1rem] sm:left-[1.8rem] sm:gap-[2rem] '>
                     <button onClick={toggleOpenButton} className='bg-[#4A55AA] transition duration-500 hover:bg-black text-white font-extrabold px-6 py-4 text-center rounded-[20px] text-[1rem] tracking-[0.1rem] sm:text-[1.5rem] sm:tracking-[0.3rem] sm:px-8'>ZAPISZ </button>
 
@@ -182,12 +181,6 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
 
 
             </div>
-
-
-
-
-
-
 
 
 
@@ -209,11 +202,6 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
                     </section>
                 </aside>
             </div>
-
-
-
-
-
 
 
 
@@ -248,15 +236,6 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
 
 
 
-
-
-
-
-
-
-
-
-
             {
                 !openList &&
                 <aside className="bg-black bg-opacity-80 fixed inset-0 flex justify-center items-center">
@@ -282,10 +261,6 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
                     </section>
                 </aside>
             }
-
-
-
-
 
 
 

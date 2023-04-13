@@ -61,7 +61,7 @@ const TwojaListaBox = ({ product, index, handleDelete, toggleComplete, setFullLi
 
         <section key={index} className='flex items-center justify-center gap-2 mt-[2rem] md:gap-8'>
 
-            <BsTrash size={25} onClick={() => handleDelete(index)} />
+            <BsTrash className='hover:scale-[1.5] transition duration-700' size={25} onClick={() => handleDelete(index)} />
 
             <div className='flex flex-col justify-between items-center w-[90%] bg-[#B7C6FF] py-3 px-4 rounded-xl shadow-[0px_5px_4px_rgba(0,0,0,0.35)] sm:flex-row md:px-8'>
 
@@ -87,7 +87,7 @@ const TwojaListaBox = ({ product, index, handleDelete, toggleComplete, setFullLi
 
                     </div>
 
-                    {!editEnabled ? <button className='font-bold text-white bg-black  uppercase text-sm border-2 p-1 border-white' onClick={editName}> edit</button> : <button className='font-bold text-white bg-black uppercase text-sm border-2 p-1 border-red-600' onClick={saveName}>save</button>}
+                    {!editEnabled ? <button className='font-bold text-white bg-black  uppercase text-sm border-2 p-1 border-white hover:scale-[1.2] hover:border-red-700 transition duration-500' onClick={editName}> edit</button> : <button className='font-bold text-white bg-black uppercase text-sm border-2 p-1 border-white hover:scale-[1.2] hover:border-red-700 transition duration-500 ' onClick={saveName}>save</button>}
 
                 </div>
 
