@@ -67,6 +67,7 @@ const TwojaListaBox = ({ product, index, handleDelete, toggleComplete, setFullLi
 
 
 
+
                 {!editEnabled ? <p className='font-bold'>{product.nazwa}</p> : <input className={`max-w-[4rem]   ${!editEnabled ? `opacity-0` : `opacity-100 transition duration-500  `}  bg-black text-white rounded-md shadow-md`} value={product.nazwa} onChange={setName}></input>}
 
 
