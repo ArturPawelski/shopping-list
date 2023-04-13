@@ -8,7 +8,9 @@ import { HiX } from 'react-icons/hi'
 
 const Navbar = () => {
 
+
     const [menu, setMenu] = useState(true)
+
 
     const toggleMenu = () => {
         setMenu(change => !change)
@@ -18,13 +20,12 @@ const Navbar = () => {
     return (
         <div className='w-full font-rob font-bold       '>
 
+
             <nav className='flex text-white min-h-[6rem]  bg-[#000B70] justify-between py-8 px-4 uppercase items-center gap-4 sm:px-8   '>
 
 
-
-
-
                 <Link to="/" className=''> <img src={Logo} alt="" className='w-[12rem]   md:w-[16rem]  lg:w-[20rem]' /> </Link>
+
 
                 <ul className='hidden  lg:flex lg:gap-12 lg:text-[1.2rem] lg:items-center '>
 
@@ -42,7 +43,6 @@ const Navbar = () => {
                 }
 
 
-
                 {
                     !menu && <ul style={{ zIndex: 5 }} className='fixed right-0 top-[0] px-8 bg-black h-[100%] w-[44%] z-5 bg-opacity-90  lg:hidden'>
 
@@ -56,10 +56,9 @@ const Navbar = () => {
 
                     </ul>
                 }
-
-
-
             </nav >
+
+
         </div >
     )
 }

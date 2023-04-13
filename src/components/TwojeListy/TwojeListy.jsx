@@ -6,6 +6,7 @@ import { BsTrash } from 'react-icons/bs'
 
 const TwojeListy = () => {
 
+
     const [openListId, setOpenListId] = useState(null);
     const toggleOpenProducts = (id) => {
         setOpenListId(openListId === id ? null : id);
@@ -47,40 +48,39 @@ const TwojeListy = () => {
     }
 
 
+
+
     return (
         <div className='w-full font-rob min-h-screen flex flex-col justify-center items-center mb-[8rem]  '>
 
 
 
 
-
-
-
-
             <main className='bg-[#B7C6FF] py-4 px-8 rounded-xl   min-h-[500px]  '>
+
 
                 <img src={Twoje} alt="" className='mt-[2rem]   mx-auto' />
 
 
-
-
-
-
                 {listData && listData.map(({ id, name, date, products }) => (
+
+
                     <div key={id} className=''>
+
                         <div className='flex justify-center items-center mt-14 gap-2 '>
 
 
-
                             <section className='flex flex-col w-full justify-center items-center gap-2  bg-white py-2 px-4 rounded-xl sm:flex-row sm:justify-between sm:w-[80%]'>
+
                                 <h2 className='uppercase font-extrabold'>{name}</h2>
 
                                 <div className='flex flex-col gap-2 items-center sm:flex-row sm:gap-4'>
-
                                     <p className='font-extrabold'>{date}</p>
                                     <BiCaretDown size={25} onClick={() => toggleOpenProducts(id)} />
                                 </div>
+
                             </section>
+
 
                             <BsTrash size={25} onClick={() => deleteList(id)} />
                         </div>
@@ -100,36 +100,17 @@ const TwojeListy = () => {
                                             <div className='flex  gap-4 items-center sm:flex-row sm:gap-8'>
                                                 <p>{ilosc}</p>
                                                 <p className='font-extrabold'>{cena}</p>
-
                                             </div>
-                                        </section>
 
+                                        </section>
 
                                     </div>))}
 
                             </div>
                         }
-
                     </div>))
                 }
-
-
-
-
-
-
-
-
-
             </main >
-
-
-
-
-
-
-
-
 
 
 

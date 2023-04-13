@@ -32,7 +32,6 @@ const Footer = () => {
                     <VscTwitter size={40} className='lg:w-[3rem] xl:w-[4rem]' />
                 </div>
 
-
             </footer>
 
 

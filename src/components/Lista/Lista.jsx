@@ -15,14 +15,10 @@ const Lista = () => {
     }
 
 
-
-
     const [fullList, setFullList] = useState([])
-
 
     const appendProductToList = (newProduct) => {
         setFullList([...fullList, newProduct]);
-
     }
 
 
@@ -40,13 +36,13 @@ const Lista = () => {
     }
 
 
+
+
     const [allProducts, setAllProducts] = useState(0)
     useEffect(() => {
         const newProduct = fullList.reduce((total, product) => total + Number(product.ilosc), 0);
         setAllProducts(newProduct.toFixed(2));
-
     }, [fullList]);
-
 
     const [fullPrice, setFullPrice] = useState(0)
     useEffect(() => {
@@ -57,15 +53,8 @@ const Lista = () => {
 
 
 
-
-
     return (
         <div className='w-full font-rob mb-[8rem]'>
-
-
-
-
-
 
             <AddListItem
                 appendProductToList={appendProductToList}
@@ -81,9 +70,6 @@ const Lista = () => {
                 delateAllProducts={delateAllProducts}
                 setFullList={setFullList}
             />
-
-
-
 
         </div >
     )

@@ -33,7 +33,6 @@ const TwojaListaBox = ({ product, index, handleDelete, toggleComplete, setFullLi
         })
     }
 
-
     const setNumber = (event) => {
         const newNumber = event.target.value
 
@@ -43,7 +42,6 @@ const TwojaListaBox = ({ product, index, handleDelete, toggleComplete, setFullLi
             return newList
         })
     }
-
 
     const setPrice = (event) => {
         const newPrice = event.target.value
