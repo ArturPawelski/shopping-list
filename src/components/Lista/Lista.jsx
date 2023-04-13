@@ -40,13 +40,13 @@ const Lista = () => {
 
     const [allProducts, setAllProducts] = useState(0)
     useEffect(() => {
-        const newProduct = fullList.reduce((total, product) => total + Number(product.ilosc), 0);
+        const newProduct = fullList.reduce((total, product) => total + Number(product.quantity), 0);
         setAllProducts(newProduct.toFixed(2));
     }, [fullList]);
 
     const [fullPrice, setFullPrice] = useState(0)
     useEffect(() => {
-        const newPrice = fullList.reduce((total, product) => total + Number(product.cena), 0);
+        const newPrice = fullList.reduce((total, product) => total + Number(product.price), 0);
         setFullPrice(newPrice.toFixed(2))
     }, [fullList])
 

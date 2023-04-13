@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { BsTrash } from 'react-icons/bs'
-
 import { BsCircle } from 'react-icons/bs'
 import { AiOutlineCheckCircle } from 'react-icons/ai'
 
@@ -28,17 +27,17 @@ const TwojaListaBox = ({ product, index, handleDelete, toggleComplete, setFullLi
 
         setFullList(previousList => {
             let newList = Array.from(previousList) // możesz spróbować znaleźć odpowiedź dlaczego
-            newList[index].nazwa = newName
+            newList[index].name = newName
             return newList
         })
     }
 
-    const setNumber = (event) => {
+    const setQuantity = (event) => {
         const newNumber = event.target.value
 
         setFullList(previousList => {
             let newList = Array.from(previousList)
-            newList[index].ilosc = newNumber
+            newList[index].quantity = newNumber
             return newList
         })
     }
@@ -47,7 +46,7 @@ const TwojaListaBox = ({ product, index, handleDelete, toggleComplete, setFullLi
         const newPrice = event.target.value
         setFullList(previousList => {
             let newList = Array.from(previousList)
-            newList[index].cena = newPrice
+            newList[index].price = newPrice
             return newList
         })
     }
@@ -66,7 +65,7 @@ const TwojaListaBox = ({ product, index, handleDelete, toggleComplete, setFullLi
 
 
 
-                {!editEnabled ? <p className='font-bold'>{product.nazwa}</p> : <input className={`max-w-[4rem]   ${!editEnabled ? `opacity-0` : `opacity-100 transition duration-500  `}  bg-black text-white rounded-md shadow-md`} value={product.nazwa} onChange={setName}></input>}
+                {!editEnabled ? <p className='font-bold'>{product.name}</p> : <input className={`max-w-[4rem]   ${!editEnabled ? `opacity-0` : `opacity-100 transition duration-500  `}  bg-black text-white rounded-md shadow-md`} value={product.name} onChange={setName}></input>}
 
 
 
@@ -76,9 +75,9 @@ const TwojaListaBox = ({ product, index, handleDelete, toggleComplete, setFullLi
 
                     <div className='flex gap-4 items-center py-2 sm:py-0 md:gap-12'>
 
-                        {!editEnabled ? <p className='font-bold'>{product.ilosc}</p> : <input className='max-w-[4rem] bg-black text-white rounded-md shadow-md  ' value={product.ilosc} onChange={setNumber} ></input>}
+                        {!editEnabled ? <p className='font-bold'>{product.quantity}</p> : <input className='max-w-[4rem] bg-black text-white rounded-md shadow-md  ' value={product.quantity} onChange={setQuantity} ></input>}
 
-                        {!editEnabled ? <p className='font-bold'>{product.cena}</p> : <input className='max-w-[4rem] bg-black text-white rounded-md shadow-md  ' value={product.cena} onChange={setPrice} ></input>}
+                        {!editEnabled ? <p className='font-bold'>{product.price}</p> : <input className='max-w-[4rem] bg-black text-white rounded-md shadow-md  ' value={product.price} onChange={setPrice} ></input>}
 
                         <div className='max-w-[1rem] ' onClick={() => toggleComplete(index)} >
                             {product.status ? <BsCircle size={25} /> : <AiOutlineCheckCircle size={25} />}

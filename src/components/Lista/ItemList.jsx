@@ -184,7 +184,7 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
 
 
 
-            <div >
+            <section >
                 <aside className={!openButton ? 'bg-black bg-opacity-80 fixed inset-0 flex justify-center items-center ease-in-out duration-700' : ' ease-in-out duration-1000 fixed left-[-100%]'}>
 
                     <section className="relative w-full  z-10 bg-white sm:max-w-[400px] sm:px-16 py-8 rounded-xl">
@@ -200,7 +200,7 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
                         </div>
                     </section>
                 </aside>
-            </div>
+            </section>
 
 
 
