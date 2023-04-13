@@ -76,13 +76,13 @@ const TwojeListy = () => {
 
                                 <div className='flex flex-col gap-2 items-center sm:flex-row sm:gap-4'>
                                     <p className='font-extrabold'>{date}</p>
-                                    <BiCaretDown size={25} onClick={() => toggleOpenProducts(id)} />
+                                    <BiCaretDown className='hover:scale-[1.8] hover:text-red-600 transition duration-500' size={25} onClick={() => toggleOpenProducts(id)} />
                                 </div>
 
                             </section>
 
 
-                            <BsTrash size={25} onClick={() => deleteList(id)} />
+                            <BsTrash className='hover:scale-[1.5]  transition duration-500' size={25} onClick={() => deleteList(id)} />
                         </div>
 
 

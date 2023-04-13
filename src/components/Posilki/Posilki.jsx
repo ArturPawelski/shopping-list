@@ -80,8 +80,8 @@ const Posilki = () => {
                             <p className='text-left mt-2'>{description}</p>
 
                             <div className='flex items-center gap-2'>
-                                <button onClick={() => toggleOpenProducts(id)} className='mt-4 flex flex-col items-center  text-white font-extrabold  py-2 bg-[#4A55AA] rounded-2xl sm:px-8 sm:flex-row sm:gap-4 '>ROZWIŃ LISTĘ PRODUKTÓW <BiCaretDown /></button>
-                                <BsTrash size={30} className=' relative sm:top-2' onClick={() => deleteFoodList(id)} />
+                                <button onClick={() => toggleOpenProducts(id)} className='mt-4 hover:bg-black transition duration-500 flex flex-col items-center  text-white font-extrabold  py-2 bg-[#4A55AA] rounded-2xl sm:px-8 sm:flex-row sm:gap-4 '>ROZWIŃ LISTĘ PRODUKTÓW <BiCaretDown /></button>
+                                <BsTrash size={30} className=' relative hover:scale-[1.3] transition-all duration-500 sm:top-2' onClick={() => deleteFoodList(id)} />
                             </div>
 
                         </div>
@@ -94,7 +94,7 @@ const Posilki = () => {
                     {openListId === id &&
                         <div>
 
-                            <button className='mt-8 bg-black text-white block font-extrabold max-w-[10rem] px-2 py-2  rounded-xl mx-auto '>Dodaj do koszyka</button>
+                            <button className='hover:bg-[#4A55AA] transition-all duration-500 mt-8 bg-black text-white block font-extrabold max-w-[10rem] px-2 py-2  rounded-xl mx-auto '>Dodaj do koszyka</button>
 
                             {productsList && productsList.map(({ name, quantity, price }) => (
                                 <>
