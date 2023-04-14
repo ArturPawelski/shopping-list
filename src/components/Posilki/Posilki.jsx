@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { BiCaretDown } from 'react-icons/bi'
 import { BsTrash } from 'react-icons/bs'
+import ProductList from './ProductList';
 
 
 const Posilki = () => {
@@ -96,23 +97,20 @@ const Posilki = () => {
 
                             <button className='hover:bg-[#4A55AA] transition-all duration-500 mt-8 bg-black text-white block font-extrabold max-w-[10rem] px-2 py-2  rounded-xl mx-auto '>Dodaj do koszyka</button>
 
-                            {productsList && productsList.map(({ name, quantity, price }) => (
-                                <>
-                                    <section className='flex  items-center justify-center gap-2 mt-[2rem] md:gap-8'>
+                            {productsList && productsList.map((product, index,) => (
 
-                                        <div className='flex flex-col justify-between  items-center w-[90%] bg-[#B7C6FF] py-3 px-4 rounded-xl shadow-[0px_5px_4px_rgba(0,0,0,0.35)] sm:flex-row md:px-8'>
+                                <ProductList key={`${id}-${index}`}
 
-                                            <p className='font-bold'>{name}</p>
+                                    product={product}
+                                    index={index}
+                                    setFoodsData={setFoodsData}
+                                    id={id}
 
-                                            <div className='flex gap-4 items-center py-2 sm:py-0 md:gap-16 '>
-                                                <p className='font-bold'>{quantity}</p>
-                                                <p className='font-bold'>{price}</p>
-                                            </div>
-                                        </div>
 
-                                    </section>
-                                </>
+                                />
+
                             ))}
+
                         </div>}
 
 
@@ -121,8 +119,6 @@ const Posilki = () => {
 
                 </section>
             ))}
-
-
         </div >
     )
 }

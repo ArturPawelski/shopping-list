@@ -65,27 +65,33 @@ const TwojaListaBox = ({ product, index, handleDelete, toggleComplete, setFullLi
 
 
 
-                {!editEnabled ? <p className='font-bold'>{product.name}</p> : <input className={`max-w-[4rem]   ${!editEnabled ? `opacity-0` : `opacity-100 transition duration-500  `}  bg-black text-white rounded-md shadow-md`} value={product.name} onChange={setName}></input>}
-
-
-
+                {!editEnabled ?
+                    <p className='font-bold'>{product.name}</p>
+                    : <input className={`max-w-[4rem] bg-black text-white rounded-md shadow-md`} value={product.name} onChange={setName}></input>}
 
 
                 <div className='flex flex-col gap-4 items-center py-2 sm:py-0 sm:flex-row sm:gap-12 md:gap-20 '>
-
                     <div className='flex gap-4 items-center py-2 sm:py-0 md:gap-12'>
 
-                        {!editEnabled ? <p className='font-bold'>{product.quantity}</p> : <input className='max-w-[4rem] bg-black text-white rounded-md shadow-md  ' value={product.quantity} onChange={setQuantity} ></input>}
+                        {!editEnabled ?
+                            <p className='font-bold'>{product.quantity}</p>
+                            : <input className='max-w-[4rem] bg-black text-white rounded-md shadow-md  ' value={product.quantity} onChange={setQuantity} ></input>}
 
-                        {!editEnabled ? <p className='font-bold'>{product.price}</p> : <input className='max-w-[4rem] bg-black text-white rounded-md shadow-md  ' value={product.price} onChange={setPrice} ></input>}
+                        {!editEnabled ?
+                            <p className='font-bold'>{product.price}</p>
+                            : <input className='max-w-[4rem] bg-black text-white rounded-md shadow-md  ' value={product.price} onChange={setPrice} ></input>}
 
                         <div className='max-w-[1rem] ' onClick={() => toggleComplete(index)} >
-                            {product.status ? <BsCircle size={25} /> : <AiOutlineCheckCircle size={25} />}
+                            {product.status ?
+                                <BsCircle size={25} />
+                                : <AiOutlineCheckCircle size={25} />}
                         </div>
-
                     </div>
 
-                    {!editEnabled ? <button className='font-bold text-white bg-black  uppercase text-sm border-2 p-1 border-white hover:scale-[1.2] hover:border-red-700 transition duration-500' onClick={editName}> edit</button> : <button className='font-bold text-white bg-black uppercase text-sm border-2 p-1 border-white hover:scale-[1.2] hover:border-red-700 transition duration-500 ' onClick={saveName}>save</button>}
+                    {!editEnabled ?
+                        <button className='font-bold text-white bg-black  uppercase text-sm border-2 p-1 border-white hover:scale-[1.2] hover:border-red-700 transition duration-500' onClick={editName}> edit</button>
+
+                        : <button className='font-bold text-white bg-black uppercase text-sm border-2 p-1 border-white hover:scale-[1.2] hover:border-red-700 transition duration-500 ' onClick={saveName}>save</button>}
 
                 </div>
 
