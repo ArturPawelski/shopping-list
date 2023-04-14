@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { BiCaretDown } from 'react-icons/bi'
 import { BsTrash } from 'react-icons/bs'
-import ProductList from './ProductList';
+import ProductLists from './ProductLists';
 
 
 const Posilki = () => {
@@ -97,15 +97,15 @@ const Posilki = () => {
 
                             <button className='hover:bg-[#4A55AA] transition-all duration-500 mt-8 bg-black text-white block font-extrabold max-w-[10rem] px-2 py-2  rounded-xl mx-auto '>Dodaj do koszyka</button>
 
-                            {productsList && productsList.map((product, index,) => (
+                            {productsList && productsList.map((product, index) => (
 
-                                <ProductList key={`${id}-${index}`}
+                                <ProductLists
+                                    key={index}
 
                                     product={product}
+                                    id={id}
                                     index={index}
                                     setFoodsData={setFoodsData}
-                                    id={id}
-
 
                                 />
 

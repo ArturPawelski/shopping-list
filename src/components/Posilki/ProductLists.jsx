@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 
 
-const ProductList = ({ product, index, setFoodsData, id }) => {
+const ProductLists = ({ product, id, index, setFoodsData, }) => {
 
 
     const [editButton, setEditButton] = useState(true)
@@ -10,17 +10,15 @@ const ProductList = ({ product, index, setFoodsData, id }) => {
         setEditButton(!editButton)
     }
 
+
     const setName = (event) => {
         const newName = event.target.value;
         setFoodsData(previousList => {
             let newList = Array.from(previousList);
-            newList[id].productsList[index].name = newName; // access the correct element
+            newList[id - 1].productsList[index].name = newName; // access the correct element
             return newList;
         });
     };
-
-
-
 
 
 
@@ -33,7 +31,7 @@ const ProductList = ({ product, index, setFoodsData, id }) => {
 
                 {editButton ?
                     <p className='font-bold'>{product.name}</p>
-                    : <input value={product.name} onChange={setName} className='max-w-[4rem] bg-black text-white rounded-md shadow-md' ></input>}
+                    : <input onChange={setName} className='max-w-[4rem] bg-black text-white rounded-md shadow-md' ></input>}
 
 
                 <div className='flex gap-4 items-center py-2 sm:py-0 md:gap-16 '>
@@ -54,4 +52,4 @@ const ProductList = ({ product, index, setFoodsData, id }) => {
         </section >
     )
 }
-export default ProductList
+export default ProductLists
