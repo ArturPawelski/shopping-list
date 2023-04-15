@@ -11,15 +11,26 @@ const ProductLists = ({ product, id, index, setFoodsData, foodsData }) => {
     }
 
 
-    const setName = (event) => {
-        const newName = event.target.value;
+    // const setName = (event) => {
+    //     const newName = event.target.value;
+    //     setFoodsData(previousList => {
+    //         let newList = Array.from(previousList);
+    //         newList[id - 1].productsList[index].name = newName; // access the correct element
+    //         return newList;
+    //     });
+
+    // };
+
+
+    const handleChangeInput = (event) => {
+        const { name, value } = event.target
         setFoodsData(previousList => {
             let newList = Array.from(previousList);
-            newList[id - 1].productsList[index].name = newName; // access the correct element
+            newList[id - 1].productsList[index][name] = value; // access the correct element
             return newList;
         });
-        console.log(foodsData[id - 1].productsList, `to jest foodsDAta`)
-    };
+
+    }
 
 
     const patchFoods = () => {
@@ -59,18 +70,18 @@ const ProductLists = ({ product, id, index, setFoodsData, foodsData }) => {
 
                 {editButton ?
                     <p className='font-bold'>{product.name}</p>
-                    : <input value={product.name} onChange={setName} className='max-w-[4rem] bg-black text-white rounded-md shadow-md' ></input>}
+                    : <input name='name' value={product.name} onChange={handleChangeInput} className='max-w-[4rem] bg-black text-white rounded-md shadow-md' ></input>}
 
 
                 <div className='flex gap-4 items-center py-2 sm:py-0 md:gap-16 '>
 
                     {editButton ?
                         <p className='font-bold'>{product.quantity}</p>
-                        : <input className='max-w-[4rem] bg-black text-white rounded-md shadow-md' ></input>}
+                        : <input name='quantity' value={product.quantity} onChange={handleChangeInput} className='max-w-[4rem] bg-black text-white rounded-md shadow-md' ></input>}
 
                     {editButton ?
                         <p className='font-bold'>{product.price}</p>
-                        : <input className='max-w-[4rem] bg-black text-white rounded-md shadow-md' ></input>}
+                        : <input name='price' value={product.price} onChange={handleChangeInput} className='max-w-[4rem] bg-black text-white rounded-md shadow-md' ></input>}
 
                     {editButton ?
                         <button onClick={toggleEditButton} className='font-bold text-white bg-black uppercase text-sm border-2 p-1 border-white hover:scale-[1.2] hover:border-red-700 transition duration-500'>Edit</button>

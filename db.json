@@ -40,26 +40,6 @@
         }
       ],
       "id": 1
-    },
-    {
-      "name": "s",
-      "description": "s",
-      "img": "s",
-      "productsList": [
-        {
-          "name": "xddsss",
-          "quantity": "-12",
-          "price": "-48.00",
-          "status": true
-        },
-        {
-          "name": "asdasd",
-          "quantity": "2",
-          "price": "8.00",
-          "status": true
-        }
-      ],
-      "id": 2
     }
   ]
 }
