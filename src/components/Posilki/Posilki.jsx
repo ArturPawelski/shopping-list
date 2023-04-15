@@ -24,9 +24,7 @@ const Posilki = () => {
         fetch("http://localhost:3001/foods")
             .then(response => response.json())
             .then(result => {
-                console.log(result)
                 setFoodsData(result)
-
             })
             .catch(error => console.log('error', error));
     }, [refresh])
@@ -41,9 +39,7 @@ const Posilki = () => {
         fetch(`http://localhost:3001/foods/${id}`, requestOptions)
             .then(response => response.text())
             .then(result => {
-                console.log(result)
                 toggleRefresh()
-
             })
             .catch(error => console.log('error', error));
     }
@@ -106,6 +102,7 @@ const Posilki = () => {
                                     id={id}
                                     index={index}
                                     setFoodsData={setFoodsData}
+                                    foodsData={foodsData}
 
                                 />
 

@@ -22,76 +22,44 @@
   ],
   "foods": [
     {
-      "name": "Posilek z kurczakiem",
-      "description": "assdasdsdsdsdsdds",
+      "name": "lista 1 ",
+      "description": "x",
       "img": "",
       "productsList": [
         {
-          "name": "asdasd",
-          "quantity": "4",
-          "price": "20.00",
+          "name": "xd",
+          "quantity": "3",
+          "price": "12.00",
           "status": true
         },
         {
-          "name": "asdasd",
-          "quantity": "2",
-          "price": "8.00",
+          "name": "test2",
+          "quantity": "1",
+          "price": "1.00",
           "status": true
         }
       ],
       "id": 1
     },
     {
-      "name": "posilek1",
-      "description": "xdxdxd",
-      "img": "",
+      "name": "s",
+      "description": "s",
+      "img": "s",
       "productsList": [
         {
-          "name": "mleko",
+          "name": "xddsss",
+          "quantity": "-12",
+          "price": "-48.00",
+          "status": true
+        },
+        {
+          "name": "asdasd",
           "quantity": "2",
           "price": "8.00",
-          "status": true
-        },
-        {
-          "name": "ciastka",
-          "quantity": "1",
-          "price": "2.60",
-          "status": true
-        },
-        {
-          "name": "kurczak",
-          "quantity": "2",
-          "price": "6.98",
           "status": true
         }
       ],
       "id": 2
-    },
-    {
-      "name": "lisa 3 ",
-      "description": "asdasd",
-      "img": "",
-      "productsList": [
-        {
-          "name": "s",
-          "quantity": "3",
-          "price": "12.00",
-          "status": true
-        },
-        {
-          "name": "a",
-          "quantity": "3",
-          "price": "12.00",
-          "status": true
-        },
-        {
-          "name": "xd",
-          "quantity": "2",
-          "price": "6.00",
-          "status": true
-        }
-      ],
-      "id": 3
     }
   ]
 }

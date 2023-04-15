@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 
 
-const ProductLists = ({ product, id, index, setFoodsData, }) => {
+const ProductLists = ({ product, id, index, setFoodsData, foodsData }) => {
 
 
     const [editButton, setEditButton] = useState(true)
@@ -18,7 +18,35 @@ const ProductLists = ({ product, id, index, setFoodsData, }) => {
             newList[id - 1].productsList[index].name = newName; // access the correct element
             return newList;
         });
+        console.log(foodsData[id - 1].productsList, `to jest foodsDAta`)
     };
+
+
+    const patchFoods = () => {
+
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        var raw = JSON.stringify({
+            "productsList": foodsData[id - 1].productsList
+        });
+
+        var requestOptions = {
+            method: 'PATCH',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+        };
+
+        fetch(`http://localhost:3001/foods/${id}`, requestOptions)
+            .then(response => response.text())
+            .then(result => {
+                console.log(result)
+                setEditButton(!editButton)
+            })
+            .catch(error => console.log('error', error));
+    }
+
 
 
 
@@ -31,7 +59,7 @@ const ProductLists = ({ product, id, index, setFoodsData, }) => {
 
                 {editButton ?
                     <p className='font-bold'>{product.name}</p>
-                    : <input onChange={setName} className='max-w-[4rem] bg-black text-white rounded-md shadow-md' ></input>}
+                    : <input value={product.name} onChange={setName} className='max-w-[4rem] bg-black text-white rounded-md shadow-md' ></input>}
 
 
                 <div className='flex gap-4 items-center py-2 sm:py-0 md:gap-16 '>
@@ -46,7 +74,7 @@ const ProductLists = ({ product, id, index, setFoodsData, }) => {
 
                     {editButton ?
                         <button onClick={toggleEditButton} className='font-bold text-white bg-black uppercase text-sm border-2 p-1 border-white hover:scale-[1.2] hover:border-red-700 transition duration-500'>Edit</button>
-                        : <button onClick={toggleEditButton} className='font-bold text-white bg-black uppercase text-sm border-2 p-1 border-white hover:scale-[1.2] hover:border-red-700 transition duration-500 '> save</button>}
+                        : <button onClick={patchFoods} className='font-bold text-white bg-black uppercase text-sm border-2 p-1 border-white hover:scale-[1.2] hover:border-red-700 transition duration-500 '> save</button>}
                 </div>
             </div>
         </section >
