@@ -5,15 +5,15 @@
       "date": "21.03",
       "products": [
         {
-          "name": "ss",
-          "quantity": "2",
-          "price": "8.00",
+          "name": "siemass",
+          "quantity": "44",
+          "price": "9.202",
           "status": true
         },
         {
-          "name": "aaa",
-          "quantity": "4",
-          "price": "16.00",
+          "name": "testasd",
+          "quantity": "102",
+          "price": "203",
           "status": true
         }
       ],
