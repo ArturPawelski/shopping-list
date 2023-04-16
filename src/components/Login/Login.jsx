@@ -35,7 +35,7 @@ const Login = () => {
                         <input type="text" className='bg-[#D9D9D9] bg-opacity-60 py-2 rounded-xl w-full ' />
 
                         <p className='font-bold text-[0.9rem] mt-4'>HASŁO:</p>
-                        <input type="text" className='bg-[#D9D9D9] bg-opacity-60 py-2 rounded-xl w-full' />
+                        <input type="password" className='bg-[#D9D9D9] bg-opacity-60 py-2 rounded-xl w-full' />
 
 
                         <div className='flex justify-between mt-4'>

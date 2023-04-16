@@ -138,8 +138,8 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
 
             <div className='mt-[2rem] bg-white w-[90%] mx-auto rounded-2xl py-8 px-4 md:w-[85%] lg:w-[75%] xl:w-[70%] 2xl:w-[50%]'>
 
-                <div className='flex justify-between mx-[2rem] '>
-                    <button onClick={loadListFromServer} className='bg-[#4A55AA] transition duration-500 hover:bg-black text-white font-extrabold px-6 py-2 rounded-xl text-center '>Wczytaj dane z chmury</button>
+                <div className='flex flex-col gap-4 sm:flex-row sm:justify-between mx-[2rem] '>
+                    <button onClick={loadListFromServer} className='bg-[#4A55AA] transition duration-500 hover:bg-black text-white font-extrabold px-6 py-2 rounded-3xl text-center '>Wczytaj dane z chmury</button>
 
                     <button className='text-white bg-black px-4 py-2 tracking-[0.2rem] rounded-3xl  '>Filtruj</button>
                 </div>
