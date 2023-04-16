@@ -46,6 +46,34 @@ const Posilki = () => {
 
 
 
+    const postDataToActualList = (id) => {
+        // Usunięcie wszystkich pozostałych wpisów z listy czyli 1
+        fetch(`http://localhost:3001/actualList/1`, { method: 'DELETE' })
+            .then(response => {
+                // Dodanie nowego wpisu do listy po usunięciu pozostałych
+                var myHeaders = new Headers();
+                myHeaders.append("Content-Type", "application/json");
+
+                var raw = JSON.stringify({
+                    "list": foodsData[id - 1].productsList
+                });
+
+                var requestOptions = {
+                    method: 'POST',
+                    headers: myHeaders,
+                    body: raw,
+                    redirect: 'follow'
+                };
+
+                return fetch("http://localhost:3001/actualList", requestOptions);
+            })
+            .then(response => response.text())
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error));
+    }
+
+
+
 
 
     return (
@@ -91,7 +119,7 @@ const Posilki = () => {
                     {openListId === id &&
                         <div>
 
-                            <button className='hover:bg-[#4A55AA] transition-all duration-500 mt-8 bg-black text-white block font-extrabold max-w-[10rem] px-2 py-2  rounded-xl mx-auto '>Dodaj do koszyka</button>
+                            <button onClick={() => postDataToActualList(id)} className='hover:bg-[#4A55AA] transition-all duration-500 mt-8 bg-black text-white block font-extrabold max-w-[10rem] px-2 py-2  rounded-xl mx-auto '>Dodaj do koszyka</button>
 
                             {productsList && productsList.map((product, index) => (
 

@@ -102,7 +102,6 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
 
 
     const postDataToFoods = () => {
-
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
 
