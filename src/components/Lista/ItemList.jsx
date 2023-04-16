@@ -52,24 +52,6 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
 
 
 
-    const [foodsName, setFoodsName] = useState('')
-    const [foodsDescription, setFoodsdescription] = useState('')
-    const [foodsImg, setFoodsImg] = useState('')
-
-    const foodsNameTarget = (e) => {
-        setFoodsName(e.target.value)
-    };
-
-    const foodsDescriptionTarget = (e) => {
-        setFoodsdescription(e.target.value)
-    };
-    const foodsImgTarget = (e) => {
-        setFoodsImg(e.target.value)
-    };
-
-
-
-
     const history = useNavigate()
     const postDataToList = () => {
         if (listName.trim().length >= 3 && listDate.trim().length >= 3) {
@@ -99,6 +81,24 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
                 .catch(error => console.log('error', error));
         }
     }
+
+
+
+
+    const [foodsName, setFoodsName] = useState('')
+    const [foodsDescription, setFoodsdescription] = useState('')
+    const [foodsImg, setFoodsImg] = useState('')
+
+    const foodsNameTarget = (e) => {
+        setFoodsName(e.target.value)
+    };
+
+    const foodsDescriptionTarget = (e) => {
+        setFoodsdescription(e.target.value)
+    };
+    const foodsImgTarget = (e) => {
+        setFoodsImg(e.target.value)
+    };
 
 
     const postDataToFoods = () => {
@@ -215,7 +215,7 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
                         <h2 className="text-center text-[1.3rem] pt-8 font-extrabold">CZY CHCESZ ZAPISAĆ SWÓJ POSIŁEK??</h2>
 
 
-                        <h2 class="mt-8 font-extralight">NAZWA POSIŁKU:</h2>
+                        <h2 className="mt-8 font-extralight">NAZWA POSIŁKU:</h2>
                         <input value={foodsName} onChange={foodsNameTarget} className="bg-[#D9D9D9] bg-opacity-60 px-2 py-2 rounded-xl w-full" type="text" />
 
                         <h2 className="mt-4 font-extralight">OPIS:</h2>
