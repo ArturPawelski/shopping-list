@@ -39,42 +39,7 @@ const AddListItem = ({ appendProductToList }) => {
         setProductName('');
         setNumbersOfProduct(``);
         setProductPrice(``);
-
-
-
-
-        // const postDataToActualList = () => {
-
-        //     var myHeaders = new Headers();
-        //     myHeaders.append("Content-Type", "application/json");
-
-
-        //     var raw = JSON.stringify({
-        //         "name": productName,
-        //         "quantity": numbersOfProduct,
-        //         "price": price.toFixed(2),
-        //         "status": complete
-        //     });
-
-        //     var requestOptions = {
-        //         method: 'POST',
-        //         headers: myHeaders,
-        //         body: raw,
-        //         redirect: 'follow'
-        //     };
-
-        //     fetch("http://localhost:3001/actualList", requestOptions)
-        //         .then(response => response.text())
-        //         .then(result => console.log(result))
-        //         .catch(error => console.log('error', error));
-        // }
-        // postDataToActualList()
     };
-
-
-
-
-
 
 
     return (

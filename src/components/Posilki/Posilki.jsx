@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { BiCaretDown } from 'react-icons/bi'
 import { BsTrash } from 'react-icons/bs'
 import ProductLists from './ProductLists';
+import { useNavigate } from 'react-router-dom'
 
 
 const Posilki = () => {
@@ -45,7 +46,7 @@ const Posilki = () => {
     }
 
 
-
+    const Navigate = useNavigate()
     const postDataToActualList = (id) => {
         // Usunięcie wszystkich pozostałych wpisów z listy czyli 1
         fetch(`http://localhost:3001/actualList/1`, { method: 'DELETE' })
@@ -68,12 +69,12 @@ const Posilki = () => {
                 return fetch("http://localhost:3001/actualList", requestOptions);
             })
             .then(response => response.text())
-            .then(result => console.log(result))
+            .then(result => {
+                console.log(result)
+                Navigate('/lista')
+            })
             .catch(error => console.log('error', error));
     }
-
-
-
 
 
     return (
