@@ -53,25 +53,6 @@ const Lista = () => {
 
 
 
-    const loadListFromServer = () => {
-        fetch('http://localhost:3001/actualList')
-            .then(response => response.json())
-            .then(data => {
-                // Przetwórz dane tak, aby pasowały do formatu twojej aplikacji
-                const newList = data[0].list.map(item => ({
-                    name: item.name,
-                    quantity: item.quantity,
-                    price: item.price,
-                    status: item.status
-                }));
-
-                // Zaktualizuj stan fullList, aby odzwierciedlić pobrane dane
-                setFullList(newList);
-            })
-            .catch(error => console.log('error', error));
-    };
-
-
     return (
         <div className='w-full font-rob mb-[8rem]'>
 
@@ -87,7 +68,7 @@ const Lista = () => {
                 fullPrice={fullPrice}
                 delateAllProducts={delateAllProducts}
                 setFullList={setFullList}
-                loadListFromServer={loadListFromServer}
+
             />
         </div >
     )
