@@ -120,7 +120,7 @@ const Posilki = () => {
                     {openListId === id &&
                         <div>
 
-                            <button onClick={() => postDataToActualList(id)} className='hover:bg-[#4A55AA] transition-all duration-500 mt-8 bg-black text-white block font-extrabold max-w-[10rem] px-2 py-2  rounded-xl mx-auto '>Dodaj listę do 'Chmury'</button>
+                            <button onClick={() => postDataToActualList(id)} className='hover:bg-[#4A55AA] transition-all duration-500 mt-8 bg-black text-white block font-extrabold  px-2 py-2  rounded-xl mx-auto '>Dodaj listę do 'Chmury'</button>
 
                             {productsList && productsList.map((product, index) => (
 

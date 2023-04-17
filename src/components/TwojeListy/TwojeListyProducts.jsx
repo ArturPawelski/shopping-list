@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 
+
+
 const TwojeListyProducts = ({ product, id, index, listData, setListData }) => {
 
 
@@ -44,12 +46,14 @@ const TwojeListyProducts = ({ product, id, index, listData, setListData }) => {
     }
 
 
+
+
     return (
 
 
         <div key={index} className='flex justify-center items-center mt-4 gap-2 '>
 
-            <section className='flex flex-col w-[50%] justify-center items-center gap-2 bg-white bg-opacity-40 py-1 px-4 rounded-xl sm:flex-row sm:justify-between sm:w-[70%]'>
+            <section className='flex flex-col w-[90%] justify-center items-center gap-2 bg-white bg-opacity-40 py-1 px-4 rounded-xl sm:flex-row sm:justify-between sm:w-[70%]'>
 
 
                 {editButton ?

@@ -1,5 +1,38 @@
 {
-  "list": [],
+  "list": [
+    {
+      "name": "aaa",
+      "date": "233",
+      "products": [
+        {
+          "name": "a",
+          "quantity": "2",
+          "price": "8.00",
+          "status": true
+        }
+      ],
+      "id": 1
+    },
+    {
+      "name": "aaa",
+      "date": "23.03",
+      "products": [
+        {
+          "name": "asd",
+          "quantity": "1",
+          "price": "3.00",
+          "status": true
+        },
+        {
+          "name": "asdad",
+          "quantity": "2",
+          "price": "8.00",
+          "status": true
+        }
+      ],
+      "id": 2
+    }
+  ],
   "foods": [
     {
       "name": "zosia",
@@ -33,15 +66,9 @@
     {
       "list": [
         {
-          "name": "chleb",
+          "name": "a",
           "quantity": "2",
-          "price": "8.90",
-          "status": true
-        },
-        {
-          "name": "woda",
-          "quantity": "3",
-          "price": "4.77",
+          "price": "8.00",
           "status": true
         }
       ],

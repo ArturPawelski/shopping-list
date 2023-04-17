@@ -4,6 +4,7 @@ import Twoje from '../images/TWOJE.png'
 import { BiCaretDown } from 'react-icons/bi'
 import { BsTrash } from 'react-icons/bs'
 import TwojeListyProducts from './TwojeListyProducts'
+import { useNavigate } from 'react-router-dom'
 
 const TwojeListy = () => {
 
@@ -49,6 +50,37 @@ const TwojeListy = () => {
     }
 
 
+    const Navigate = useNavigate()
+
+
+    const postDataToActualList = (id) => {
+        // Usunięcie wszystkich pozostałych wpisów z listy czyli 1
+        fetch(`http://localhost:3001/actualList/1`, { method: 'DELETE' })
+            .then(response => {
+                // Dodanie nowego wpisu do listy po usunięciu pozostałych
+                var myHeaders = new Headers();
+                myHeaders.append("Content-Type", "application/json");
+
+                var raw = JSON.stringify({
+                    "list": listData[id - 1].products
+                });
+
+                var requestOptions = {
+                    method: 'POST',
+                    headers: myHeaders,
+                    body: raw,
+                    redirect: 'follow'
+                };
+
+                return fetch("http://localhost:3001/actualList", requestOptions);
+            })
+            .then(response => response.text())
+            .then(result => {
+                console.log(result)
+                Navigate('/lista')
+            })
+            .catch(error => console.log('error', error));
+    }
 
 
     return (
@@ -62,7 +94,7 @@ const TwojeListy = () => {
                     <div key={id} >
 
 
-                        <div className='flex justify-center items-center mt-14 gap-2 '>
+                        <div className='flex justify-center items-center mt-10 gap-2 '>
 
 
                             <section className='flex flex-col w-full justify-center items-center gap-2  bg-white py-2 px-4 rounded-xl sm:flex-row sm:justify-between sm:w-[80%]'>
@@ -83,6 +115,7 @@ const TwojeListy = () => {
 
                         {openListId === id &&
                             <div>
+                                <button onClick={() => postDataToActualList(id)} className='hover:bg-[#4A55AA] ml-[10%] sm:ml-24 md:ml-28 transition-all duration-500 mt-4 mb-6 bg-black text-white block font-extrabold  px-2 py-2  rounded-xl '>Dodaj listę do 'Chmury'</button>
                                 {products && products.map((product, index) => (
 
                                     <TwojeListyProducts
@@ -93,6 +126,7 @@ const TwojeListy = () => {
                                         index={index}
                                         listData={listData}
                                         setListData={setListData}
+
                                     />
                                 ))}
 
