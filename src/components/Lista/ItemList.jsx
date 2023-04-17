@@ -4,6 +4,8 @@ import { GrClose } from 'react-icons/gr'
 import { useNavigate } from 'react-router-dom'
 import TwojaLista from '../images/TWOJA.png'
 import TwojaListaBox from './TwojaListaBox'
+import { HiArrowSmDown, HiArrowSmUp } from 'react-icons/hi'
+
 
 const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProducts, fullPrice, delateAllProducts, loadListFromServer }) => {
 
@@ -129,6 +131,34 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
     }
 
 
+
+
+    const [filter, setFilter] = useState(true)
+    const toggleFilter = () => {
+        setFilter(!filter)
+    }
+
+    const sortFullListByLowestPrice = () => {
+        const newList = [...fullList].sort((a, b) => parseFloat(a.price) - parseFloat(b.price))
+        setFullList(newList)
+    }
+
+    const sortFullListByHighestPrice = () => {
+        const newList = [...fullList].sort((a, b) => parseFloat(b.price) - parseFloat(a.price))
+        setFullList(newList)
+    }
+
+    const sortFullListByHighestQuantity = () => {
+        const newList = [...fullList].sort((a, b) => parseFloat(b.quantity) - parseFloat(a.quantity))
+        setFullList(newList)
+    }
+
+    const sortFullListByLowestQuantity = () => {
+        const newList = [...fullList].sort((a, b) => parseFloat(a.quantity) - parseFloat(b.quantity))
+        setFullList(newList)
+    }
+
+
     return (
         <main className='mt-[6rem] font-rob'>
 
@@ -138,10 +168,25 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
 
             <div className='mt-[2rem] bg-white w-[90%] mx-auto rounded-2xl py-8 px-4 md:w-[85%] lg:w-[75%] xl:w-[70%] 2xl:w-[50%]'>
 
-                <div className='flex flex-col gap-4 sm:flex-row sm:justify-between mx-[2rem] '>
+
+                <div className='flex flex-col-reverse gap-8 sm:flex-row sm:justify-between mx-[2rem] '>
+
                     <button onClick={loadListFromServer} className='bg-[#4A55AA] transition duration-500 hover:bg-black text-white font-extrabold px-6 py-2 rounded-3xl text-center '>Wczytaj dane z chmury</button>
 
-                    <button className='text-white bg-black px-4 py-2 tracking-[0.2rem] rounded-3xl  '>Filtruj</button>
+                    <div >
+                        <button onClick={toggleFilter} className='text-white bg-black flex items-center px-4 py-2 tracking-[0.2rem] rounded-3xl hover:bg-[#4A55AA] transition duration-500 hover:scale-[1.1]'>Filtruj <HiArrowSmDown size={20} />  </button>
+
+                        {!filter &&
+                            <div className='bg-black text-white font-extralight mt-1 px-5  py-4 rounded-2xl absolute bg-opacity-90 hover:bg-opacity-100 transition duration-[1s]  '>
+                                <ul >
+                                    <li onClick={sortFullListByLowestPrice} className='hover:text-red-500 transition duration-500 hover:scale-[1.2] cursor-pointer '>Cena - rosnąco</li>
+                                    <li onClick={sortFullListByHighestPrice} className='mt-2 hover:text-red-500 transition duration-500 hover:scale-[1.2] cursor-pointer'>Cena - malejąco</li>
+                                    <li onClick={sortFullListByLowestQuantity} className='mt-2 hover:text-red-500 transition duration-500 hover:scale-[1.2] cursor-pointer'>Ilość - rosnąco</li>
+                                    <li onClick={sortFullListByHighestQuantity} className='mt-2 hover:text-red-500 transition duration-500 hover:scale-[1.2] cursor-pointer'>Ilośc - malejąco</li>
+                                </ul>
+                            </div>
+                        }
+                    </div>
                 </div>
 
 
