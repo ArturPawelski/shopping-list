@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import BgLogin from '../images/signup-bg.png'
+import { motion } from "framer-motion"
+
 const Login = () => {
 
 
@@ -13,7 +15,12 @@ const Login = () => {
 
 
     return (
-        <div className='w-full  font-rob min-h-screen flex flex-col justify-center items-center bg-black bg-opacity-60 '>
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className='w-full  font-rob min-h-screen flex flex-col justify-center items-center bg-black bg-opacity-60 '
+        >
 
 
 
@@ -91,7 +98,7 @@ const Login = () => {
 
 
 
-        </div >
+        </motion.div >
     )
 }
 

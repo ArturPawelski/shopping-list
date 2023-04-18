@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react'
-
 import AddListItem from './AddListItem'
 import ItemList from './ItemList'
-
-
+import { motion } from "framer-motion"
 
 const Lista = () => {
 
@@ -54,7 +52,12 @@ const Lista = () => {
 
 
     return (
-        <div className='w-full font-rob mb-[8rem]'>
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className='w-full font-rob mb-[8rem]'
+        >
 
             <AddListItem
                 appendProductToList={appendProductToList}
@@ -70,7 +73,7 @@ const Lista = () => {
                 setFullList={setFullList}
 
             />
-        </div >
+        </motion.div >
     )
 }
 export default Lista

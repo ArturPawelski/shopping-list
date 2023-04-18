@@ -3,7 +3,7 @@ import { BiCaretDown } from 'react-icons/bi'
 import { BsTrash } from 'react-icons/bs'
 import ProductLists from './ProductLists';
 import { useNavigate } from 'react-router-dom'
-
+import { motion } from "framer-motion"
 
 const Posilki = () => {
 
@@ -78,7 +78,12 @@ const Posilki = () => {
 
 
     return (
-        <div className='w-full font-rob min-h-screen flex flex-col justify-center items-center mb-[8rem] '>
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className='w-full font-rob min-h-screen flex flex-col justify-center items-center mb-[8rem] '
+        >
 
 
 
@@ -145,7 +150,7 @@ const Posilki = () => {
 
                 </section>
             ))}
-        </div >
+        </motion.div >
     )
 }
 

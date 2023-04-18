@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import Twoje from '../images/TWOJE.png'
-
 import { BiCaretDown } from 'react-icons/bi'
 import { BsTrash } from 'react-icons/bs'
 import TwojeListyProducts from './TwojeListyProducts'
 import { useNavigate } from 'react-router-dom'
+import { motion } from "framer-motion"
 
 const TwojeListy = () => {
 
@@ -84,7 +84,12 @@ const TwojeListy = () => {
 
 
     return (
-        <div className='w-full font-rob min-h-screen flex flex-col justify-center items-center mb-[8rem]  '>
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className='w-full font-rob min-h-screen flex flex-col justify-center items-center mb-[8rem]  '
+        >
             <main className='bg-[#B7C6FF] py-4 px-8 rounded-xl   min-h-[500px]  '>
 
                 <img src={Twoje} alt="" className='mt-[2rem]   mx-auto' />
@@ -135,7 +140,7 @@ const TwojeListy = () => {
                     </div>))
                 }
             </main >
-        </div >
+        </motion.div >
     )
 }
 

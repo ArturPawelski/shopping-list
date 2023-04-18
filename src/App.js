@@ -8,6 +8,7 @@ import Login from './components/Login/Login';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import AnimatedRoutes from './components/AnimatedRoutes';
 
 
 
@@ -19,26 +20,10 @@ function App() {
 
         <Navbar />
 
-        <Routes>
-          <Route path='/' element={<Home />} />
-
-          < Route path='/lista' element={< Lista />} />
-
-          < Route path='/posilki' element={< Posilki />} />
-
-          < Route path='/twojelisty' element={< TwojeListy />} />
-
-          < Route path='/login' element={< Login />} />
-
-          < Route path='*' element={<h1 h1 > 404 error </h1 >} />
-        </Routes >
-
+        <AnimatedRoutes />
         <Footer />
 
       </BrowserRouter >
-
-
-
 
 
     </div >
