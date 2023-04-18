@@ -53,9 +53,7 @@ const Lista = () => {
 
     return (
         <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+
             className='w-full font-rob mb-[8rem]'
         >
 

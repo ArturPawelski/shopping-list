@@ -14,7 +14,7 @@ import AnimatedRoutes from './components/AnimatedRoutes';
 
 function App() {
   return (
-    <div className='bg-gradient-to-b from-blue-300 to-blue-800 ' >
+    <div className='bg-gradient-to-b from-blue-300 to-blue-800'>
 
       <BrowserRouter>
 
