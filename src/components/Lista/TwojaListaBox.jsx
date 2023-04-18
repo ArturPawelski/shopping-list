@@ -56,7 +56,7 @@ const TwojaListaBox = ({ product, index, handleDelete, toggleComplete, setFullLi
 
 
                 {!editEnabled ?
-                    <p className='font-bold'>{product.name}</p>
+                    <p className='font-bold text-center'>{product.name}</p>
                     : <input className={`max-w-[4rem] bg-black text-white rounded-md shadow-md`} name='name' value={product.name} onChange={handleChange}></input>}
 
 
@@ -64,11 +64,11 @@ const TwojaListaBox = ({ product, index, handleDelete, toggleComplete, setFullLi
                     <div className='flex gap-4 items-center py-2 sm:py-0 md:gap-12'>
 
                         {!editEnabled ?
-                            <p className='font-bold'>{product.quantity}</p>
+                            <p className='font-bold text-center'>{product.quantity}</p>
                             : <input className='max-w-[4rem] bg-black text-white rounded-md shadow-md' name='quantity' value={product.quantity} onChange={handleChange} ></input>}
 
                         {!editEnabled ?
-                            <p className='font-bold'>{product.price}</p>
+                            <p className='font-bold text-center'>{product.price}</p>
                             : <input className='max-w-[4rem] bg-black text-white rounded-md shadow-md' name='price' value={product.price} onChange={handleChange} ></input>}
 
                         <div className='max-w-[1rem] ' onClick={() => toggleComplete(index)} >
