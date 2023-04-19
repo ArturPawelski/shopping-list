@@ -62,10 +62,9 @@ const ItemListFiltr = ({ setFullList, fullList }) => {
 
                 <motion.div
 
-                    animate={{ height: filter ? "auto" : 0, opacity: filter ? 1 : 0, display: filter ? "block" : "none" }}
-                    transition={{ duration: 0.2, }}
 
-                    className='bg-black text-white font-extralight mt-1 px-5 py-4 rounded-2xl absolute bg-opacity-90 transition={{ duration: 0.5 }} hover:bg-opacity-100'
+
+                    className='bg-black text-white font-extralight mt-1 px-5 py-4 rounded-2xl absolute  transition={{ duration: 0.5 }} '
                 >
                     <ul>
                         <li onClick={sortFullListByLowestPrice} className='hover:text-red-500 cursor-pointer'>Cena - rosnąco</li>
