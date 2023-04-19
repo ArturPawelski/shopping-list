@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { BsTrash } from 'react-icons/bs'
 import { BsCircle } from 'react-icons/bs'
 import { AiOutlineCheckCircle } from 'react-icons/ai'
-import { motion, AnimatePresence } from "framer-motion"
+import { motion } from "framer-motion"
 /*
 1. drilowanie setFullList (ponieważ fullList jest stanem dwa komponenty wyżej, a w tym komponencie mamy dostęp do wartości za pośrednictwem props (product) product jest propsem który pochodzi ze stanu dwa komponenty wyżej)
 2. dodaliśmy input i guziki edytuj i zapisz które są sterowane przez nową zmienną stanu editEnabled
@@ -44,12 +44,16 @@ const TwojaListaBox = ({ product, index, handleDelete, toggleComplete, setFullLi
     };
 
 
+
+
     return (
 
+
         <motion.section
-            initial={{ opacity: 0, transition: { duration: 2 } }}
-            animate={{ opacity: 1, transition: { duration: 1 } }}
-            exit={{ opacity: 0, transition: { duration: 0.5 } }}
+            initial={{ opacity: 0, }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5, }}
 
             key={index} className='flex items-center justify-center gap-2 mt-[2rem] md:gap-8'
         >
@@ -96,6 +100,7 @@ const TwojaListaBox = ({ product, index, handleDelete, toggleComplete, setFullLi
             </div>
 
         </motion.section>
+
     )
 }
 

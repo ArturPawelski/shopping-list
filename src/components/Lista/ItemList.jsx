@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import TwojaLista from '../images/TWOJA.png'
 import TwojaListaBox from './TwojaListaBox'
 import ItemListFiltr from './ItemListFiltr'
-
+import { AnimatePresence } from "framer-motion"
 
 const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProducts, fullPrice, delateAllProducts, loadListFromServer }) => {
 
@@ -142,17 +142,19 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
                     fullList={fullList}
                 />
 
-                <div layout className='mt-8'>
-                    {fullList.map((product, index) => (
-                        <TwojaListaBox
-                            product={product}
-                            key={index}
-                            index={index}
-                            handleDelete={handleDelete}
-                            toggleComplete={toggleComplete}
-                            setFullList={setFullList}
-                        />
-                    ))}
+                <div className='mt-8'>
+                    <AnimatePresence>
+                        {fullList.map((product, index) => (
+                            <TwojaListaBox
+                                product={product}
+                                key={index}
+                                index={index}
+                                handleDelete={handleDelete}
+                                toggleComplete={toggleComplete}
+                                setFullList={setFullList}
+                            />
+                        ))}
+                    </AnimatePresence>
                 </div>
 
 

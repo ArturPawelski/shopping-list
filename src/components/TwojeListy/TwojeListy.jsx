@@ -85,9 +85,10 @@ const TwojeListy = () => {
 
     return (
         <motion.div
-            initial={{ opacity: 0, transition: { duration: 2 } }}
+            initial={{ opacity: 0, }}
             animate={{ opacity: 1, transition: { duration: 1 } }}
-            exit={{ opacity: 0, transition: { duration: 0.5 } }}
+            exit={{ opacity: 0, transition: { duration: 0.3 } }}
+
             className='w-full font-rob min-h-screen flex flex-col justify-center items-center mb-[8rem]  '
         >
             <main className='bg-[#B7C6FF] py-4 px-8 rounded-xl   min-h-[500px]  '>

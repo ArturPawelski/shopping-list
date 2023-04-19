@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { HiArrowSmDown, HiArrowSmUp } from 'react-icons/hi'
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 
 const ItemListFiltr = ({ setFullList, fullList }) => {
 
@@ -24,7 +24,7 @@ const ItemListFiltr = ({ setFullList, fullList }) => {
     };
 
 
-    const [filter, setFilter] = useState(true)
+    const [filter, setFilter] = useState(false)
     const toggleFilter = () => {
         setFilter(!filter)
     }
@@ -59,20 +59,24 @@ const ItemListFiltr = ({ setFullList, fullList }) => {
             <div>
                 <button onClick={toggleFilter} className='text-white bg-black flex items-center px-4 py-2 tracking-[0.2rem] rounded-3xl hover:bg-[#4A55AA] transition duration-500 hover:scale-[1.1]'>Filtruj <HiArrowSmDown size={20} />  </button>
 
+                <AnimatePresence>
 
-                <motion.div
+                    {filter && <motion.div
+                        initial={{ opacity: 0, y: 100 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 100 }}
+                        transition={{ duration: 0.2 }}
 
-
-
-                    className='bg-black text-white font-extralight mt-1 px-5 py-4 rounded-2xl absolute  transition={{ duration: 0.5 }} '
-                >
-                    <ul>
-                        <li onClick={sortFullListByLowestPrice} className='hover:text-red-500 cursor-pointer'>Cena - rosnąco</li>
-                        <li onClick={sortFullListByHighestPrice} className='mt-2 hover:text-red-500 cursor-pointer'>Cena - malejąco</li>
-                        <li onClick={sortFullListByLowestQuantity} className='mt-2 hover:text-red-500 cursor-pointer'>Ilość - rosnąco</li>
-                        <li onClick={sortFullListByHighestQuantity} className='mt-2 hover:text-red-500 cursor-pointer'>Ilość - malejąco</li>
-                    </ul>
-                </motion.div>
+                        className='bg-black text-white font-extralight mt-1 px-5 py-4 rounded-2xl absolute  transition={{ duration: 0.5 }} '
+                    >
+                        <ul>
+                            <li onClick={sortFullListByLowestPrice} className='hover:text-red-500 cursor-pointer'>Cena - rosnąco</li>
+                            <li onClick={sortFullListByHighestPrice} className='mt-2 hover:text-red-500 cursor-pointer'>Cena - malejąco</li>
+                            <li onClick={sortFullListByLowestQuantity} className='mt-2 hover:text-red-500 cursor-pointer'>Ilość - rosnąco</li>
+                            <li onClick={sortFullListByHighestQuantity} className='mt-2 hover:text-red-500 cursor-pointer'>Ilość - malejąco</li>
+                        </ul>
+                    </motion.div>}
+                </AnimatePresence>
 
             </div>
         </div >
