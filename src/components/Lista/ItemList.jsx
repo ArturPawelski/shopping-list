@@ -6,6 +6,7 @@ import TwojaLista from '../images/TWOJA.png'
 import TwojaListaBox from './TwojaListaBox'
 import ItemListFiltr from './ItemListFiltr'
 
+
 const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProducts, fullPrice, delateAllProducts, loadListFromServer }) => {
 
 
@@ -139,10 +140,9 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
                 <ItemListFiltr
                     setFullList={setFullList}
                     fullList={fullList}
-
                 />
 
-                <div className='mt-8'>
+                <div layout className='mt-8'>
                     {fullList.map((product, index) => (
                         <TwojaListaBox
                             product={product}

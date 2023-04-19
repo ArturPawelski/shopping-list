@@ -11,6 +11,7 @@ const Home = () => {
             initial={{ y: "100%" }}
             animate={{ y: "0%" }}
             exit={{ opacity: 0 }}
+
             transition={{ duration: 0.75, ease: "easeOut" }}
 
 

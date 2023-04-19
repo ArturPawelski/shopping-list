@@ -31,49 +31,6 @@
         }
       ],
       "id": 2
-    },
-    {
-      "name": "hjaj",
-      "date": "17.04.20223",
-      "products": [
-        {
-          "name": "jajka",
-          "quantity": "1",
-          "price": "7.50",
-          "status": true
-        },
-        {
-          "name": "maka",
-          "quantity": "2",
-          "price": "5.56",
-          "status": true
-        },
-        {
-          "name": "jogurt",
-          "quantity": "3",
-          "price": "3.96",
-          "status": true
-        },
-        {
-          "name": "mleko",
-          "quantity": "1",
-          "price": "3.69",
-          "status": true
-        }
-      ],
-      "id": 3
-    },
-    {
-      "name": "asd",
-      "date": "asd",
-      "products": [],
-      "id": 4
-    },
-    {
-      "name": "sasd",
-      "date": "asd",
-      "products": [],
-      "id": 5
     }
   ],
   "foods": [
@@ -109,9 +66,15 @@
     {
       "list": [
         {
-          "name": "a",
+          "name": "chleb",
           "quantity": "2",
-          "price": "8.00",
+          "price": "8.90",
+          "status": true
+        },
+        {
+          "name": "woda",
+          "quantity": "3",
+          "price": "4.77",
           "status": true
         }
       ],

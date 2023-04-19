@@ -1,10 +1,5 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 
-import Home from './components/Home/Home';
-import Lista from './components/Lista/Lista';
-import Posilki from './components/Posilki/Posilki';
-import TwojeListy from './components/TwojeListy/TwojeListy';
-import Login from './components/Login/Login';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';

@@ -80,7 +80,7 @@ const Posilki = () => {
     return (
         <motion.div
             initial={{ opacity: 0, transition: { duration: 2 } }}
-            animate={{ opacity: 1, transition: { duration: 1.5 } }}
+            animate={{ opacity: 1, transition: { duration: 1 } }}
             exit={{ opacity: 0, transition: { duration: 0.5 } }}
             className='w-full font-rob min-h-screen flex flex-col justify-center items-center mb-[8rem] '
         >
