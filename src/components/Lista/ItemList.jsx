@@ -219,7 +219,7 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
                         <input value={foodsDescription} onChange={foodsDescriptionTarget} className="bg-[#D9D9D9] bg-opacity-60 py-2 px-2 rounded-xl w-full" type="text" />
 
                         <h2 className="mt-4 font-extralight">LINK DO ZDJĘCIA:</h2>
-                        <input value={foodsImg} onChange={foodsImgTarget} class="bg-[#D9D9D9] bg-opacity-60 py-2 px-2 rounded-xl w-full" type="text" />
+                        <input value={foodsImg} onChange={foodsImgTarget} className="bg-[#D9D9D9] bg-opacity-60 py-2 px-2 rounded-xl w-full" type="text" />
 
 
                         <button onClick={postDataToFoods} className="block mt-8 mx-auto bg-black text-white py-2 px-8 rounded-xl font-extrabold hover:bg-blue-700">

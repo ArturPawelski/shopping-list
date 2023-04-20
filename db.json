@@ -5,7 +5,7 @@
       "date": "233",
       "products": [
         {
-          "name": "a",
+          "name": "xddd",
           "quantity": "2",
           "price": "8.00",
           "status": true
@@ -24,8 +24,8 @@
           "status": true
         },
         {
-          "name": "asdad",
-          "quantity": "3",
+          "name": "edit sd",
+          "quantity": "46",
           "price": "8.00",
           "status": true
         }
@@ -35,46 +35,39 @@
   ],
   "foods": [
     {
-      "name": "zosia",
-      "description": "zosia",
-      "img": "dfs",
-      "productsList": [],
-      "id": 1
-    },
-    {
-      "name": "woda z clebem",
-      "description": "woda + chleb mniam mnaim",
-      "img": "https://tvn24.pl/tvnmeteo/najnowsze/cdn-zdjecie0c28dd01ef4c2509060709b15dcd34dd-jedzenie-samego-chleba-byloby-nudne-i-niezdrowe-4469161/0d27825b-6295-459f-a263-0ed5a7429b1b.jpg",
+      "name": "posilek 1",
+      "description": "bla bla bla",
+      "img": "",
       "productsList": [
         {
-          "name": "chleb",
-          "quantity": "2",
-          "price": "8.90",
+          "name": "mleko2",
+          "quantity": "1",
+          "price": "6.00",
           "status": true
         },
         {
-          "name": "woda",
+          "name": "mleko ",
+          "quantity": "1",
+          "price": "3.00",
+          "status": true
+        },
+        {
+          "name": "xd",
           "quantity": "3",
-          "price": "4.77",
+          "price": "12.00",
           "status": true
         }
       ],
-      "id": 2
+      "id": 1
     }
   ],
   "actualList": [
     {
       "list": [
         {
-          "name": "chleb",
+          "name": "xddd",
           "quantity": "2",
-          "price": "8.90",
-          "status": true
-        },
-        {
-          "name": "woda",
-          "quantity": "3",
-          "price": "4.77",
+          "price": "8.00",
           "status": true
         }
       ],

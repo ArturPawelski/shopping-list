@@ -26,7 +26,7 @@ const ProductLists = ({ product, id, index, setFoodsData, foodsData }) => {
         const { name, value } = event.target
         setFoodsData(previousList => {
             let newList = Array.from(previousList);
-            newList[id - 1].productsList[index][name] = value; // access the correct element
+            newList[id - 1].productsList[index][name] = value;
             return newList;
         });
 
