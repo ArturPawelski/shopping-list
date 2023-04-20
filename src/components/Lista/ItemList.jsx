@@ -4,8 +4,10 @@ import { GrClose } from 'react-icons/gr'
 import { useNavigate } from 'react-router-dom'
 import TwojaLista from '../images/TWOJA.png'
 import TwojaListaBox from './TwojaListaBox'
+import ItemListFiltr from './ItemListFiltr'
+import { AnimatePresence } from "framer-motion"
 
-const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProducts, fullPrice, delateAllProducts }) => {
+const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProducts, fullPrice, delateAllProducts, loadListFromServer }) => {
 
 
     const [openButton, setOpenButton] = useState(true)
@@ -24,7 +26,6 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
         setOpenList(!openList)
         setOpenButton(true)
     }
-
 
 
 
@@ -48,25 +49,6 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
             setCheckRouter(true);
         }
     }, [listName, listDate]);
-
-
-
-
-    const [foodsName, setFoodsName] = useState('')
-    const [foodsDescription, setFoodsdescription] = useState('')
-    const [foodsImg, setFoodsImg] = useState('')
-
-    const foodsNameTarget = (e) => {
-        setFoodsName(e.target.value)
-    };
-
-    const foodsDescriptionTarget = (e) => {
-        setFoodsdescription(e.target.value)
-    };
-    const foodsImgTarget = (e) => {
-        setFoodsImg(e.target.value)
-    };
-
 
 
 
@@ -102,8 +84,23 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
 
 
 
-    const postDataToFoods = () => {
+    const [foodsName, setFoodsName] = useState('')
+    const [foodsDescription, setFoodsdescription] = useState('')
+    const [foodsImg, setFoodsImg] = useState('')
 
+    const foodsNameTarget = (e) => {
+        setFoodsName(e.target.value)
+    };
+
+    const foodsDescriptionTarget = (e) => {
+        setFoodsdescription(e.target.value)
+    };
+    const foodsImgTarget = (e) => {
+        setFoodsImg(e.target.value)
+    };
+
+
+    const postDataToFoods = () => {
         var myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
 
@@ -140,23 +137,24 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
 
             <div className='mt-[2rem] bg-white w-[90%] mx-auto rounded-2xl py-8 px-4 md:w-[85%] lg:w-[75%] xl:w-[70%] 2xl:w-[50%]'>
 
+                <ItemListFiltr
+                    setFullList={setFullList}
+                    fullList={fullList}
+                />
 
-                <div className='text-right pr-3'>
-                    <button className='text-white bg-black px-4 py-2 tracking-[0.2rem] rounded-3xl  '>Filtruj</button>
-                </div>
-
-
-                <div>
-                    {fullList.map((product, index) => (
-                        <TwojaListaBox
-                            product={product}
-                            key={index}
-                            index={index}
-                            handleDelete={handleDelete}
-                            toggleComplete={toggleComplete}
-                            setFullList={setFullList}
-                        />
-                    ))}
+                <div className='mt-8'>
+                    <AnimatePresence>
+                        {fullList.map((product, index) => (
+                            <TwojaListaBox
+                                product={product}
+                                key={index}
+                                index={index}
+                                handleDelete={handleDelete}
+                                toggleComplete={toggleComplete}
+                                setFullList={setFullList}
+                            />
+                        ))}
+                    </AnimatePresence>
                 </div>
 
 
@@ -178,15 +176,13 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
 
                     <BsTrash className='hover:scale-[1.5] transition duration-700' size={35} onClick={delateAllProducts} />
                 </section>
-
-
             </div>
 
 
 
 
-            <div >
-                <aside className={!openButton ? 'bg-black bg-opacity-80 fixed inset-0 flex justify-center items-center ease-in-out duration-700' : ' ease-in-out duration-1000 fixed left-[-100%]'}>
+            <section >
+                {!openButton && <aside className='bg-black bg-opacity-80 fixed inset-0 flex justify-center items-center'  >
 
                     <section className="relative w-full  z-10 bg-white sm:max-w-[400px] sm:px-16 py-8 rounded-xl">
 
@@ -200,8 +196,8 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
                             <button onClick={toggleOpenList} className=' text-white min-w-[100px] bg-blue-800 px-4 rounded-2xl font-bold hover:bg-black'>LISTA</button>
                         </div>
                     </section>
-                </aside>
-            </div>
+                </aside>}
+            </section>
 
 
 
@@ -216,11 +212,11 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
                         <h2 className="text-center text-[1.3rem] pt-8 font-extrabold">CZY CHCESZ ZAPISAĆ SWÓJ POSIŁEK??</h2>
 
 
-                        <h2 class="mt-8 font-extralight">NAZWA POSIŁKU:</h2>
+                        <h2 className="mt-8 font-extralight">NAZWA POSIŁKU:</h2>
                         <input value={foodsName} onChange={foodsNameTarget} className="bg-[#D9D9D9] bg-opacity-60 px-2 py-2 rounded-xl w-full" type="text" />
 
                         <h2 className="mt-4 font-extralight">OPIS:</h2>
-                        <input value={foodsDescription} onChange={foodsDescriptionTarget} class="bg-[#D9D9D9] bg-opacity-60 py-2 px-2 rounded-xl w-full" type="text" />
+                        <input value={foodsDescription} onChange={foodsDescriptionTarget} className="bg-[#D9D9D9] bg-opacity-60 py-2 px-2 rounded-xl w-full" type="text" />
 
                         <h2 className="mt-4 font-extralight">LINK DO ZDJĘCIA:</h2>
                         <input value={foodsImg} onChange={foodsImgTarget} class="bg-[#D9D9D9] bg-opacity-60 py-2 px-2 rounded-xl w-full" type="text" />

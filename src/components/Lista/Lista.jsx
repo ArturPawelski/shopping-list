@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react'
-
 import AddListItem from './AddListItem'
 import ItemList from './ItemList'
-
-
+import { motion } from "framer-motion"
 
 const Lista = () => {
 
@@ -15,14 +13,10 @@ const Lista = () => {
     }
 
 
-
-
     const [fullList, setFullList] = useState([])
-
 
     const appendProductToList = (newProduct) => {
         setFullList([...fullList, newProduct]);
-
     }
 
 
@@ -40,37 +34,35 @@ const Lista = () => {
     }
 
 
+
+
     const [allProducts, setAllProducts] = useState(0)
     useEffect(() => {
-        const newProduct = fullList.reduce((total, product) => total + Number(product.ilosc), 0);
+        const newProduct = fullList.reduce((total, product) => total + Number(product.quantity), 0);
         setAllProducts(newProduct.toFixed(2));
-
     }, [fullList]);
-
 
     const [fullPrice, setFullPrice] = useState(0)
     useEffect(() => {
-        const newPrice = fullList.reduce((total, product) => total + Number(product.cena), 0);
+        const newPrice = fullList.reduce((total, product) => total + Number(product.price), 0);
         setFullPrice(newPrice.toFixed(2))
     }, [fullList])
 
 
 
 
-
-
     return (
-        <div className='w-full font-rob mb-[8rem]'>
+        <motion.div
+            initial={{ opacity: 0, }}
+            animate={{ opacity: 1, transition: { duration: 1 } }}
+            exit={{ opacity: 0, transition: { duration: 0.3 } }}
 
-
-
-
-
+            className='w-full font-rob mb-[8rem]'
+        >
 
             <AddListItem
                 appendProductToList={appendProductToList}
             />
-
 
             <ItemList
                 fullList={fullList}
@@ -80,12 +72,9 @@ const Lista = () => {
                 fullPrice={fullPrice}
                 delateAllProducts={delateAllProducts}
                 setFullList={setFullList}
+
             />
-
-
-
-
-        </div >
+        </motion.div >
     )
 }
 export default Lista
