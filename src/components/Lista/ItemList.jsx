@@ -6,6 +6,7 @@ import TwojaLista from '../images/TWOJA.png'
 import TwojaListaBox from './TwojaListaBox'
 import ItemListFiltr from './ItemListFiltr'
 import { AnimatePresence } from "framer-motion"
+import { postDataToList, postDataToFoods } from './api'
 
 
 const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProducts, fullPrice, delateAllProducts, loadListFromServer }) => {
@@ -29,7 +30,6 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
     }
 
 
-
     const [listName, setListName] = useState('')
     const [listDate, setListDate] = useState('')
     const [checkRouter, setCheckRouter] = useState(true)
@@ -42,6 +42,7 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
         setListDate(e.target.value)
     };
 
+
     useEffect(() => {
         if (listName.trim().length >= 3 && listDate.trim().length >= 3) {
             setCheckRouter(false);
@@ -52,42 +53,13 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
     }, [listName, listDate]);
 
 
-
     const history = useNavigate()
-    const postDataToList = () => {
-        if (listName.trim().length >= 3 && listDate.trim().length >= 3) {
-
-            var myHeaders = new Headers();
-            myHeaders.append("Content-Type", "application/json");
-
-            var raw = JSON.stringify({
-                "name": listName,
-                "date": listDate,
-                "products": fullList
-            });
-
-            var requestOptions = {
-                method: 'POST',
-                headers: myHeaders,
-                body: raw,
-                redirect: 'follow'
-            };
-
-            fetch("http://localhost:3001/list", requestOptions)
-                .then(response => response.text())
-                .then(result => {
-                    console.log(result);
-                    history('/twojelisty'); // przekierowanie użytkownika do /twojelisty
-                })
-                .catch(error => console.log('error', error));
-        }
-    }
-
 
 
     const [foodsName, setFoodsName] = useState('')
     const [foodsDescription, setFoodsdescription] = useState('')
     const [foodsImg, setFoodsImg] = useState('')
+
 
     const handleFoodsNameChange = (e) => {
         setFoodsName(e.target.value)
@@ -96,37 +68,10 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
     const handleFoodsDescriptionChange = (e) => {
         setFoodsdescription(e.target.value)
     };
+
     const handleFoodsImgChange = (e) => {
         setFoodsImg(e.target.value)
     };
-
-
-    const postDataToFoods = () => {
-        var myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/json");
-
-        var raw = JSON.stringify({
-            "name": foodsName,
-            "description": foodsDescription,
-            "img": foodsImg,
-            "productsList": fullList
-        });
-
-        var requestOptions = {
-            method: 'POST',
-            headers: myHeaders,
-            body: raw,
-            redirect: 'follow'
-        };
-
-        fetch("http://localhost:3001/foods", requestOptions)
-            .then(response => response.text())
-            .then(result => {
-                console.log(result);
-                history('/posilki'); // przekierowanie użytkownika do /twojelisty
-            })
-            .catch(error => console.log('error', error));
-    }
 
 
     return (
@@ -223,7 +168,7 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
                         <input value={foodsImg} onChange={handleFoodsImgChange} className="bg-[#D9D9D9] bg-opacity-60 py-2 px-2 rounded-xl w-full" type="text" />
 
 
-                        <button onClick={postDataToFoods} className="block mt-8 mx-auto bg-black text-white py-2 px-8 rounded-xl font-extrabold hover:bg-blue-700">
+                        <button onClick={() => postDataToFoods(foodsName, foodsDescription, foodsImg, fullList, history)} className="block mt-8 mx-auto bg-black text-white py-2 px-8 rounded-xl font-extrabold hover:bg-blue-700">
                             Zapisz </button>
 
                     </section>
@@ -252,7 +197,7 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
 
                         {checkRouter && <p className="font-bold text-[0.8rem] text-red-600 pt-1">Minimum 3 znaki!</p>}
 
-                        <button onClick={postDataToList} className="block mt-8 mx-auto bg-black text-white py-2 px-8 rounded-xl font-extrabold hover:bg-blue-700">
+                        <button onClick={() => postDataToList(listName, listDate, fullList, history)} className="block mt-8 mx-auto bg-black text-white py-2 px-8 rounded-xl font-extrabold hover:bg-blue-700">
                             Zapisz </button>
 
                     </section>

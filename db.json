@@ -31,25 +31,6 @@
         }
       ],
       "id": 2
-    },
-    {
-      "name": "siemaa ",
-      "date": "233",
-      "products": [
-        {
-          "name": "xd",
-          "quantity": "3",
-          "price": "12.00",
-          "status": true
-        },
-        {
-          "name": "asd",
-          "quantity": "2",
-          "price": "8.00",
-          "status": true
-        }
-      ],
-      "id": 3
     }
   ],
   "foods": [
@@ -78,29 +59,15 @@
         }
       ],
       "id": 1
-    },
-    {
-      "name": "s",
-      "description": "2",
-      "img": "",
-      "productsList": [
-        {
-          "name": "asd",
-          "quantity": "2",
-          "price": "8.00",
-          "status": true
-        }
-      ],
-      "id": 2
     }
   ],
   "actualList": [
     {
       "list": [
         {
-          "name": "xddd",
+          "name": "s",
           "quantity": "2",
-          "price": "8.00",
+          "price": "6.00",
           "status": true
         }
       ],
