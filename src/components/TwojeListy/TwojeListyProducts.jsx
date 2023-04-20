@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import { patchList } from './api';
 
 
 const TwojeListyProducts = ({ product, id, index, listData, setListData }) => {
@@ -19,33 +19,6 @@ const TwojeListyProducts = ({ product, id, index, listData, setListData }) => {
             return newList
         })
     }
-
-
-    const patchList = () => {
-        var myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/json");
-
-        var raw = JSON.stringify({
-            "products": listData[id - 1].products
-        });
-
-        var requestOptions = {
-            method: 'PATCH',
-            headers: myHeaders,
-            body: raw,
-            redirect: 'follow'
-        };
-
-        fetch(`http://localhost:3001/list/${id}`, requestOptions)
-            .then(response => response.text())
-            .then(result => {
-
-                setEditButton(!editButton)
-            })
-            .catch(error => console.log('error', error));
-    }
-
-
 
 
     return (
@@ -75,7 +48,7 @@ const TwojeListyProducts = ({ product, id, index, listData, setListData }) => {
 
                     {editButton ?
                         <button onClick={toggleEditButton} className='font-bold text-white bg-black uppercase text-sm border-2 p-1 border-white hover:scale-[1.2] hover:border-red-700 transition duration-500'>Edit</button>
-                        : <button onClick={patchList} className='font-bold text-white bg-black uppercase text-sm border-2 p-1 border-white hover:scale-[1.2] hover:border-red-700 transition duration-500 '> save</button>}
+                        : <button onClick={() => patchList(listData, id, setEditButton, editButton)} className='font-bold text-white bg-black uppercase text-sm border-2 p-1 border-white hover:scale-[1.2] hover:border-red-700 transition duration-500 '> save</button>}
 
                 </div>
             </section>

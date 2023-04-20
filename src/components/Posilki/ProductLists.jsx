@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-
+import { patchFoods } from './api';
 
 
 const ProductLists = ({ product, id, index, setFoodsData, foodsData }) => {
@@ -15,7 +15,7 @@ const ProductLists = ({ product, id, index, setFoodsData, foodsData }) => {
     //     const newName = event.target.value;
     //     setFoodsData(previousList => {
     //         let newList = Array.from(previousList);
-    //         newList[id - 1].productsList[index].name = newName; // access the correct element
+    //         newList[id - 1].productsList[index].name = newName; 
     //         return newList;
     //     });
 
@@ -31,34 +31,6 @@ const ProductLists = ({ product, id, index, setFoodsData, foodsData }) => {
         });
 
     }
-
-
-    const patchFoods = () => {
-
-        var myHeaders = new Headers();
-        myHeaders.append("Content-Type", "application/json");
-
-        var raw = JSON.stringify({
-            "productsList": foodsData[id - 1].productsList
-        });
-
-        var requestOptions = {
-            method: 'PATCH',
-            headers: myHeaders,
-            body: raw,
-            redirect: 'follow'
-        };
-
-        fetch(`http://localhost:3001/foods/${id}`, requestOptions)
-            .then(response => response.text())
-            .then(result => {
-                console.log(result)
-                setEditButton(!editButton)
-            })
-            .catch(error => console.log('error', error));
-    }
-
-
 
 
     return (
@@ -85,7 +57,7 @@ const ProductLists = ({ product, id, index, setFoodsData, foodsData }) => {
 
                     {editButton ?
                         <button onClick={toggleEditButton} className='font-bold text-white bg-black uppercase text-sm border-2 p-1 border-white hover:scale-[1.2] hover:border-red-700 transition duration-500'>Edit</button>
-                        : <button onClick={patchFoods} className='font-bold text-white bg-black uppercase text-sm border-2 p-1 border-white hover:scale-[1.2] hover:border-red-700 transition duration-500 '> save</button>}
+                        : <button onClick={() => patchFoods(foodsData, id, setEditButton, editButton)} className='font-bold text-white bg-black uppercase text-sm border-2 p-1 border-white hover:scale-[1.2] hover:border-red-700 transition duration-500 '> save</button>}
                 </div>
             </div>
         </section >

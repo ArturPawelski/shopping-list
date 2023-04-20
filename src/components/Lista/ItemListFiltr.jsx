@@ -1,28 +1,9 @@
 import React, { useState } from 'react'
 import { HiArrowSmDown, HiArrowSmUp } from 'react-icons/hi'
 import { motion, AnimatePresence } from "framer-motion"
+import { loadListFromServer } from './api'
 
 const ItemListFiltr = ({ setFullList, fullList }) => {
-
-
-    const loadListFromServer = () => {
-        fetch('http://localhost:3001/actualList')
-            .then(response => response.json())
-            .then(data => {
-                // Przetwórz dane tak, aby pasowały do formatu twojej aplikacji
-                const newList = data[0].list.map(item => ({
-                    name: item.name,
-                    quantity: item.quantity,
-                    price: item.price,
-                    status: item.status
-                }));
-
-                // Zaktualizuj stan fullList, aby odzwierciedlić pobrane dane
-                setFullList(newList);
-            })
-            .catch(error => console.log('error', error));
-    };
-
 
     const [filter, setFilter] = useState(false)
     const toggleFilter = () => {
@@ -49,12 +30,11 @@ const ItemListFiltr = ({ setFullList, fullList }) => {
         setFullList(newList)
     }
 
-
     return (
 
         <div className='flex flex-col-reverse gap-8 sm:flex-row sm:justify-between mx-[2rem] '>
 
-            <button onClick={loadListFromServer} className='bg-[#4A55AA] transition duration-500 hover:bg-black text-white font-extrabold px-6 py-2 rounded-3xl text-center '>Wczytaj dane z chmury</button>
+            <button onClick={() => loadListFromServer(setFullList)} className='bg-[#4A55AA] transition duration-500 hover:bg-black text-white font-extrabold px-6 py-2 rounded-3xl text-center '>Wczytaj dane z chmury</button>
 
             <div>
                 <button onClick={toggleFilter} className='text-white bg-black flex items-center px-4 py-2 tracking-[0.2rem] rounded-3xl hover:bg-[#4A55AA] transition duration-500 hover:scale-[1.1]'>Filtruj <HiArrowSmDown size={20} />  </button>
@@ -82,5 +62,4 @@ const ItemListFiltr = ({ setFullList, fullList }) => {
         </div >
     )
 }
-
 export default ItemListFiltr

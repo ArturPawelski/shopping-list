@@ -55,3 +55,23 @@ export const postDataToFoods = (foodsName, foodsDescription, foodsImg, fullList,
         })
         .catch(error => console.log('error', error));
 }
+
+
+
+export const loadListFromServer = (setFullList) => {
+    fetch('http://localhost:3001/actualList')
+        .then(response => response.json())
+        .then(data => {
+            // Przetwórz dane tak, aby pasowały do formatu twojej aplikacji
+            const newList = data[0].list.map(item => ({
+                name: item.name,
+                quantity: item.quantity,
+                price: item.price,
+                status: item.status
+            }));
+
+            // Zaktualizuj stan fullList, aby odzwierciedlić pobrane dane
+            setFullList(newList);
+        })
+        .catch(error => console.log('error', error));
+};
