@@ -7,6 +7,7 @@ import TwojaListaBox from './TwojaListaBox'
 import ItemListFiltr from './ItemListFiltr'
 import { AnimatePresence } from "framer-motion"
 
+
 const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProducts, fullPrice, delateAllProducts, loadListFromServer }) => {
 
 
@@ -33,11 +34,11 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
     const [listDate, setListDate] = useState('')
     const [checkRouter, setCheckRouter] = useState(true)
 
-    const nameTarget = (e) => {
+    const handleListNameChange = (e) => {
         setListName(e.target.value)
     };
 
-    const dateTarget = (e) => {
+    const handleListDateChange = (e) => {
         setListDate(e.target.value)
     };
 
@@ -88,14 +89,14 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
     const [foodsDescription, setFoodsdescription] = useState('')
     const [foodsImg, setFoodsImg] = useState('')
 
-    const foodsNameTarget = (e) => {
+    const handleFoodsNameChange = (e) => {
         setFoodsName(e.target.value)
     };
 
-    const foodsDescriptionTarget = (e) => {
+    const handleFoodsDescriptionChange = (e) => {
         setFoodsdescription(e.target.value)
     };
-    const foodsImgTarget = (e) => {
+    const handleFoodsImgChange = (e) => {
         setFoodsImg(e.target.value)
     };
 
@@ -213,13 +214,13 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
 
 
                         <h2 className="mt-8 font-extralight">NAZWA POSIŁKU:</h2>
-                        <input value={foodsName} onChange={foodsNameTarget} className="bg-[#D9D9D9] bg-opacity-60 px-2 py-2 rounded-xl w-full" type="text" />
+                        <input value={foodsName} onChange={handleFoodsNameChange} className="bg-[#D9D9D9] bg-opacity-60 px-2 py-2 rounded-xl w-full" type="text" />
 
                         <h2 className="mt-4 font-extralight">OPIS:</h2>
-                        <input value={foodsDescription} onChange={foodsDescriptionTarget} className="bg-[#D9D9D9] bg-opacity-60 py-2 px-2 rounded-xl w-full" type="text" />
+                        <input value={foodsDescription} onChange={handleFoodsDescriptionChange} className="bg-[#D9D9D9] bg-opacity-60 py-2 px-2 rounded-xl w-full" type="text" />
 
                         <h2 className="mt-4 font-extralight">LINK DO ZDJĘCIA:</h2>
-                        <input value={foodsImg} onChange={foodsImgTarget} className="bg-[#D9D9D9] bg-opacity-60 py-2 px-2 rounded-xl w-full" type="text" />
+                        <input value={foodsImg} onChange={handleFoodsImgChange} className="bg-[#D9D9D9] bg-opacity-60 py-2 px-2 rounded-xl w-full" type="text" />
 
 
                         <button onClick={postDataToFoods} className="block mt-8 mx-auto bg-black text-white py-2 px-8 rounded-xl font-extrabold hover:bg-blue-700">
@@ -242,12 +243,12 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
                         <h2 className="text-center pt-8 font-extrabold">CZY CHCESZ ZAPISAĆ SWOJĄ LISTĘ?</h2>
 
                         <h2 class="mt-8 font-extralight">NAZWA LISTY:</h2>
-                        <input value={listName} onChange={nameTarget} className="bg-[#D9D9D9] bg-opacity-60 px-2 py-2 rounded-xl w-full" type="text" />
+                        <input value={listName} onChange={handleListNameChange} className="bg-[#D9D9D9] bg-opacity-60 px-2 py-2 rounded-xl w-full" type="text" />
 
                         {checkRouter && <p className="font-bold text-[0.8rem] text-red-600 pt-1">Minimum 3 znaki!</p>}
 
                         <h2 className="mt-4 font-extralight">DATA:</h2>
-                        <input value={listDate} onChange={dateTarget} class="bg-[#D9D9D9] bg-opacity-60 py-2 px-2 rounded-xl w-full" type="text" />
+                        <input value={listDate} onChange={handleListDateChange} class="bg-[#D9D9D9] bg-opacity-60 py-2 px-2 rounded-xl w-full" type="text" />
 
                         {checkRouter && <p className="font-bold text-[0.8rem] text-red-600 pt-1">Minimum 3 znaki!</p>}
 
