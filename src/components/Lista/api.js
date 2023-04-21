@@ -20,7 +20,7 @@ export const postDataToList = (listName, listDate, fullList, history) => {
       .then((response) => response.text())
       .then((result) => {
         console.log(result);
-        history("/twojelisty"); // przekierowanie użytkownika do /twojelisty
+        history("/yourlists"); // przekierowanie użytkownika do /twojelisty
       })
       .catch((error) => console.log("error", error));
   }
@@ -48,7 +48,7 @@ export const postDataToFoods = (foodsName, foodsDescription, foodsImg, fullList,
     .then((response) => response.text())
     .then((result) => {
       console.log(result);
-      history("/posilki"); // przekierowanie użytkownika do /twojelisty
+      history("/meals"); // przekierowanie użytkownika do /twojelisty
     })
     .catch((error) => console.log("error", error));
 };

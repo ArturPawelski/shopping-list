@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Twoje from "../images/TWOJE.png";
+import Twoje from "../images/YOUR-LISTS.png";
 import { BiCaretDown } from "react-icons/bi";
 import { BsTrash } from "react-icons/bs";
-import TwojeListyProducts from "./TwojeListyProducts";
+import TwojeListyProducts from "./YourListsProducts";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { deleteList, postDataToActualList } from "./api";

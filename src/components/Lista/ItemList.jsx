@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { BsTrash } from "react-icons/bs";
 import { GrClose } from "react-icons/gr";
 import { useNavigate } from "react-router-dom";
-import TwojaLista from "../images/TWOJA.png";
-import TwojaListaBox from "./TwojaListaBox";
+import YourList from "../images/YOUR-LIST.png";
+import ItemListProducts from "./ItemListProducts";
 import ItemListFiltr from "./ItemListFiltr";
 import { AnimatePresence } from "framer-motion";
 import { postDataToList, postDataToFoods } from "./api";
@@ -66,7 +66,7 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
 
   return (
     <main className="mt-[6rem] font-rob">
-      <img src={TwojaLista} alt="/" className="mx-auto w-auto px-8 md:max-w-[550px]" />
+      <img src={YourList} alt="/" className="mx-auto w-auto px-8 md:max-w-[550px]" />
 
       <div className="mt-[2rem] bg-white w-[90%] mx-auto rounded-2xl py-8 px-4 md:w-[85%] lg:w-[75%] xl:w-[70%] 2xl:w-[50%]">
         <ItemListFiltr setFullList={setFullList} fullList={fullList} />
@@ -74,7 +74,7 @@ const ItemList = ({ fullList, setFullList, handleDelete, toggleComplete, allProd
         <div className="mt-8">
           <AnimatePresence>
             {fullList.map((product, index) => (
-              <TwojaListaBox product={product} key={index} index={index} handleDelete={handleDelete} toggleComplete={toggleComplete} setFullList={setFullList} />
+              <ItemListProducts product={product} key={index} index={index} handleDelete={handleDelete} toggleComplete={toggleComplete} setFullList={setFullList} />
             ))}
           </AnimatePresence>
         </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../images/SKLEP-LISTA-footer.png";
+import Logo from "../images/SHOPPING-LIST-footer.png";
 import { HiOutlineMail } from "react-icons/hi";
 import { AiFillLinkedin } from "react-icons/ai";
 import { BsGithub } from "react-icons/bs";

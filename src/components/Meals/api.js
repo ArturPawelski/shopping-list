@@ -36,7 +36,7 @@ export const postDataToActualList = (id, foodsData, Navigate) => {
     .then((response) => response.text())
     .then((result) => {
       console.log(result);
-      Navigate("/lista");
+      Navigate("/list");
     })
     .catch((error) => console.log("error", error));
 };

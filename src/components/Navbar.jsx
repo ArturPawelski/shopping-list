@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Logo from "../images/SKLEP-nav.png";
+import Logo from "../images/SHOPPING-LIST.png";
 import { FiMenu } from "react-icons/fi";
 import { HiX } from "react-icons/hi";
 
@@ -20,13 +20,13 @@ const Navbar = () => {
 
         <ul className="hidden  lg:flex lg:gap-12 lg:text-[1.2rem] lg:items-center ">
           <li className="hover:text-green-500 hover:scale-[1.2] transition duration-500">
-            <Link to="/lista"> LIST </Link>
+            <Link to="/list"> LIST </Link>
           </li>
           <li className="hover:text-green-500 hover:scale-[1.2] transition duration-500">
-            <Link to="/posilki"> MEALS </Link>
+            <Link to="/meals"> MEALS </Link>
           </li>
           <li className="hover:text-green-500 hover:scale-[1.2] transition duration-500">
-            <Link to="/twojelisty"> YOUR LISTS </Link>
+            <Link to="/yourlists"> YOUR LISTS </Link>
           </li>
           <li className="bg-[#262A83] py-2 px-8 rounded-xl hover:bg-slate-200 hover:text-black">
             <Link to="/login"> Log In </Link>
@@ -51,14 +51,14 @@ const Navbar = () => {
                 <Link to="/"> HOME </Link>
               </li>
               <li className="mt-8 hover:text-green-500 hover:scale-[1.1] transition duration-500">
-                <Link to="/lista"> LIST </Link>
+                <Link to="/list"> LIST </Link>
               </li>
               <li className="mt-8 hover:text-green-500 hover:scale-[1.1] transition duration-500">
                 {" "}
-                <Link to="/posilki">MEALS</Link>
+                <Link to="/meals">MEALS</Link>
               </li>
               <li className="mt-8 hover:text-green-500 hover:scale-[1.1] transition duration-500">
-                <Link to="/twojelisty"> YOUR LISTS </Link>
+                <Link to="/yourlists"> YOUR LISTS </Link>
               </li>
               <li className="bg-[#262A83] py-2  rounded-xl mt-16 flex justify-center max-w-[150px] mx-auto md:mx-0  hover:bg-slate-200 hover:text-black transition duration-500">
                 <Link to="/login"> Log In </Link>

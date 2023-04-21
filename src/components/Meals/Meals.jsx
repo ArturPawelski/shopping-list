@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { BiCaretDown } from "react-icons/bi";
 import { BsTrash } from "react-icons/bs";
-import ProductLists from "./ProductLists";
+import ProductLists from "./MealsProductLists";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { deleteFoodList, postDataToActualList } from "./api";
