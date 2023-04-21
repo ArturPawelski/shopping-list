@@ -63,6 +63,7 @@ const Home = () => {
 
             <motion.section
                 initial={{ opacity: 1, scale: 0, x: 900 }}
+                animate={{ x: 0 }}
                 whileInView={{ opacity: 1, scale: 1, x: 0 }}
                 transition={{ stiffness: 40, type: "spring", damping: 10 }}
                 viewport={{ once: true }}
@@ -84,8 +85,9 @@ const Home = () => {
 
             <motion.section
                 initial={{ opacity: 1, scale: 0, x: -900 }}
+                animate={{ x: 0 }}
                 whileInView={{ opacity: 1, scale: 1, x: 0 }}
-                transition={{ stiffness: 40, type: "spring", damping: 10 }}
+                transition={{ duration: 1 }}
                 viewport={{ once: true }}
 
                 className='flex   flex-col min-h-[450px] justify-center items-center max-w-[90%] mx-auto mt-[4rem] gap-4 shadow-2xl py-8 rounded-2xl px-4 bg-[#000B70] bg-opacity-60 md:flex-row-reverse md:bg-transparent md:max-w-[80%] md:mt-[8rem]'>

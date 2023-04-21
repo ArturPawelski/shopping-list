@@ -5,6 +5,7 @@ import { BsTrash } from 'react-icons/bs'
 import TwojeListyProducts from './TwojeListyProducts'
 import { useNavigate } from 'react-router-dom'
 import { motion } from "framer-motion"
+import { deleteList, postDataToActualList } from './api';
 
 const TwojeListy = () => {
 
@@ -33,54 +34,7 @@ const TwojeListy = () => {
     }, [refresh])
 
 
-    const deleteList = (id,) => {
-        var requestOptions = {
-            method: 'DELETE',
-            redirect: 'follow'
-        };
-
-        fetch(`http://localhost:3001/list/${id}`, requestOptions)
-            .then(response => response.text())
-            .then(result => {
-
-                toggleRefresh()
-
-            })
-            .catch(error => console.log('error', error));
-    }
-
-
     const Navigate = useNavigate()
-
-
-    const postDataToActualList = (id) => {
-        // Usunięcie wszystkich pozostałych wpisów z listy czyli 1
-        fetch(`http://localhost:3001/actualList/1`, { method: 'DELETE' })
-            .then(response => {
-                // Dodanie nowego wpisu do listy po usunięciu pozostałych
-                var myHeaders = new Headers();
-                myHeaders.append("Content-Type", "application/json");
-
-                var raw = JSON.stringify({
-                    "list": listData[id - 1].products
-                });
-
-                var requestOptions = {
-                    method: 'POST',
-                    headers: myHeaders,
-                    body: raw,
-                    redirect: 'follow'
-                };
-
-                return fetch("http://localhost:3001/actualList", requestOptions);
-            })
-            .then(response => response.text())
-            .then(result => {
-                console.log(result)
-                Navigate('/lista')
-            })
-            .catch(error => console.log('error', error));
-    }
 
 
     return (
@@ -115,13 +69,13 @@ const TwojeListy = () => {
                             </section>
 
 
-                            <BsTrash className='hover:scale-[1.5]  transition duration-500' size={25} onClick={() => deleteList(id)} />
+                            <BsTrash className='hover:scale-[1.5]  transition duration-500' size={25} onClick={() => deleteList(id, toggleRefresh)} />
                         </div>
 
 
                         {openListId === id &&
                             <div>
-                                <button onClick={() => postDataToActualList(id)} className='hover:bg-[#4A55AA] ml-[10%] sm:ml-24 md:ml-28 transition-all duration-500 mt-4 mb-6 bg-black text-white block font-extrabold  px-2 py-2  rounded-xl '>Dodaj listę do 'Chmury'</button>
+                                <button onClick={() => postDataToActualList(id, listData, Navigate)} className='hover:bg-[#4A55AA] ml-[10%] sm:ml-24 md:ml-28 transition-all duration-500 mt-4 mb-6 bg-black text-white block font-extrabold  px-2 py-2  rounded-xl '>Dodaj listę do 'Chmury'</button>
                                 {products && products.map((product, index) => (
 
                                     <TwojeListyProducts

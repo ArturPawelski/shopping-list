@@ -1,9 +1,9 @@
 import React from 'react'
 
 import Home from './Home/Home';
-import Lista from './Lista/Lista';
-import Posilki from './Posilki/Posilki';
-import TwojeListy from './TwojeListy/TwojeListy';
+import CreatingList from './Lista/Lista';
+import Foods from './Posilki/Posilki';
+import YourLists from './TwojeListy/TwojeListy';
 import Login from './Login/Login';
 
 import { Route, Routes, useLocation } from 'react-router-dom';
@@ -19,9 +19,9 @@ const AnimatedRoutes = () => {
             <Routes location={location} key={location.pathname}>
 
                 <Route path='/' element={<Home />} />
-                < Route path='/lista' element={< Lista />} />
-                < Route path='/posilki' element={< Posilki />} />
-                < Route path='/twojelisty' element={< TwojeListy />} />
+                < Route path='/lista' element={< CreatingList />} />
+                < Route path='/posilki' element={< Foods />} />
+                < Route path='/twojelisty' element={< YourLists />} />
                 < Route path='/login' element={< Login />} />
                 < Route path='*' element={<h1 h1 > 404 error </h1 >} />
 
