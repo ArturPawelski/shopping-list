@@ -53,7 +53,7 @@ const Posilki = () => {
 
               <div className="w-[60%] flex flex-col justify-center items-center">
                 <h2 className="font-extrabold text-[#050C69]">{name}</h2>
-                <p className="text-left mt-2">{description}</p>
+                <p className="text-left mt-2 p-1">{description}</p>
 
                 <div className="flex items-center gap-2">
                   <button
