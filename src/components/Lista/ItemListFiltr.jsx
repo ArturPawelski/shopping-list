@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { HiArrowSmDown, HiArrowSmUp } from 'react-icons/hi'
+import { HiArrowSmDown } from 'react-icons/hi'
 import { motion, AnimatePresence } from "framer-motion"
 import { loadListFromServer } from './api'
 

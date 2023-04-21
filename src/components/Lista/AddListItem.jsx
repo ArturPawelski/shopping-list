@@ -22,7 +22,7 @@ const AddListItem = ({ appendProductToList }) => {
     };
 
 
-    const [complete, setComplete] = useState(true)
+
 
 
     const addProductToList = () => {
@@ -33,7 +33,7 @@ const AddListItem = ({ appendProductToList }) => {
             name: productName,
             quantity: productQuantity,
             price: price.toFixed(2),
-            status: complete
+            status: true
         };
         appendProductToList(newProduct);
         setProductName('');
