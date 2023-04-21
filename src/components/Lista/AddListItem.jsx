@@ -36,9 +36,7 @@ const AddListItem = ({ appendProductToList }) => {
       <article className=" w-full  mt-[6rem] flex flex-col bg-[#32388F] bg-opacity-90 py-8 px-8 mx-auto md:max-w-[650px]  md:rounded-2xl   ">
         <main className="flex flex-col md:flex-row md:items-center md:justify-center md:mx-auto  md:gap-[8rem]">
           <div className="mx-auto grid ">
-            <p className="text-white font-bold mx-auto md:mx-0 ">
-              PRODUCT NAME:
-            </p>
+            <p className="text-white font-bold mx-auto md:mx-0 ">PRODUCT NAME:</p>
             <input
               className="py-4 px-4 max-w-[18rem] rounded-lg  mx-auto shadow-[6px_4px_8px_rgba(0,0,0,0.35)]  "
               type="text"

@@ -15,11 +15,7 @@ const Navbar = () => {
     <div className="w-full font-rob font-bold       ">
       <nav className="flex text-white min-h-[6rem]  bg-[#000B70] justify-between py-8 px-4 uppercase items-center gap-4 sm:px-8   ">
         <Link to="/" className=" hover:scale-[1.1] transition duration-500">
-          <img
-            src={Logo}
-            alt=""
-            className="w-[12rem]   md:w-[16rem]  lg:w-[20rem]"
-          />
+          <img src={Logo} alt="" className="w-[12rem]   md:w-[16rem]  lg:w-[20rem]" />
         </Link>
 
         <ul className="hidden  lg:flex lg:gap-12 lg:text-[1.2rem] lg:items-center ">
@@ -38,11 +34,7 @@ const Navbar = () => {
         </ul>
 
         {menu ? (
-          <FiMenu
-            size={25}
-            className="hover:scale-[1.1] hover:text-red-500 transition duration-500 lg:hidden"
-            onClick={toggleMenu}
-          />
+          <FiMenu size={25} className="hover:scale-[1.1] hover:text-red-500 transition duration-500 lg:hidden" onClick={toggleMenu} />
         ) : (
           <HiX
             size={25}
@@ -53,10 +45,7 @@ const Navbar = () => {
         )}
 
         {!menu && (
-          <ul
-            style={{ zIndex: 5 }}
-            className="fixed right-0 top-[0] px-8 bg-black h-[100%] w-[44%] z-5 bg-opacity-90  lg:hidden"
-          >
+          <ul style={{ zIndex: 5 }} className="fixed right-0 top-[0] px-8 bg-black h-[100%] w-[44%] z-5 bg-opacity-90  lg:hidden">
             <div className="mt-32 ">
               <li className="hover:text-green-500 hover:scale-[1.1] transition duration-500">
                 <Link to="/"> HOME </Link>
