@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Twoje from "../images/YOUR-LISTS.png";
+import YourLists from "../images/YOUR-LISTS.png";
 import { BiCaretDown } from "react-icons/bi";
 import { BsTrash } from "react-icons/bs";
-import TwojeListyProducts from "./YourListsProducts";
+import YourListsProducts from "./YourListsProducts";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { deleteList, postDataToActualList } from "./api";
@@ -38,7 +38,7 @@ const TwojeListy = () => {
       className="w-full font-rob min-h-screen flex flex-col justify-center items-center mb-[8rem]  "
     >
       <main className="bg-[#B7C6FF] py-4 px-8 rounded-xl   min-h-[500px]  ">
-        <img src={Twoje} alt="" className="mt-[2rem]   mx-auto" />
+        <img src={YourLists} alt="" className="mt-[2rem]   mx-auto" />
 
         {listData &&
           listData.map(({ id, name, date, products }) => (
@@ -64,7 +64,7 @@ const TwojeListy = () => {
                   >
                     Upload the list to the cloud
                   </button>
-                  {products && products.map((product, index) => <TwojeListyProducts key={index} product={product} id={id} index={index} listData={listData} setListData={setListData} />)}
+                  {products && products.map((product, index) => <YourListsProducts key={index} product={product} id={id} index={index} listData={listData} setListData={setListData} />)}
                 </div>
               )}
             </div>

@@ -5,6 +5,7 @@ import ProductLists from "./MealsProductLists";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { deleteFoodList, postDataToActualList } from "./api";
+import YourMeals from "../images/YOUR-MEALS.png";
 
 const Posilki = () => {
   const Navigate = useNavigate();
@@ -36,6 +37,7 @@ const Posilki = () => {
       exit={{ opacity: 0, transition: { duration: 0.2 } }}
       className="w-full font-rob min-h-screen flex flex-col justify-center items-center mb-[8rem] "
     >
+      <img src={YourMeals} alt="/" className="mx-auto mb-[-4rem] mt-[2rem] w-auto px-8 md:max-w-[600px]" />
       {foodsData &&
         foodsData.map(({ id, name, description, img, productsList }) => (
           <section
