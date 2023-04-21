@@ -45,7 +45,6 @@ const AddListItem = ({ appendProductToList }) => {
     return (
         <section>
 
-
             <article className=' w-full  mt-[6rem] flex flex-col bg-[#32388F] bg-opacity-90 py-8 px-8 mx-auto md:max-w-[650px]  md:rounded-2xl   '>
 
                 <main className='flex flex-col md:flex-row md:items-center md:justify-center md:mx-auto  md:gap-[8rem]'>
