@@ -20,11 +20,13 @@ Full functionality is available only after installation❗️
 
 ## Installation 💾
 
+```
 - git clone https://github.com/ArturPawelski/shopping-list
 - cd shopping-list
 - npm install
 - npx json-server --watch db.json --port 3001
 - npm start
+```
 
 ## Screenshots 📸
 
