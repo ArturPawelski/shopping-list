@@ -3,7 +3,7 @@ import AddListItem from "./AddListItem";
 import ItemList from "./ItemList";
 import { motion } from "framer-motion";
 
-const Lista = () => {
+const List = () => {
   const toggleComplete = (index) => {
     const newList = [...fullList];
     newList[index].status = !newList[index].status;
@@ -55,4 +55,4 @@ const Lista = () => {
     </motion.div>
   );
 };
-export default Lista;
+export default List;

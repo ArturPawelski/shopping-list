@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import YourLists from "../images/YOUR-LISTS.png";
+import YourListsImg from "../images/YOUR-LISTS.png";
 import { BiCaretDown } from "react-icons/bi";
 import { BsTrash } from "react-icons/bs";
 import YourListsProducts from "./YourListsProducts";
@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { deleteList, postDataToActualList } from "./api";
 
-const TwojeListy = () => {
+const YourLists = () => {
   const [openListId, setOpenListId] = useState(null);
   const toggleOpenProducts = (id) => {
     setOpenListId(openListId === id ? null : id);
@@ -38,7 +38,7 @@ const TwojeListy = () => {
       className="w-full font-rob min-h-screen flex flex-col justify-center items-center mb-[8rem]  "
     >
       <main className="bg-[#B7C6FF] py-4 px-8 rounded-xl   min-h-[500px]  ">
-        <img src={YourLists} alt="" className="mt-[2rem]   mx-auto" />
+        <img src={YourListsImg} alt="" className="mt-[2rem]   mx-auto" />
 
         {listData &&
           listData.map(({ id, name, date, products }) => (
@@ -74,4 +74,4 @@ const TwojeListy = () => {
   );
 };
 
-export default TwojeListy;
+export default YourLists;

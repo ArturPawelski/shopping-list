@@ -4,7 +4,7 @@ import { BsCircle } from "react-icons/bs";
 import { AiOutlineCheckCircle } from "react-icons/ai";
 import { motion } from "framer-motion";
 
-const TwojaListaBox = ({ product, index, handleDelete, toggleComplete, setFullList }) => {
+const ItemListProducts = ({ product, index, handleDelete, toggleComplete, setFullList }) => {
   const [editEnabled, setEditEnabled] = useState(false);
 
   function editName() {
@@ -77,4 +77,4 @@ const TwojaListaBox = ({ product, index, handleDelete, toggleComplete, setFullLi
   );
 };
 
-export default TwojaListaBox;
+export default ItemListProducts;

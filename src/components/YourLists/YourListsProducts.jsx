@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { patchList } from "./api";
 
-const TwojeListyProducts = ({ product, id, index, listData, setListData }) => {
+const YourListsProducts = ({ product, id, index, listData, setListData }) => {
   const [editButton, setEditButton] = useState(true);
   const toggleEditButton = () => {
     setEditButton(!editButton);
@@ -56,4 +56,4 @@ const TwojeListyProducts = ({ product, id, index, listData, setListData }) => {
     </div>
   );
 };
-export default TwojeListyProducts;
+export default YourListsProducts;

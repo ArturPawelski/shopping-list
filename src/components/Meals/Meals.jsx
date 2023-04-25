@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { deleteFoodList, postDataToActualList } from "./api";
 import YourMeals from "../images/YOUR-MEALS.png";
 
-const Posilki = () => {
+const Meals = () => {
   const Navigate = useNavigate();
 
   const [refresh, setRefresh] = useState(false);
@@ -85,4 +85,4 @@ const Posilki = () => {
     </motion.div>
   );
 };
-export default Posilki;
+export default Meals;
