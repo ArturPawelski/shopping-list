@@ -2,6 +2,8 @@
 
 ## Description 📝
 
+**Note:** This is one of my first projects in React. It doesn't showcase my current skills, but it's a good memento that illustrates my journey as a developer.
+
 This app allows users to create, save, and edit shopping lists.
 
 ## Live preview 📲
